@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ZippyGrow Media</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           1. CORE STYLES & RESET
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --orange: #ff4a22;
+            --dark-bg: #111111;
+            --light-bg: #fdfbf7;
+            --text-dark: #1e1e1e;
+            --text-gray: #666666;
+            --mobile-menu-bg: #08141d;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ==========================================
+           2. LINE PRELOADER ANIMATION
+           ========================================== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 99999;
+            display: flex;
+            pointer-events: none;
+        }
+
+        .loader-panel {
+            flex: 1;
+            height: 100%;
+            background-color: var(--dark-bg);
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .center-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--orange);
+            transform: scaleX(0);
+            transition: transform 0.5s ease, opacity 0.4s ease;
+        }
+
+        #preloader.active-line .center-line {
+            transform: scaleX(1);
+        }
+
+        #preloader.loaded .panel-left {
+            transform: translateY(-100%);
+        }
+
+        #preloader.loaded .panel-right {
+            transform: translateY(100%);
+        }
+
+        #preloader.loaded .center-line {
+            opacity: 0;
+        }
+
+        /* ==========================================
+           3. NAVBAR & RESPONSIVE MENU
+           ========================================== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .custom-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .site-logo {
+            height: 160px;
+            width: auto;
+            max-width: 450px;
+            object-fit: contain;
+            display: block;
+            margin-top: -35px;
+            margin-bottom: -35px;
+            transition: all 0.3s ease;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .desktop-nav a:hover,
+        .desktop-nav a.active {
+            color: #fff;
+        }
+
+        .cta-quote-btn {
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+            padding: 10px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-quote-btn:hover {
+            background-color: #fff;
+            color: #111;
+        }
+
+        .menu-btn {
+            display: none;
+            background-color: #ff4a22;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #08141d;
+            z-index: 5000;
+            transition: .4s;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-top {
+            background: #08141d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        .mobile-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px;
+            font-size: 26px;
+        }
+
+        .mobile-quote {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 30px;
+            padding: 18px 30px;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        @media (max-width: 992px) {
+
+            .desktop-nav,
+            .cta-quote-btn {
+                display: none !important;
+            }
+
+            /* Animated Glowing Mobile Menu Button */
+            .menu-btn {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background: #0d1117;
+                border-radius: 50%;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+                padding: 3px;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .site-logo {
+                height: 140px;
+                max-width: 380px;
+                margin-top: -35px;
+                margin-bottom: -35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-logo {
+                height: 110px;
+                max-width: 290px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+        }
+
+        /* ==========================================
+           4. HERO BANNER
+           ========================================== */
+        .hero-banner {
+            background-color: #181818;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero-banner h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .breadcrumb {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .breadcrumb span {
+            color: var(--orange);
+        }
+
+        /* ==========================================
+           5. CONTACT SECTION
+           ========================================== */
+        .contact-section {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .sub-tag {
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .main-heading {
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #111;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-item i {
+            color: var(--orange);
+            font-size: 22px;
+            margin-top: 4px;
+        }
+
+        .info-item h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 6px;
+            text-transform: lowercase;
+        }
+
+        .info-item h4.title-case {
+            text-transform: capitalize;
+        }
+
+        .info-item p {
+            color: var(--text-gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* CONTACT FORM BOX */
+        .contact-form-box {
+            background-color: var(--light-bg);
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--orange);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--orange);
+            color: #fff;
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e03e1a;
+        }
+
+        /* SUCCESS CARD WITH ANIMATED ICON */
+        .success-card {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-card .status-icon-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .success-card .status-icon-wrapper i {
+            font-size: 65px;
+            color: #28a745;
+            animation: successPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* Checkmark Animation Keyframes */
+        @keyframes successPop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            80% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .success-card h3 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        .success-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .success-card .domain-badge {
+            display: inline-block;
+            background-color: #111;
+            color: var(--orange);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 900px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-box {
+                padding: 25px;
+            }
+
+            .main-heading {
+                font-size: 34px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #111;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 16px;
+            z-index: 100;
+        }
+
+        /* =======================================================
+   PREMIUM HIGH-TECH ANIMATED "GET A QUOTE" BUTTON
+   ======================================================= */
+
+        /* 1. Desktop / Laptop Button */
+        .cta-quote-btn {
+            position: relative;
+            padding: 12px 30px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff !important;
+            background: #0d1117;
+            /* Sleek dark background */
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+
+        /* Moving Blue-Green Border Layer */
+        .cta-quote-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg,
+                    #00d5ff 120deg,
+                    #00e600 240deg,
+                    transparent 360deg);
+            animation: rotateBorder 4s linear infinite;
+            z-index: -2;
+        }
+
+        /* Inner Dark Mask for Sharp Border Effect */
+        .cta-quote-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            /* Border ki thickness */
+            background: #0d1117;
+            border-radius: 50px;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        /* Passing Light Beam (Shimmer) */
+        .cta-quote-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 2. Mobile Menu Button Adaptability */
+        .mobile-quote {
+            position: relative;
+            padding: 16px 36px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff !important;
+            background: #0d1117;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .mobile-quote::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg,
+                    #00d5ff 120deg,
+                    #00e600 240deg,
+                    transparent 360deg);
+            animation: rotateBorder 4s linear infinite;
+            z-index: -2;
+        }
+
+        .mobile-quote::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #08141d;
+            border-radius: 50px;
+            z-index: -1;
+        }
+
+        /* 3. Hover Interaction */
+        .cta-quote-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 213, 255, 0.4),
+                0 10px 25px -5px rgba(0, 230, 0, 0.3);
+        }
+
+        .cta-quote-btn:hover::after {
+            background: #141c24;
+            /* Subtle lighter dark on hover */
+        }
+
+        /* 4. Smooth Rotation Keyframe */
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* =======================================================
+   PREMIUM 2-COLOR ANIMATED NAVIGATION LINKS (EXCLUDING BUTTON)
+   ======================================================= */
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        /* Sirf Normal Links par lagega, "Get a quote" button par nahi */
+        .desktop-nav a:not(.cta-quote-btn) {
+            position: relative;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 0;
+            letter-spacing: 0.5px;
+            transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Hover Effect: Text Gradient (Blue to Green) */
+        .desktop-nav a:not(.cta-quote-btn):hover {
+            background: linear-gradient(135deg, #00d5ff 0%, #00e600 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 12px rgba(0, 213, 255, 0.3);
+        }
+
+        /* Bottom Underline Animation */
+        .desktop-nav a:not(.cta-quote-btn)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #00d5ff, #00e600);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px rgba(0, 213, 255, 0.8);
+        }
+
+        .desktop-nav a:not(.cta-quote-btn):hover::after {
+            width: 100%;
+        }
+
+        /* Circular Rotating Gradient Lines for Menu Button */
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg 180deg,
+                    #00d5ff 270deg,
+                    #00e600 360deg);
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        /* Dark Inner Circle */
+        .menu-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #0b0f15;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Icon / Lines inside Menu */
+        .menu-btn span,
+        .menu-btn i,
+        .menu-btn .bar {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Line Preloader Overlay -->
+    <div id="preloader">
+        <div class="loader-panel panel-left"></div>
+        <div class="center-line"></div>
+        <div class="loader-panel panel-right"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="index.html" class="custom-logo-link">
+            <img src="ChatGPT Image Jul 15, 2026, 02_37_16 PM.png" alt="ZippyGrow Media" class="site-logo">
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <a href="contact.html" class="cta-quote-btn">Get a Quote</a>
+
+        <button class="menu-btn" id="openMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobileNav">
+        <div class="mobile-top">
+            <a href="index.html" class="custom-logo-link">
+                <img src="ChatGPT Image Jul 15, 2026, 02_37_16 PM.png" alt="ZippyGrow Media" class="site-logo">
+            </a>
+            <button class="close-btn" id="closeMenuBtn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">HOME </a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a href="contact.html" class="mobile-quote">Get a quote &rarr;</a>
+    </div>
+
+    <!-- Banner -->
+    <div class="hero-banner">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">
+            <a href="index.html" style="color:#aaa; text-decoration:none;">Home</a> &gt; <span>Contact us</span>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <!-- Left Info -->
+        <div>
+            <div class="sub-tag">CONTACT US</div>
+            <h2 class="main-heading">Get In Touch<br>With Us</h2>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>location</h4>
+                        <p>Nagpur, Maharashtra, India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4 class="title-case">Call Us</h4>
+                        <p>+91 9534680179</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4 class="title-case">Email</h4>
+                        <p>zippygrowmedia@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Form Box -->
+        <div class="contact-form-box">
+
+            <!-- REAL FORM -->
+            <form id="contactForm">
+                <!-- HIDDEN FORMSUBMIT SETTINGS FOR DIRECT REPLIES & CLEAN MAILS -->
+                <input type="hidden" name="_replyto" id="replyToEmail">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" id="emailSubject" value="New Website Inquiry">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="Email" placeholder="Yourmail@.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" placeholder="Description" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Leave A Comment &rarr;
+                </button>
+            </form>
+
+            <!-- CUSTOM SUCCESS CARD WITH ANIMATED ICON -->
+            <div class="success-card" id="successCard">
+                <div class="status-icon-wrapper">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>Thanks! Your message successfully sent</h3>
+                <p>We will get back to you as soon as possible.</p>
+                <div class="domain-badge">zippygrowmedia.com</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Scroll To Top Button -->
+    <a href="#" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu
+        const openMenuBtn = document.getElementById('openMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        openMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+
+        // Fixed Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+
+            setTimeout(() => {
+                preloader.classList.add('active-line');
+            }, 100);
+
+            setTimeout(() => {
+                preloader.classList.add('loaded');
+            }, 600);
+
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1400);
+        });
+
+        // AJAX FORM SUBMISSION (No Page Reload / Instant Response)
+        const contactForm = document.getElementById('contactForm');
+        const successCard = document.getElementById('successCard');
+        const submitBtn = document.getElementById('submitBtn');
+        const emailInput = document.getElementById('email');
+        const nameInput = document.getElementById('name');
+        const replyToEmail = document.getElementById('replyToEmail');
+        const emailSubject = document.getElementById('emailSubject');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Direct reply field setup
+            replyToEmail.value = emailInput.value;
+
+            // Unique subject title per client so Gmail won't thread/group emails
+            emailSubject.value = "New Inquiry from " + nameInput.value;
+
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch('https://formsubmit.co/ajax/6d5cd376710df52c6c854b1c6fade1e8', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    contactForm.style.display = 'none';
+                    successCard.style.display = 'block';
+                })
+                .catch(error => {
+                    alert('Something went wrong! Please try again.');
+                    submitBtn.innerText = 'Leave A Comment →';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+
+</html>

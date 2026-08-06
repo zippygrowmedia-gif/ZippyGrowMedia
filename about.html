@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ZippyGrow Media</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ==========================================
+   1. CORE STYLES & DARK THEME RESET
+   ========================================== */
+        html,
+        body {
+            max-width: 100%;
+            background-color: #080a0c !important;
+            color: #ffffff !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: clip;
+            /* Yeh overflow rokega bina sticky header tode */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --orange: #ff4a22;
+            --dark-bg: #0b0d10;
+            --card-bg: #12161f;
+            --text-light: #f1f5f9;
+            --text-gray: #94a3b8;
+            --mobile-menu-bg: #08141d;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        /* ==========================================
+   2. FIXED LINE PRELOADER ANIMATION
+   ========================================== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 99999;
+            display: flex;
+            pointer-events: all;
+            opacity: 1;
+            transition: opacity 0.5s ease 0.8s, visibility 0.5s ease 0.8s;
+        }
+
+        .loader-panel {
+            flex: 1;
+            height: 100%;
+            background-color: #000000;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .center-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--orange);
+            transform: scaleX(0);
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        #preloader.active-line .center-line {
+            transform: scaleX(1);
+        }
+
+        #preloader.loaded .center-line {
+            opacity: 0;
+        }
+
+        #preloader.loaded .panel-left {
+            transform: translateY(-100%);
+        }
+
+        #preloader.loaded .panel-right {
+            transform: translateY(100%);
+        }
+
+        /* Completely hide preloader overlay after animation completes */
+        #preloader.hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            display: none !important;
+        }
+
+        /* ==========================================
+   3. HEADER & NAVBAR
+   ========================================== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #000000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .custom-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .site-logo {
+            height: 160px;
+            width: auto;
+            max-width: 450px;
+            object-fit: contain;
+            display: block;
+            margin-top: -35px;
+            margin-bottom: -35px;
+            transition: all 0.3s ease;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .menu-btn {
+            display: none;
+            background-color: #ff4a22;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #08141d;
+            z-index: 5000;
+            transition: .4s;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-top {
+            background: #08141d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .mobile-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px;
+            font-size: 26px;
+        }
+
+        @media (max-width: 992px) {
+
+            .desktop-nav,
+            .cta-quote-btn {
+                display: none !important;
+            }
+
+            .menu-btn {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background: #0d1117;
+                border-radius: 50%;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+                padding: 3px;
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .site-logo {
+                height: 100px;
+                max-width: 300px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-logo {
+                height: 80px;
+                max-width: 220px;
+            }
+        }
+
+        /* ==========================================
+   4. BREADCRUMB HERO (DARK MODE)
+   ========================================== */
+        .hero-banner {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-banner h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .breadcrumb span {
+            color: var(--orange);
+        }
+
+        /* ==========================================
+   5. ABOUT SECTION (DARK MODE)
+   ========================================== */
+        .about-section {
+            padding: 90px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background-color: var(--dark-bg);
+        }
+
+        .sub-tag {
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .main-heading {
+            font-size: 38px;
+            line-height: 1.25;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .desc-text {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .checklist-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .small-preview-img {
+            width: 170px;
+            height: 110px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #e2e8f0;
+        }
+
+        .checklist li i {
+            background-color: var(--orange);
+            color: #fff;
+            padding: 3px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+
+        .img-container {
+            position: relative;
+        }
+
+        .about-main-img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .exp-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .exp-badge i {
+            background-color: var(--orange);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* =======================================================
+   6. REDESIGNED MODERN SERVICES GRID CARDS (DARK GLASS MODE)
+   ======================================================= */
+        .services-grid-section {
+            padding: 90px 8%;
+            background-color: #050709;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .services-grid-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #ffffff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 35px 30px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 74, 34, 0.15);
+            border-color: var(--orange);
+        }
+
+        .service-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .service-icon-box {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 74, 34, 0.12);
+            color: var(--orange);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--orange);
+            color: #ffffff;
+        }
+
+        .service-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .service-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #38bdf8;
+            text-decoration: none;
+            transition: gap 0.3s ease, color 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+            color: var(--orange);
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================
+   7. LOGOS STRIP & FOOTER (DARK MODE)
+   ========================================== */
+        .logos-strip {
+            background-color: var(--orange);
+            padding: 35px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 70px 8% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 25px;
+            height: 2px;
+            background: var(--orange);
+        }
+
+        .footer-col p,
+        .footer-col ul li {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            list-style: none;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--orange);
+        }
+
+        /* ==========================================
+   8. ANIMATIONS & REVEAL
+   ========================================== */
+        .reveal-left,
+        .reveal-right,
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .active-reveal {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+        }
+
+        @media (max-width: 850px) {
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =======================================================
+   ANIMATED BUTTONS & NAV LINKS
+   ======================================================= */
+        .cta-quote-btn {
+            position: relative;
+            padding: 12px 30px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff !important;
+            background: #0d1117;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+
+        .cta-quote-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg,
+                    #00d5ff 120deg,
+                    #00e600 240deg,
+                    transparent 360deg);
+            animation: rotateBorder 4s linear infinite;
+            z-index: -2;
+        }
+
+        .cta-quote-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #0d1117;
+            border-radius: 50px;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-quote {
+            position: relative;
+            padding: 16px 36px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff !important;
+            background: #0d1117;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+            margin: 40px 30px;
+        }
+
+        .mobile-quote::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg,
+                    #00d5ff 120deg,
+                    #00e600 240deg,
+                    transparent 360deg);
+            animation: rotateBorder 4s linear infinite;
+            z-index: -2;
+        }
+
+        .mobile-quote::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #08141d;
+            border-radius: 50px;
+            z-index: -1;
+        }
+
+        .cta-quote-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 213, 255, 0.4),
+                0 10px 25px -5px rgba(0, 230, 0, 0.3);
+        }
+
+        .cta-quote-btn:hover::after {
+            background: #141c24;
+        }
+
+        @keyframes rotateBorder {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .desktop-nav a:not(.cta-quote-btn) {
+            position: relative;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 0;
+            letter-spacing: 0.5px;
+            transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .desktop-nav a:not(.cta-quote-btn):hover {
+            background: linear-gradient(135deg, #00d5ff 0%, #00e600 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 12px rgba(0, 213, 255, 0.3);
+        }
+
+        .desktop-nav a:not(.cta-quote-btn)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #00d5ff, #00e600);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px rgba(0, 213, 255, 0.8);
+        }
+
+        .desktop-nav a:not(.cta-quote-btn):hover::after {
+            width: 100%;
+        }
+
+        .menu-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg,
+                    transparent 0deg 180deg,
+                    #00d5ff 270deg,
+                    #00e600 360deg);
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        .menu-btn::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: #0b0f15;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .menu-btn span,
+        .menu-btn i,
+        .menu-btn .bar {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .logos-strip a {
+            color: inherit;
+            /* Aapki website ka font color retain karega */
+            text-decoration: none;
+            /* Underline hata dega */
+            transition: opacity 0.3s ease;
+        }
+
+        .logos-strip a:hover {
+            opacity: 0.7;
+            /* Mouse hover karne par thoda fade effect dega */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Line Preloader Overlay -->
+    <div id="preloader">
+        <div class="loader-panel panel-left"></div>
+        <div class="center-line"></div>
+        <div class="loader-panel panel-right"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="index.html" class="custom-logo-link">
+            <img src="ChatGPT Image Jul 15, 2026, 02_37_16 PM.png" alt="ZippyGrow Media" class="site-logo">
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="contact.html" class="cta-quote-btn">Get a Quote</a>
+
+        <!-- Round Mobile Menu Hamburger Button -->
+        <button class="menu-btn" id="openMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Fullscreen Mobile Navigation Slide Overlay -->
+    <div class="mobile-menu" id="mobileNav">
+        <div class="mobile-top">
+            <a href="index.html" class="custom-logo-link">
+                <img src="ChatGPT Image Jul 15, 2026, 02_37_16 PM.png" alt="ZippyGrow Media" class="site-logo">
+            </a>
+            <button class="close-btn" id="closeMenuBtn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">HOME </a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a href="contact.html" class="mobile-quote">Get a quote &rarr;</a>
+    </div>
+
+    <!-- Banner -->
+    <div class="hero-banner reveal-up">
+        <h1>About Us</h1>
+        <div class="breadcrumb"><a href="index.html" style="color:#aaa; text-decoration:none;">Home</a> &gt; <span>About
+                Us</span></div>
+    </div>
+
+    <!-- Content -->
+    <section class="about-section">
+        <div class="reveal-left">
+            <div class="sub-tag">About Us</div>
+            <h2 class="main-heading">Empowering Brands To Scale & Stand Out Digital</h2>
+            <p class="desc-text">
+                Zippy Grow Media is a 360° growth agency. We combine creative design, targeted marketing, and technical
+                expertise to help local businesses transform into powerful, high-converting digital brands.
+            </p>
+            <div class="checklist-group">
+                <img src="groth.jpg" alt="Preview" class="small-preview-img">
+                <ul class="checklist">
+                    <li><i class="fa-solid fa-check"></i> Data-Driven Social Media & Paid Ads</li>
+                    <li><i class="fa-solid fa-check"></i> High-Quality Photography & Video Ads</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Web Development & Branding</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="img-container reveal-right">
+            <img src="video.jpg" alt="About Main" class="about-main-img">
+            <div class="exp-badge">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                    <h3 style="font-size:24px; font-weight:800; color:#fff;">10+</h3>
+                    <p style="font-size:12px; color:#ccc;">Years Of Experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 REDESIGNED MODERN SERVICE BOXES SECTION -->
+    <section class="services-grid-section reveal-up">
+        <h2 class="services-grid-title">Our Specialized Services</h2>
+
+        <div class="services-grid">
+            <!-- Box 1 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-code"></i></div>
+                    <span class="service-number">01</span>
+                </div>
+                <div class="service-content">
+                    <h3>Web & Mobile App Development</h3>
+                    <p>Modern, fast, and responsive websites & custom Android/iOS apps built to scale your business
+                        online.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-palette"></i></div>
+                    <span class="service-number">02</span>
+                </div>
+                <div class="service-content">
+                    <h3>Branding & Visual Identity</h3>
+                    <p>Stand out with premium Logo Design, Brand Style Guides, Business Cards, and Corporate Identity
+                        kits.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-store"></i></div>
+                    <span class="service-number">03</span>
+                </div>
+                <div class="service-content">
+                    <h3>Local Business Marketing</h3>
+                    <p>Boost walk-ins with Google Business Profile setup, Menu Design, Posters, Standees, and Physical
+                        Brochures.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <span class="service-number">04</span>
+                </div>
+                <div class="service-content">
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Complete online store setup, product cataloging, payment gateway integration, and high-converting
+                        checkout UX.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-building"></i></div>
+                    <span class="service-number">05</span>
+                </div>
+                <div class="service-content">
+                    <h3>Real Estate Digital Kits</h3>
+                    <p>High-converting property listing landing pages, digital brochures, social media banners, and lead
+                        forms.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 6 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+                    <span class="service-number">06</span>
+                </div>
+                <div class="service-content">
+                    <h3>Social Media Management & Ads</h3>
+                    <p>End-to-end content creation, Meta/Instagram ad campaigns, post design, and audience engagement
+                        strategy.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 7 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+                    <span class="service-number">07</span>
+                </div>
+                <div class="service-content">
+                    <h3>UI/UX Design & Prototyping</h3>
+                    <p>User-centric wireframes, interactive Figma prototypes, and sleek interfaces for web and mobile
+                        software.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 8 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <span class="service-number">08</span>
+                </div>
+                <div class="service-content">
+                    <h3>Search Engine Optimization</h3>
+                    <p>Rank #1 on Google with On-Page SEO, Keyword Research, Technical Audits, and Local Map Packs.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 9 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-feather"></i></div>
+                    <span class="service-number">09</span>
+                </div>
+                <div class="service-content">
+                    <h3>Content Marketing & Graphics</h3>
+                    <p>High-converting YouTube Thumbnails, Banners, Social Media Graphics, and SEO-optimized Blog Posts.
+                    </p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 10 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <span class="service-number">10</span>
+                </div>
+                <div class="service-content">
+                    <h3>Performance Ads & Leads</h3>
+                    <p>Highly targeted Facebook, Google, and LinkedIn ad campaigns designed to generate quality,
+                        ready-to-buy leads.</p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 11 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-video"></i></div>
+                    <span class="service-number">11</span>
+                </div>
+                <div class="service-content">
+                    <h3>Video Editing & Content Reels</h3>
+                    <p>Engaging short-form video content, Instagram Reels, promotional video ads, and brand story edits.
+                    </p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+
+            <!-- Box 12 -->
+            <div class="service-card">
+                <div class="service-card-top">
+                    <div class="service-icon-box"><i class="fa-solid fa-server"></i></div>
+                    <span class="service-number">12</span>
+                </div>
+                <div class="service-content">
+                    <h3>SaaS & Tech Product Strategy</h3>
+                    <p>Custom software architecture, MVP development, API integrations, and scalable digital solutions.
+                    </p>
+                </div>
+                <a href="#" class="service-link">Find out more &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="logos-strip reveal-up">
+        <div>
+            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="custom-logo-link" style="margin-bottom:15px;">
+                    <img src="ChatGPT Image Jul 15, 2026, 02_37_16 PM.png" alt="ZippyGrow" class="site-logo"
+                        style="height:120px;">
+                </div>
+                <p>Zippy Grow Media is a full-service marketing & creative agency. We help brands scale using
+                    high-converting ads, web development, and premium media production.</p>
+            </div>
+            <div class="footer-col">
+                <h4>SERVICES</h4>
+                <ul>
+                    <li><a href="#services">Digital Marketing & Ads</a></li>
+                    <li><a href="#services">Media Production</a></li>
+                    <li><a href="#services">Website Development</a></li>
+                    <li><a href="#services">Branding & Print Ads</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>CONTACT INFO</h4>
+                <p>Nagpur, Maharashtra, India</p>
+                <p>9534680179</p>
+                <p>zippygrowmedia@gmail.com</p>
+            </div>
+        </div>
+        <div
+            style="text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; color:#666; font-size:13px;">
+            © Copyright 2026, All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- JavaScript Animations & Preloader Removal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const preloader = document.getElementById("preloader");
+
+            // 1. Line scale animation
+            setTimeout(() => {
+                if (preloader) preloader.classList.add("active-line");
+            }, 200);
+
+            // 2. Split preloader panels
+            setTimeout(() => {
+                if (preloader) preloader.classList.add("loaded");
+            }, 700);
+
+            // 3. Completely hide preloader from DOM
+            setTimeout(() => {
+                if (preloader) preloader.classList.add("hidden");
+            }, 1400);
+
+            // Mobile Navigation Toggle
+            const openMenuBtn = document.getElementById("openMenuBtn");
+            const closeMenuBtn = document.getElementById("closeMenuBtn");
+            const mobileNav = document.getElementById("mobileNav");
+
+            if (openMenuBtn && mobileNav) {
+                openMenuBtn.addEventListener("click", () => {
+                    mobileNav.classList.add("active");
+                });
+            }
+            if (closeMenuBtn && mobileNav) {
+                closeMenuBtn.addEventListener("click", () => {
+                    mobileNav.classList.remove("active");
+                });
+            }
+
+            // Scroll Reveal Observer
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active-reveal");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
