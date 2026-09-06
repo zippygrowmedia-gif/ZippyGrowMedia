@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web & Mobile App Packages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f1115;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ff5e36;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .header p {
+            color: #9aa0a6;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Toggle Buttons */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .toggle-box {
+            background-color: #161920;
+            border: 1px solid #2a2e39;
+            padding: 6px;
+            border-radius: 30px;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #9aa0a6;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
+            color: #ffffff;
+        }
+
+        /* Sections */
+        .pricing-section {
+            display: none;
+        }
+
+        .pricing-section.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #161920;
+            border: 1px solid #2a2e39;
+            border-radius: 16px;
+            padding: 35px 25px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff5e36;
+        }
+
+        .card.popular {
+            border: 2px solid #ff5e36;
+            background-color: #1a1d26;
+            box-shadow: 0 10px 30px rgba(255, 94, 54, 0.15);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: 25px;
+            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 6px 16px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            color: #9aa0a6;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            min-height: 38px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .price span {
+            font-size: 0.95rem;
+            color: #9aa0a6;
+            font-weight: normal;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .features-list li.check::before {
+            content: "✓";
+            color: #00e676;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .features-list li.cross {
+            color: #717680;
+        }
+
+        .features-list li.cross::before {
+            content: "✕";
+            color: #ff5252;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 14px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #3a3f4d;
+        }
+
+        .btn-outline:hover {
+            background-color: #2a2e39;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Extra Sections Style */
+        .info-box {
+            background-color: #161920;
+            border: 1px solid #2a2e39;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .info-box h2 {
+            font-size: 1.4rem;
+            color: #ff5e36;
+            margin-bottom: 15px;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            list-style: none;
+        }
+
+        .grid-list li {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            background-color: #1f232d;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #ff5e36;
+        }
+
+        .terms-list {
+            list-style-type: square;
+            padding-left: 20px;
+            color: #9aa0a6;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .terms-list li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <div class="header">
+            <h1>Web & Mobile App Packages</h1>
+            <p>Transparent pricing, defined scope, and zero hidden risks.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="toggle-container">
+            <div class="toggle-box">
+                <button class="toggle-btn" onclick="switchTab('web', this)">🌐 Web Only</button>
+                <button class="toggle-btn" onclick="switchTab('app', this)">📱 Mobile App Only</button>
+                <button class="toggle-btn active" onclick="switchTab('combo', this)">🔥 Web + App Combo</button>
+            </div>
+        </div>
+
+        <!-- 1. WEB ONLY PACKAGES -->
+        <div id="web-section" class="pricing-section">
+            <div class="card">
+                <div>
+                    <h2 class="card-title">Web Basic</h2>
+                    <p class="card-desc">Starter Website for small setups.</p>
+                    <div class="price">₹2,499 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Up to 3 Pages ✓</li>
+                        <li class="check">Responsive Mobile Design ✓</li>
+                        <li class="check">WhatsApp + Call Button ✓</li>
+                        <li class="check">Basic Contact Form ✓</li>
+                        <li class="check">Free SSL Certificate ✓</li>
+                        <li class="cross">Domain/Hosting (Client Pays OR Add-on)</li>
+                        <li class="cross">E-Commerce / Payment Gateway</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose Web Basic</a>
+            </div>
+
+            <div class="card popular">
+                <span class="badge">⭐ Popular</span>
+                <div>
+                    <h2 class="card-title">Web Standard</h2>
+                    <p class="card-desc">Complete site for growing businesses.</p>
+                    <div class="price">₹4,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Up to 7 Pages ✓</li>
+                        <li class="check">Domain Included (1 Year) ✓</li>
+                        <li class="check">Hosting Included (1 Year) ✓</li>
+                        <li class="check">Basic SEO & Google Maps Setup ✓</li>
+                        <li class="check">Speed Optimization ✓</li>
+                        <li class="cross">Payment Gateway / E-Commerce</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Choose Web Standard</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2 class="card-title">Web Premium</h2>
+                    <p class="card-desc">Full Business / E-Commerce site.</p>
+                    <div class="price">₹9,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Up to 12 Pages ✓</li>
+                        <li class="check">Domain + Hosting Included (1 Year) ✓</li>
+                        <li class="check">E-Commerce Product Catalogue ✓</li>
+                        <li class="check">Payment Gateway Integration ✓</li>
+                        <li class="check">Admin Control Panel ✓</li>
+                        <li class="check">Basic Security & SEO Setup ✓</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose Web Premium</a>
+            </div>
+        </div>
+
+        <!-- 2. MOBILE APP ONLY PACKAGES -->
+        <div id="app-section" class="pricing-section">
+            <div class="card">
+                <div>
+                    <h2 class="card-title">App Basic</h2>
+                    <p class="card-desc">Website to Android App conversion.</p>
+                    <div class="price">₹1,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Android WebView App ✓</li>
+                        <li class="check">App Icon & Splash Screen ✓</li>
+                        <li class="check">APK File Delivery ✓</li>
+                        <li class="cross">Push Notifications</li>
+                        <li class="cross">Play Store Publishing</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose App Basic</a>
+            </div>
+
+            <div class="card popular">
+                <span class="badge">⭐ Popular</span>
+                <div>
+                    <h2 class="card-title">App Standard</h2>
+                    <p class="card-desc">Native Application for Android.</p>
+                    <div class="price">₹5,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Native Android App (8-10 Screens) ✓</li>
+                        <li class="check">Push Notifications Feature ✓</li>
+                        <li class="check">Basic Backend / API Integration ✓</li>
+                        <li class="check">Play Store Publishing Support ✓</li>
+                        <li class="cross">Google Console Fee ($25 Paid by Client)</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Choose App Standard</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2 class="card-title">App Premium</h2>
+                    <p class="card-desc">Android & iOS Dual Platform App.</p>
+                    <div class="price">₹12,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Android + iOS App (Up to 15 Screens) ✓</li>
+                        <li class="check">Admin Control Panel ✓</li>
+                        <li class="check">Push Notifications & Payment Gateway ✓</li>
+                        <li class="check">Play Store & App Store Support ✓</li>
+                        <li class="cross">Apple Dev Account ($99/yr Paid by Client)</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose App Premium</a>
+            </div>
+        </div>
+
+        <!-- 3. WEB + APP COMBO PACKAGES (ACTIVE BY DEFAULT) -->
+        <div id="combo-section" class="pricing-section active">
+            <div class="card">
+                <div>
+                    <h2 class="card-title">Basic Combo</h2>
+                    <p class="card-desc">Entry package for small businesses.</p>
+                    <div class="price">₹4,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Up to 5 Pages Responsive Website ✓</li>
+                        <li class="check">Android WebView App (.APK) ✓</li>
+                        <li class="check">WhatsApp & Call Integration ✓</li>
+                        <li class="check">Basic Contact Form ✓</li>
+                        <li class="cross">Domain/Hosting (Add-on / Client Account)</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose Basic Combo</a>
+            </div>
+
+            <div class="card popular">
+                <span class="badge">🔥 Most Popular</span>
+                <div>
+                    <h2 class="card-title">Standard Combo</h2>
+                    <p class="card-desc">Main package for growing businesses.</p>
+                    <div class="price">₹9,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">Up to 10 Pages Website ✓</li>
+                        <li class="check">Native Android App (Up to 10 Screens) ✓</li>
+                        <li class="check">Domain + Hosting Included (1 Year) ✓</li>
+                        <li class="check">Admin Panel & Push Notifications ✓</li>
+                        <li class="check">Payment Gateway Integration ✓</li>
+                        <li class="check">Play Store Publishing Support ✓</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Choose Standard Combo</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h2 class="card-title">Premium Combo</h2>
+                    <p class="card-desc">Complete Digital Solution.</p>
+                    <div class="price">₹19,999 <span>/ one-time</span></div>
+                    <ul class="features-list">
+                        <li class="check">E-Commerce / Business Web (Up to 15 Pages) ✓</li>
+                        <li class="check">Android + iOS App (Up to 15 Screens) ✓</li>
+                        <li class="check">Domain + Cloud Hosting (1 Year) ✓</li>
+                        <li class="check">Full Admin Panel & Push Notifications ✓</li>
+                        <li class="check">Play Store & App Store Support ✓</li>
+                        <li class="check">30-Day Priority Support ✓</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-outline">Choose Premium Combo</a>
+            </div>
+        </div>
+
+        <!-- Additional Services & Charges -->
+        <div class="info-box">
+            <h2>🛠️ Additional Add-ons & Charges</h2>
+            <ul class="grid-list">
+                <li>Extra Website Page: ₹300 / page</li>
+                <li>Extra App Screen: ₹500 / screen</li>
+                <li>Extra Revision: ₹300 / request</li>
+                <li>Logo Design: ₹999 onwards</li>
+                <li>Advanced SEO Package: ₹2,999 onwards</li>
+                <li>Monthly Maintenance: ₹999 / month</li>
+            </ul>
+        </div>
+
+        <!-- Terms & Payment Milestone -->
+        <div class="info-box" style="margin-top: 25px;">
+            <h2>📋 Important Terms & Payment Terms</h2>
+            <ul class="terms-list">
+                <li><strong>Payment Schedule:</strong> 50% Advance to start work + 50% before final source/deployment for plans up to ₹5,000. For plans above ₹5,000: 40% Advance + 40% Demo Approval + 20% Final Handover.</li>
+                <li><strong>Third-Party Fees:</strong> Google Play Developer account ($25 one-time) & Apple Developer account ($99/year) fees are strictly payable by the client.</li>
+                <li><strong>Renewals:</strong> Domain and Hosting included plans are valid for 1 Year. Renewal charges apply from Year 2 based on official provider rates.</li>
+                <li><strong>Payment Gateway:</strong> Gateway merchant transaction charges will be deducted by the respective gateway provider.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tab, btnElement) {
+            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.pricing-section').forEach(sec => sec.classList.remove('active'));
+
+            btnElement.classList.add('active');
+
+            if(tab === 'web') {
+                document.getElementById('web-section').classList.add('active');
+            } else if(tab === 'app') {
+                document.getElementById('app-section').classList.add('active');
+            } else if(tab === 'combo') {
+                document.getElementById('combo-section').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
