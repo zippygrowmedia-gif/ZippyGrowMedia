@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Branding & Visual Identity | ZippyGrow Media</title>
+    <meta name="description" content="Professional branding and visual identity services by ZippyGrow Media. Logo design, brand identity, business stationery and complete visual branding solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           ROOT
+        ========================= */
+
+        :root {
+            --bg: #0b0d12;
+            --bg-soft: #10131a;
+            --card: #171a21;
+            --card-2: #1b1f28;
+
+            --border: #292e39;
+            --border-light: #343a47;
+
+            --white: #f7f8fa;
+            --text: #d7dbe3;
+            --muted: #9299a7;
+
+            --orange: #ff7048;
+            --orange-light: #ff9a5c;
+            --coral: #ff5360;
+
+            --cyan: #61e8ff;
+            --green: #00ee88;
+
+            --radius: 22px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(255,112,72,0.08), transparent 35%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           BACK HOME
+        ========================= */
+
+        .back-wrap {
+            padding-top: 25px;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 10px 17px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,0.025);
+
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .back-home i {
+            font-size: 12px;
+        }
+
+        .back-home:hover {
+            border-color: rgba(255,112,72,0.55);
+            background: rgba(255,112,72,0.08);
+            color: var(--white);
+            transform: translateX(-3px);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            text-align: center;
+            padding: 58px 0 15px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 7px 13px;
+            margin-bottom: 15px;
+
+            border: 1px solid rgba(255,112,72,0.25);
+            border-radius: 999px;
+
+            background: rgba(255,112,72,0.06);
+
+            color: var(--orange-light);
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin: 0 auto;
+
+            color: var(--white);
+
+            font-size: clamp(40px, 6vw, 74px);
+            line-height: 1.04;
+            letter-spacing: -2.8px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                var(--orange),
+                var(--coral),
+                var(--orange-light)
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            max-width: 760px;
+            margin: 18px auto 0;
+
+            color: var(--text);
+
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .hero-description {
+            max-width: 690px;
+            margin: 9px auto 0;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .gradient-line {
+            width: 85px;
+            height: 3px;
+
+            margin: 18px auto 0;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                90deg,
+                var(--orange),
+                var(--coral)
+            );
+
+            box-shadow: 0 0 20px rgba(255,112,72,0.3);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            padding: 28px 0 75px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            color: var(--white);
+
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -1.4px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 9px auto 0;
+
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           PRICING GRID
+        ========================= */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+
+
+        /* =========================
+           PRICING CARD
+        ========================= */
+
+        .pricing-card {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
+            min-height: 630px;
+
+            padding: 30px 28px 27px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.025),
+                    rgba(255,255,255,0.008)
+                ),
+                var(--card);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.18);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--border-light);
+
+            box-shadow:
+                0 28px 65px rgba(0,0,0,0.28);
+        }
+
+        .pricing-card.popular-card {
+            border: 2px solid var(--orange);
+
+            box-shadow:
+                0 0 0 1px rgba(255,112,72,0.12),
+                0 25px 70px rgba(255,112,72,0.12);
+        }
+
+        .pricing-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .package-label {
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .package-number {
+            color: rgba(255,255,255,0.2);
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            margin-top: 13px;
+
+            color: var(--white);
+
+            font-size: 25px;
+            line-height: 1.2;
+            letter-spacing: -0.6px;
+        }
+
+        .package-description {
+            min-height: 50px;
+            margin-top: 9px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+
+        /* =========================
+           PRICE
+        ========================= */
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+
+            gap: 4px;
+
+            margin-top: 22px;
+        }
+
+        .currency {
+            color: var(--orange-light);
+
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .amount {
+            color: var(--white);
+
+            font-size: 43px;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -1.8px;
+        }
+
+        .duration {
+            color: var(--muted);
+
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+
+        /* =========================
+           DIVIDER
+        ========================= */
+
+        .card-divider {
+            width: 100%;
+            height: 1px;
+
+            margin: 22px 0;
+
+            background: var(--border);
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            list-style: none;
+        }
+
+        .features li {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 10px;
+
+            color: var(--text);
+
+            font-size: 12.5px;
+            line-height: 1.45;
+        }
+
+        .features li i {
+            flex: 0 0 auto;
+
+            margin-top: 2px;
+
+            color: var(--green);
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .package-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            min-height: 50px;
+
+            margin-top: auto;
+            padding: 12px 18px;
+
+            border: 1px solid var(--border-light);
+            border-radius: 13px;
+
+            background: rgba(255,255,255,0.025);
+
+            color: var(--white);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .package-btn:hover {
+            border-color: var(--orange);
+            background: rgba(255,112,72,0.08);
+        }
+
+        .popular-card .package-btn {
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color: #fff;
+
+            box-shadow:
+                0 12px 30px rgba(255,112,72,0.2);
+        }
+
+        .popular-card .package-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 35px rgba(255,112,72,0.3);
+        }
+
+
+        /* =========================
+           POPULAR BADGE
+        ========================= */
+
+        .popular-badge {
+            position: absolute;
+
+            top: -15px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            min-width: 165px;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color: #fff;
+
+            text-align: center;
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+
+            box-shadow:
+                0 8px 25px rgba(255,112,72,0.22);
+        }
+
+
+        /* =========================
+           ADDITIONAL SERVICES
+        ========================= */
+
+        .services-section {
+            padding-top: 5px;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 19px 21px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.025),
+                    rgba(255,255,255,0.008)
+                ),
+                var(--card);
+
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+
+            border-color: rgba(97,232,255,0.22);
+        }
+
+        .service-info {
+            min-width: 0;
+        }
+
+        .service-info h3 {
+            color: var(--white);
+
+            font-size: 14px;
+            line-height: 1.35;
+        }
+
+        .service-info p {
+            margin-top: 3px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .service-price {
+            flex: 0 0 auto;
+
+            color: var(--cyan);
+
+            font-size: 14px;
+            font-weight: 800;
+
+            text-align: right;
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           ADDONS
+        ========================= */
+
+        .addon-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .addon-card {
+            padding: 21px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--card);
+
+            transition: 0.3s ease;
+        }
+
+        .addon-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255,112,72,0.28);
+        }
+
+        .addon-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 14px;
+
+            border-radius: 11px;
+
+            background: rgba(255,112,72,0.08);
+
+            color: var(--orange-light);
+
+            font-size: 14px;
+        }
+
+        .addon-card h3 {
+            color: var(--white);
+
+            font-size: 14px;
+        }
+
+        .addon-price {
+            margin-top: 7px;
+
+            color: var(--orange-light);
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           TERMS
+        ========================= */
+
+        .terms {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .term-card {
+            padding: 21px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: var(--card);
+        }
+
+        .term-card h3 {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--white);
+
+            font-size: 14px;
+        }
+
+        .term-card h3 i {
+            color: var(--orange-light);
+            font-size: 13px;
+        }
+
+        .term-card p {
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 11.5px;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           FINAL CTA
+        ========================= */
+
+        .final-cta {
+            padding: 20px 0 80px;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+
+            padding: 50px 30px;
+
+            border: 1px solid rgba(255,112,72,0.22);
+            border-radius: 25px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255,112,72,0.13),
+                    transparent 50%
+                ),
+                var(--card);
+
+            text-align: center;
+        }
+
+        .cta-box::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 15%;
+            right: 15%;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--orange),
+                    transparent
+                );
+        }
+
+        .cta-box h2 {
+            color: var(--white);
+
+            font-size: clamp(27px, 4vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -1.3px;
+        }
+
+        .cta-box p {
+            max-width: 600px;
+
+            margin: 11px auto 24px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 23px;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color: #fff;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            box-shadow:
+                0 13px 32px rgba(255,112,72,0.2);
+
+            transition: 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 40px rgba(255,112,72,0.3);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 0 25px;
+
+            border-top: 1px solid var(--border);
+
+            background: #090b10;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+
+            font-size: 16px;
+        }
+
+        .footer-brand p {
+            margin-top: 4px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+
+            gap: 17px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            transition: 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--orange-light);
+        }
+
+        .copyright {
+            margin-top: 20px;
+
+            color: #666d79;
+
+            font-size: 10px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 620px;
+                margin: 0 auto;
+                gap: 28px;
+            }
+
+            .pricing-card {
+                min-height: 0;
+            }
+
+            .addon-wrapper {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 720px) {
+
+            .container {
+                width: calc(100% - 32px);
+                max-width: 620px;
+            }
+
+            .back-wrap {
+                padding-top: 18px;
+            }
+
+            .back-home {
+                padding: 9px 14px;
+                font-size: 12px;
+            }
+
+
+            /* Compact Hero */
+
+            .hero {
+                padding: 42px 0 10px;
+            }
+
+            .eyebrow {
+                padding: 6px 11px;
+                margin-bottom: 12px;
+
+                font-size: 8px;
+                letter-spacing: 1.1px;
+            }
+
+            .hero h1 {
+                max-width: 100%;
+
+                font-size: clamp(32px, 10vw, 42px);
+                line-height: 1.08;
+                letter-spacing: -1.4px;
+            }
+
+            .hero-subtitle {
+                max-width: 350px;
+
+                margin-top: 12px;
+
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .hero-description {
+                max-width: 340px;
+
+                margin-top: 7px;
+
+                font-size: 11.5px;
+                line-height: 1.5;
+            }
+
+            .gradient-line {
+                width: 65px;
+                height: 2px;
+
+                margin-top: 14px;
+            }
+
+
+            /* Section */
+
+            .section {
+                padding: 18px 0 55px;
+            }
+
+            .section-heading {
+                margin-bottom: 23px;
+            }
+
+            .section-heading h2 {
+                font-size: 27px;
+                letter-spacing: -0.8px;
+            }
+
+            .section-heading p {
+                margin-top: 6px;
+
+                font-size: 11.5px;
+                line-height: 1.5;
+            }
+
+
+            /* Pricing */
+
+            .pricing-grid {
+                width: 100%;
+                max-width: 100%;
+
+                gap: 27px;
+            }
+
+            .pricing-card {
+                width: 100%;
+                min-height: 0;
+
+                padding: 24px 19px 20px;
+
+                border-radius: 19px;
+            }
+
+            .pricing-card.popular-card {
+                border-width: 1px;
+            }
+
+            .popular-badge {
+                top: -13px;
+
+                min-width: 158px;
+
+                padding: 6px 11px;
+
+                font-size: 9px;
+            }
+
+            .pricing-card-top {
+                gap: 8px;
+            }
+
+            .package-label {
+                font-size: 9px;
+            }
+
+            .package-number {
+                font-size: 10px;
+            }
+
+            .pricing-card h3 {
+                margin-top: 11px;
+
+                font-size: 21px;
+                letter-spacing: -0.4px;
+            }
+
+            .package-description {
+                min-height: 0;
+
+                margin-top: 7px;
+
+                font-size: 11.5px;
+                line-height: 1.5;
+            }
+
+
+            /* Price */
+
+            .price {
+                margin-top: 17px;
+            }
+
+            .currency {
+                font-size: 21px;
+            }
+
+            .amount {
+                font-size: 37px;
+                letter-spacing: -1.3px;
+            }
+
+            .duration {
+                font-size: 10px;
+            }
+
+            .card-divider {
+                margin: 18px 0;
+            }
+
+
+            /* Features */
+
+            .features {
+                gap: 10px;
+            }
+
+            .features li {
+                gap: 8px;
+
+                font-size: 11.5px;
+                line-height: 1.4;
+            }
+
+            .features li i {
+                font-size: 10px;
+            }
+
+            .package-btn {
+                min-height: 47px;
+
+                margin-top: 21px;
+
+                padding: 10px 14px;
+
+                border-radius: 11px;
+
+                font-size: 12px;
+            }
+
+
+            /* Services */
+
+            .service-list {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .service-card {
+                padding: 16px;
+
+                border-radius: 14px;
+
+                gap: 12px;
+            }
+
+            .service-info h3 {
+                font-size: 12.5px;
+            }
+
+            .service-info p {
+                font-size: 10px;
+            }
+
+            .service-price {
+                font-size: 11.5px;
+            }
+
+
+            /* Addons */
+
+            .addon-wrapper {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .addon-card {
+                padding: 17px;
+
+                border-radius: 14px;
+            }
+
+            .addon-icon {
+                width: 34px;
+                height: 34px;
+
+                margin-bottom: 11px;
+
+                border-radius: 9px;
+
+                font-size: 12px;
+            }
+
+            .addon-card h3 {
+                font-size: 12.5px;
+            }
+
+            .addon-price {
+                font-size: 11.5px;
+            }
+
+
+            /* Terms */
+
+            .terms {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .term-card {
+                padding: 17px;
+
+                border-radius: 14px;
+            }
+
+            .term-card h3 {
+                font-size: 12.5px;
+            }
+
+            .term-card p {
+                font-size: 10.5px;
+            }
+
+
+            /* CTA */
+
+            .final-cta {
+                padding: 5px 0 55px;
+            }
+
+            .cta-box {
+                padding: 35px 18px;
+
+                border-radius: 19px;
+            }
+
+            .cta-box h2 {
+                font-size: 27px;
+                letter-spacing: -0.8px;
+            }
+
+            .cta-box p {
+                margin: 9px auto 20px;
+
+                font-size: 11.5px;
+            }
+
+            .cta-btn {
+                width: 100%;
+
+                padding: 12px 17px;
+
+                font-size: 12px;
+            }
+
+
+            /* Footer */
+
+            footer {
+                padding: 25px 0 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+
+                text-align: center;
+            }
+
+            .footer-contact {
+                justify-content: center;
+
+                gap: 9px 14px;
+            }
+
+            .footer-contact a {
+                font-size: 10px;
+            }
+
+            .copyright {
+                font-size: 9px;
+            }
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 430px) {
+
+            .container {
+                width: calc(100% - 30px);
+            }
+
+            .hero {
+                padding-top: 35px;
+                padding-bottom: 7px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+                line-height: 1.08;
+                letter-spacing: -1.1px;
+            }
+
+            .hero-subtitle {
+                max-width: 320px;
+
+                font-size: 12px;
+            }
+
+            .hero-description {
+                max-width: 315px;
+
+                font-size: 10.5px;
+            }
+
+            .section {
+                padding-top: 14px;
+            }
+
+            .section-heading h2 {
+                font-size: 25px;
+            }
+
+            .pricing-grid {
+                gap: 25px;
+            }
+
+            .pricing-card {
+                padding: 22px 17px 18px;
+
+                border-radius: 17px;
+            }
+
+            .popular-badge {
+                min-width: 150px;
+
+                padding: 6px 10px;
+
+                font-size: 8.5px;
+            }
+
+            .pricing-card h3 {
+                font-size: 20px;
+            }
+
+            .amount {
+                font-size: 35px;
+            }
+
+            .currency {
+                font-size: 20px;
+            }
+
+            .features li {
+                font-size: 11px;
+            }
+
+            .package-btn {
+                min-height: 45px;
+
+                font-size: 11.5px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACK TO HOME
+    ========================= -->
+
+    <div class="back-wrap">
+        <div class="container">
+            <a href="index.html" class="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                BRANDING & VISUAL IDENTITY
+            </div>
+
+            <h1>
+                Build a Brand That
+                <span>People Remember.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Build a memorable brand identity that looks professional,
+                consistent, and ready to grow.
+            </p>
+
+            <p class="hero-description">
+                From logo design to complete brand identity systems,
+                we create professional visuals that help your business
+                stand out and build trust.
+            </p>
+
+            <div class="gradient-line"></div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         BRANDING PACKAGES
+    ========================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Branding Packages
+                </h2>
+
+                <p>
+                    Choose the branding package that fits your business stage
+                    and visual identity needs.
+                </p>
+
+            </div>
+
+
+            <div class="pricing-grid">
+
+
+                <!-- =========================
+                     BASIC
+                ========================= -->
+
+                <div class="pricing-card">
+
+                    <div class="pricing-card-top">
+
+                        <span class="package-label">
+                            STARTER
+                        </span>
+
+                        <span class="package-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Brand Basic
+                    </h3>
+
+                    <p class="package-description">
+                        A simple and professional branding foundation
+                        for small businesses and new brands.
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="currency">
+                            ₹
+                        </span>
+
+                        <span class="amount">
+                            999
+                        </span>
+
+                        <span class="duration">
+                            / one-time
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-divider"></div>
+
+
+                    <ul class="features">
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Professional Logo Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            2 Logo Concepts
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            2 Revision Rounds
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            High Resolution Files
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            PNG & JPG Formats
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Transparent Background Logo
+                        </li>
+
+                    </ul>
+
+
+                    <a href="contact.html" class="package-btn">
+                        Choose Brand Basic
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================
+                     STANDARD
+                ========================= -->
+
+                <div class="pricing-card popular-card">
+
+                    <div class="popular-badge">
+                        ⭐ MOST POPULAR
+                    </div>
+
+
+                    <div class="pricing-card-top">
+
+                        <span class="package-label">
+                            GROWTH
+                        </span>
+
+                        <span class="package-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Brand Standard
+                    </h3>
+
+                    <p class="package-description">
+                        A complete visual starter kit for businesses
+                        ready to build a stronger and more consistent brand.
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="currency">
+                            ₹
+                        </span>
+
+                        <span class="amount">
+                            2,499
+                        </span>
+
+                        <span class="duration">
+                            / one-time
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-divider"></div>
+
+
+                    <ul class="features">
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Professional Logo Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            3 Logo Concepts
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            3 Revision Rounds
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Brand Color Palette
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Typography Selection
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Business Card Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Social Media Profile Kit
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            High Resolution Files
+                        </li>
+
+                    </ul>
+
+
+                    <a href="contact.html" class="package-btn">
+                        Choose Brand Standard
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PREMIUM
+                ========================= -->
+
+                <div class="pricing-card">
+
+                    <div class="pricing-card-top">
+
+                        <span class="package-label">
+                            COMPLETE
+                        </span>
+
+                        <span class="package-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Brand Premium
+                    </h3>
+
+                    <p class="package-description">
+                        A complete brand identity system designed for
+                        businesses that want a premium professional presence.
+                    </p>
+
+
+                    <div class="price">
+
+                        <span class="currency">
+                            ₹
+                        </span>
+
+                        <span class="amount">
+                            4,999
+                        </span>
+
+                        <span class="duration">
+                            / one-time
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-divider"></div>
+
+
+                    <ul class="features">
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Professional Logo Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            4 Logo Concepts
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            4 Revision Rounds
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Brand Color Palette
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Typography System
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Business Card Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Letterhead Design
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Social Media Brand Kit
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Brand Guidelines
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            High Resolution & Source Files
+                        </li>
+
+                    </ul>
+
+
+                    <a href="contact.html" class="package-btn">
+                        Choose Brand Premium
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ADDITIONAL BRANDING SERVICES
+    ========================= -->
+
+    <section class="section services-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Additional Branding Services
+                </h2>
+
+                <p>
+                    Need only a specific branding or design service?
+                    Choose exactly what your business needs.
+                </p>
+
+            </div>
+
+
+            <div class="service-list">
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Logo Design
+                        </h3>
+
+                        <p>
+                            Professional logo concepts and final files
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹999
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Business Card Design
+                        </h3>
+
+                        <p>
+                            Professional front and back business card
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹499
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Letterhead Design
+                        </h3>
+
+                        <p>
+                            Professional branded letterhead
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹499
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Social Media Brand Kit
+                        </h3>
+
+                        <p>
+                            Consistent profile and social media visuals
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹999
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Brochure Design
+                        </h3>
+
+                        <p>
+                            Professional business brochure
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹999 onwards
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Menu Design
+                        </h3>
+
+                        <p>
+                            Restaurant and business menu designs
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹799 onwards
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Brand Guidelines
+                        </h3>
+
+                        <p>
+                            Professional brand usage guidelines
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹1,499 onwards
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Packaging Design
+                        </h3>
+
+                        <p>
+                            Professional product packaging visuals
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹1,499 onwards
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Poster / Flyer Design
+                        </h3>
+
+                        <p>
+                            Promotional posters and marketing flyers
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹499 onwards
+                    </div>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-info">
+
+                        <h3>
+                            Company Profile Design
+                        </h3>
+
+                        <p>
+                            Professional company profile document
+                        </p>
+
+                    </div>
+
+                    <div class="service-price">
+                        ₹1,999 onwards
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ADD-ONS
+    ========================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Branding Add-ons
+                </h2>
+
+                <p>
+                    Extend your package with additional creative requirements.
+                </p>
+
+            </div>
+
+
+            <div class="addon-wrapper">
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <h3>
+                        Extra Logo Concept
+                    </h3>
+
+                    <div class="addon-price">
+                        ₹300
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-rotate"></i>
+                    </div>
+
+                    <h3>
+                        Extra Revision
+                    </h3>
+
+                    <div class="addon-price">
+                        ₹300 / request
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+
+                    <h3>
+                        Source File Package
+                    </h3>
+
+                    <div class="addon-price">
+                        ₹500
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <h3>
+                        Extra Design Variation
+                    </h3>
+
+                    <div class="addon-price">
+                        ₹300
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <h3>
+                        Urgent Delivery
+                    </h3>
+
+                    <div class="addon-price">
+                        Get a Quote
+                    </div>
+
+                </div>
+
+
+                <div class="addon-card">
+
+                    <div class="addon-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <h3>
+                        Custom Branding Requirements
+                    </h3>
+
+                    <div class="addon-price">
+                        Get a Quote
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         IMPORTANT TERMS
+    ========================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Important Terms
+                </h2>
+
+                <p>
+                    Simple and transparent terms for a smooth branding process.
+                </p>
+
+            </div>
+
+
+            <div class="terms">
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-credit-card"></i>
+                        Payment Schedule
+                    </h3>
+
+                    <p>
+                        50% Advance to start work + 50% before final delivery.
+                    </p>
+
+                </div>
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-rotate"></i>
+                        Revisions
+                    </h3>
+
+                    <p>
+                        Number of revisions depends on the selected package.
+                        Additional revisions are charged separately.
+                    </p>
+
+                </div>
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        Source Files
+                    </h3>
+
+                    <p>
+                        Source files are included only where specifically
+                        mentioned in the selected package.
+                    </p>
+
+                </div>
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-list-check"></i>
+                        Custom Requirements
+                    </h3>
+
+                    <p>
+                        Requirements outside the selected package scope
+                        will be quoted separately.
+                    </p>
+
+                </div>
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-user"></i>
+                        Client Content
+                    </h3>
+
+                    <p>
+                        Client must provide correct business information,
+                        content and required materials.
+                    </p>
+
+                </div>
+
+
+                <div class="term-card">
+
+                    <h3>
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        Delivery
+                    </h3>
+
+                    <p>
+                        Final digital files are delivered after completion
+                        and payment settlement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================= -->
+
+    <section class="final-cta">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+                    Ready to Build a Brand
+                    People Remember?
+                </h2>
+
+                <p>
+                    Let's create a professional and consistent visual
+                    identity for your business.
+                </p>
+
+                <a href="contact.html" class="cta-btn">
+
+                    Start Your Branding
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <h3>
+                        ZippyGrow Media
+                    </h3>
+
+                    <p>
+                        Digital Growth • Branding • Marketing
+                    </p>
+
+                </div>
+
+
+                <div class="footer-contact">
+
+                    <a href="https://www.zippygrowmedia.in" target="_blank" rel="noopener noreferrer">
+                        www.zippygrowmedia.in
+                    </a>
+
+                    <a href="mailto:zippygrowmedia@gmail.com">
+                        zippygrowmedia@gmail.com
+                    </a>
+
+                    <a href="tel:+919534680179">
+                        9534680179
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+                © 2026 ZippyGrow Media. All rights reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
