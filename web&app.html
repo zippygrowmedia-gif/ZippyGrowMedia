@@ -1,514 +1,4877 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Web & Mobile App Packages | ZippyGrow Media</title>
+
+    <meta name="description"
+        content="Professional Web and Mobile App Development packages by ZippyGrow Media. Responsive websites, Android apps, iOS apps, e-commerce and custom digital solutions.">
+
+    <meta name="keywords"
+        content="Web Development, Mobile App Development, Android App, iOS App, E-Commerce Website, ZippyGrow Media">
+
+    <meta name="author" content="ZippyGrow Media">
+
+    <meta name="theme-color" content="#080b10">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+            --bg: #080b10;
+            --bg-2: #0d1118;
+
+            --card: #121821;
+            --card-2: #171e28;
+
+            --border: #26303b;
+            --border-light: #374351;
+
+            --white: #f7f9fc;
+            --text: #d7dce4;
+            --muted: #8f99a7;
+
+            --orange: #ff7048;
+            --orange-2: #ff995c;
+            --coral: #ff5360;
+
+            --cyan: #61e8ff;
+            --green: #00e889;
+            --red: #ff5a5a;
+
+            --radius: 20px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #0f1115;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 40px 20px;
-        }
+            overflow-x: hidden;
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
+            color: var(--text);
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #ff5e36;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
+            font-family:
+                "Inter",
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
+            background:
+                radial-gradient(
+                    circle at 85% 0%,
+                    rgba(255, 112, 72, 0.12),
+                    transparent 26%
+                ),
+                radial-gradient(
+                    circle at 8% 35%,
+                    rgba(97, 232, 255, 0.05),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 70% 75%,
+                    rgba(255, 83, 96, 0.035),
+                    transparent 25%
+                ),
+                var(--bg);
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-            color: #ffffff;
-        }
-
-        .header p {
-            color: #9aa0a6;
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Toggle Buttons */
-        .toggle-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-
-        .toggle-box {
-            background-color: #161920;
-            border: 1px solid #2a2e39;
-            padding: 6px;
-            border-radius: 30px;
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .toggle-btn {
-            background: transparent;
-            border: none;
-            color: #9aa0a6;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-
-        .toggle-btn.active {
-            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
-            color: #ffffff;
-        }
-
-        /* Sections */
-        .pricing-section {
-            display: none;
-        }
-
-        .pricing-section.active {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: #161920;
-            border: 1px solid #2a2e39;
-            border-radius: 16px;
-            padding: 35px 25px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ff5e36;
-        }
-
-        .card.popular {
-            border: 2px solid #ff5e36;
-            background-color: #1a1d26;
-            box-shadow: 0 10px 30px rgba(255, 94, 54, 0.15);
-        }
-
-        .badge {
-            position: absolute;
-            top: -15px;
-            right: 25px;
-            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
-            color: white;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 6px 16px;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .card-desc {
-            color: #9aa0a6;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            min-height: 38px;
-        }
-
-        .price {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .price span {
-            font-size: 0.95rem;
-            color: #9aa0a6;
-            font-weight: normal;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .features-list li {
-            margin-bottom: 12px;
-            color: #d1d5db;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .features-list li.check::before {
-            content: "✓";
-            color: #00e676;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-
-        .features-list li.cross {
-            color: #717680;
-        }
-
-        .features-list li.cross::before {
-            content: "✕";
-            color: #ff5252;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            text-align: center;
-            padding: 14px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s ease;
-            cursor: pointer;
-            margin-top: 15px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid #3a3f4d;
-        }
-
-        .btn-outline:hover {
-            background-color: #2a2e39;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff5e36, #ff2a5f);
-            color: #ffffff;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        /* Extra Sections Style */
-        .info-box {
-            background-color: #161920;
-            border: 1px solid #2a2e39;
-            border-radius: 16px;
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        .info-box h2 {
-            font-size: 1.4rem;
-            color: #ff5e36;
-            margin-bottom: 15px;
-        }
-
-        .grid-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            list-style: none;
-        }
-
-        .grid-list li {
-            color: #d1d5db;
-            font-size: 0.9rem;
-            background-color: #1f232d;
-            padding: 10px 15px;
-            border-radius: 8px;
-            border-left: 3px solid #ff5e36;
-        }
-
-        .terms-list {
-            list-style-type: square;
-            padding-left: 20px;
-            color: #9aa0a6;
-            font-size: 0.9rem;
             line-height: 1.6;
         }
 
-        .terms-list li {
-            margin-bottom: 8px;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+           AMBIENT BACKGROUND
+        ========================================================= */
+
+        .ambient {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            overflow: hidden;
+        }
+
+        .ambient-orb {
+            position: absolute;
+
+            width: 240px;
+            height: 240px;
+
+            border-radius: 50%;
+
+            filter: blur(70px);
+
+            opacity: .11;
+
+            animation:
+                floatOrb 12s ease-in-out infinite;
+        }
+
+        .orb-one {
+            top: 13%;
+            left: -80px;
+
+            background: var(--orange);
+        }
+
+        .orb-two {
+            top: 55%;
+            right: -90px;
+
+            background: var(--cyan);
+
+            animation-delay: -4s;
+        }
+
+        .orb-three {
+            bottom: 5%;
+            left: 35%;
+
+            background: var(--coral);
+
+            animation-delay: -7s;
+        }
+
+        @keyframes floatOrb {
+
+            0%,
+            100% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform:
+                    translate3d(25px, -20px, 0)
+                    scale(1.08);
+            }
+
+        }
+
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        .page {
+            width: min(1200px, calc(100% - 40px));
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           BACK BUTTON
+        ========================================================= */
+
+        .top {
+            padding-top: 24px;
+        }
+
+        .back-link {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            color: var(--text);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            overflow: hidden;
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .back-link::before {
+            content: "";
+
+            position: absolute;
+
+            left: -50%;
+            top: 0;
+
+            width: 45%;
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.08),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition:
+                left .55s ease;
+        }
+
+        .back-link:hover::before {
+            left: 115%;
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px);
+
+            color: #fff;
+
+            border-color:
+                rgba(97, 232, 255, .35);
+
+            box-shadow:
+                0 12px 30px rgba(97, 232, 255, .06);
+        }
+
+        .back-link i {
+            color: var(--orange);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            padding:
+                55px 0
+                70px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .hero-copy {
+            position: relative;
+
+            animation:
+                heroIn .8s ease both;
+        }
+
+        @keyframes heroIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                7px 12px;
+
+            border:
+                1px solid
+                rgba(
+                    97,
+                    232,
+                    255,
+                    .20
+                );
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(
+                    97,
+                    232,
+                    255,
+                    .035
+                );
+
+            color:
+                var(--cyan);
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .eyebrow i {
+            font-size: 8px;
+        }
+
+        .hero h1 {
+            margin-top: 18px;
+
+            max-width: 600px;
+
+            color: var(--white);
+
+            font-size:
+                clamp(
+                    42px,
+                    5.5vw,
+                    69px
+                );
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    var(--orange-2) 50%,
+                    var(--coral) 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-desc {
+            max-width: 590px;
+
+            margin-top: 17px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 23px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                12px 18px;
+
+            border-radius: 11px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+        }
+
+        .hero-btn.primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color: #fff;
+
+            box-shadow:
+                0 13px 30px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .16
+                );
+        }
+
+        .hero-btn.primary:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 17px 36px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .25
+                );
+        }
+
+        .hero-btn.secondary {
+            border:
+                1px solid
+                var(--border-light);
+
+            color:
+                var(--text);
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .02
+                );
+        }
+
+        .hero-btn.secondary:hover {
+            transform:
+                translateY(-3px);
+
+            color:
+                var(--cyan);
+
+            border-color:
+                var(--cyan);
+        }
+
+
+        /* =========================================================
+           DEVICE SHOWCASE
+        ========================================================= */
+
+        .showcase {
+            position: relative;
+
+            min-height: 430px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            animation:
+                showcaseIn .9s .1s ease both;
+        }
+
+        @keyframes showcaseIn {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(30px)
+                    scale(.96);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+        .showcase-glow {
+            position: absolute;
+
+            width: 310px;
+            height: 310px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,112,72,.18),
+                    rgba(97,232,255,.055) 45%,
+                    transparent 72%
+                );
+
+            filter: blur(8px);
+
+            animation:
+                pulseGlow 5s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform:
+                    scale(.96);
+
+                opacity: .7;
+            }
+
+            50% {
+                transform:
+                    scale(1.06);
+
+                opacity: 1;
+            }
+
+        }
+
+        .laptop {
+            position: relative;
+
+            width: min(470px, 100%);
+
+            transform:
+                perspective(1200px)
+                rotateX(4deg)
+                rotateY(-8deg);
+
+            animation:
+                laptopFloat 7s ease-in-out infinite;
+
+            z-index: 2;
+        }
+
+        @keyframes laptopFloat {
+
+            0%,
+            100% {
+                transform:
+                    perspective(1200px)
+                    rotateX(4deg)
+                    rotateY(-8deg)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    perspective(1200px)
+                    rotateX(2deg)
+                    rotateY(-5deg)
+                    translateY(-9px);
+            }
+
+        }
+
+        .laptop-screen {
+            position: relative;
+
+            width: 100%;
+
+            padding: 9px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 15px 15px 8px 8px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #303946,
+                    #151b24
+                );
+
+            box-shadow:
+                0 30px 60px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .42
+                );
+        }
+
+        .browser {
+            height: 270px;
+
+            border-radius: 9px;
+
+            overflow: hidden;
+
+            background:
+                #0b1118;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        .browser-top {
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding: 0 9px;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+            background:
+                #111721;
+        }
+
+        .browser-dot {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background:
+                #5b6470;
+        }
+
+        .browser-body {
+            position: relative;
+
+            height:
+                calc(
+                    100% - 27px
+                );
+
+            padding: 16px;
+        }
+
+        .browser-nav {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #808a97;
+
+            font-size: 6px;
+        }
+
+        .browser-logo {
+            color:
+                #fff;
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+        }
+
+        .browser-menu {
+            display: flex;
+
+            gap: 8px;
+        }
+
+        .browser-hero {
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            gap: 10px;
+
+            align-items: center;
+
+            margin-top: 23px;
+        }
+
+        .browser-copy-line {
+            width: 80%;
+
+            height: 7px;
+
+            margin-bottom: 7px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #f6f7f9,
+                    #606a78
+                );
+        }
+
+        .browser-copy-line.two {
+            width: 58%;
+        }
+
+        .browser-small-line {
+            width: 75%;
+
+            height: 4px;
+
+            border-radius: 4px;
+
+            background:
+                #34404e;
+        }
+
+        .browser-cta {
+            width: 42px;
+
+            height: 13px;
+
+            margin-top: 11px;
+
+            border-radius: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--orange),
+                    var(--coral)
+                );
+        }
+
+        .browser-art {
+            position: relative;
+
+            height: 135px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(
+                        97,
+                        232,
+                        255,
+                        .14
+                    ),
+                    rgba(
+                        255,
+                        112,
+                        72,
+                        .15
+                    )
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+        }
+
+        .browser-card {
+            position: absolute;
+
+            width: 72px;
+            height: 48px;
+
+            border-radius: 8px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            backdrop-filter:
+                blur(8px);
+        }
+
+        .browser-card.a {
+            left: 13px;
+            top: 18px;
+        }
+
+        .browser-card.b {
+            right: 12px;
+            bottom: 15px;
+        }
+
+        .browser-orb {
+            position: absolute;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            right: 28px;
+            top: 35px;
+
+            box-shadow:
+                0 0 25px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .35
+                );
+
+            animation:
+                orbFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+
+        }
+
+        .laptop-base {
+            width: 106%;
+
+            height: 13px;
+
+            margin-left:
+                -3%;
+
+            border-radius:
+                0 0 22px 22px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #56616f,
+                    #272f39
+                );
+
+            box-shadow:
+                0 10px 25px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .30
+                );
+        }
+
+
+        /* =========================================================
+           PHONE
+        ========================================================= */
+
+        .phone {
+            position: absolute;
+
+            right: -2px;
+            bottom: 18px;
+
+            width: 118px;
+
+            padding: 7px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #313b49,
+                    #111720
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .13
+                );
+
+            box-shadow:
+                0 25px 45px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .45
+                );
+
+            z-index: 4;
+
+            animation:
+                phoneFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes phoneFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(4deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-11px)
+                    rotate(0deg);
+            }
+
+        }
+
+        .phone-screen {
+            min-height: 220px;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #121923,
+                    #090d13
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+        }
+
+        .phone-notch {
+            width: 38px;
+            height: 7px;
+
+            margin:
+                6px auto;
+
+            border-radius:
+                0 0 8px 8px;
+
+            background:
+                #05070a;
+        }
+
+        .phone-ui {
+            padding:
+                9px;
+        }
+
+        .phone-head {
+            height: 7px;
+
+            width: 55%;
+
+            border-radius: 5px;
+
+            background:
+                #dfe4ea;
+
+            opacity:
+                .85;
+        }
+
+        .phone-image {
+            height: 74px;
+
+            margin-top: 10px;
+
+            border-radius:
+                9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        112,
+                        72,
+                        .22
+                    ),
+                    rgba(
+                        97,
+                        232,
+                        255,
+                        .14
+                    )
+                );
+
+            position:
+                relative;
+        }
+
+        .phone-image::after {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                30px;
+
+            height:
+                30px;
+
+            border-radius:
+                50%;
+
+            left:
+                50%;
+
+            top:
+                50%;
+
+            transform:
+                translate(
+                    -50%,
+                    -50%
+                );
+
+            background:
+                var(--orange);
+        }
+
+        .phone-line {
+            width:
+                84%;
+
+            height:
+                5px;
+
+            margin-top:
+                9px;
+
+            border-radius:
+                5px;
+
+            background:
+                #313b49;
+        }
+
+        .phone-line.small {
+            width:
+                62%;
+        }
+
+        .phone-button {
+            width:
+                100%;
+
+            height:
+                25px;
+
+            margin-top:
+                11px;
+
+            border-radius:
+                7px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+        }
+
+
+        /* =========================================================
+           QUICK STATS
+        ========================================================= */
+
+        .quick-stats {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap:
+                8px;
+
+            margin-top:
+                11px;
+        }
+
+        .quick-stat {
+            padding:
+                9px 6px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+
+            border-radius:
+                9px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .02
+                );
+
+            text-align:
+                center;
+        }
+
+        .quick-stat strong {
+            display:
+                block;
+
+            color:
+                var(--white);
+
+            font-size:
+                11px;
+        }
+
+        .quick-stat span {
+            display:
+                block;
+
+            margin-top:
+                1px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                6px;
+        }
+
+
+        /* =========================================================
+           PRICING
+        ========================================================= */
+
+        .pricing-section {
+            padding:
+                15px 0
+                70px;
+        }
+
+        .section-heading {
+            margin-bottom:
+                28px;
+
+            text-align:
+                center;
+        }
+
+        .section-heading .label {
+            color:
+                var(--cyan);
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .section-heading h2 {
+            margin-top:
+                7px;
+
+            color:
+                var(--white);
+
+            font-size:
+                clamp(
+                    28px,
+                    4vw,
+                    43px
+                );
+
+            line-height:
+                1.12;
+
+            letter-spacing:
+                -1.5px;
+        }
+
+        .section-heading p {
+            max-width:
+                660px;
+
+            margin:
+                8px auto 0;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+        }
+
+
+        /* =========================================================
+           TOGGLE
+        ========================================================= */
+
+        .toggle-container {
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            margin-bottom:
+                28px;
+        }
+
+        .toggle-box {
+            position:
+                relative;
+
+            display:
+                flex;
+
+            gap:
+                5px;
+
+            padding:
+                5px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                999px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .025
+                );
+
+            box-shadow:
+                0 15px 35px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .18
+                );
+
+            flex-wrap:
+                wrap;
+
+            justify-content:
+                center;
+        }
+
+        .toggle-btn {
+            border:
+                none;
+
+            outline:
+                none;
+
+            cursor:
+                pointer;
+
+            padding:
+                10px 17px;
+
+            border-radius:
+                999px;
+
+            background:
+                transparent;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            transition:
+                .3s ease;
+        }
+
+        .toggle-btn:hover {
+            color:
+                #fff;
+        }
+
+        .toggle-btn.active {
+            color:
+                #fff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            box-shadow:
+                0 9px 23px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .16
+                );
+        }
+
+
+        /* =========================================================
+           PRICING GRID
+        ========================================================= */
+
+        .pricing-section-inner {
+            display:
+                none;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(
+                        0,
+                        1fr
+                    )
+                );
+
+            gap:
+                20px;
+
+            animation:
+                sectionIn .4s ease;
+        }
+
+        .pricing-section-inner.active {
+            display:
+                grid;
+        }
+
+        @keyframes sectionIn {
+
+            from {
+                opacity:
+                    0;
+
+                transform:
+                    translateY(
+                        8px
+                    );
+            }
+
+            to {
+                opacity:
+                    1;
+
+                transform:
+                    translateY(
+                        0
+                    );
+            }
+
+        }
+
+
+        /* =========================================================
+           PRICE CARD
+        ========================================================= */
+
+        .card {
+            position:
+                relative;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            min-height:
+                540px;
+
+            padding:
+                24px 22px 21px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .028
+                    ),
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .006
+                    )
+                ),
+
+                var(--card);
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                0 17px 45px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .25
+                );
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .card::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                15%;
+
+            right:
+                15%;
+
+            height:
+                1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--cyan),
+                    var(--orange),
+                    transparent
+                );
+
+            opacity:
+                0;
+
+            transition:
+                opacity .3s ease;
+        }
+
+        .card::after {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                170px;
+
+            height:
+                170px;
+
+            right:
+                -100px;
+
+            bottom:
+                -105px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .07
+                );
+
+            filter:
+                blur(
+                    40px
+                );
+
+            opacity:
+                0;
+
+            transition:
+                opacity .3s ease;
+        }
+
+        .card:hover {
+            transform:
+                translateY(
+                    -8px
+                );
+
+            border-color:
+                var(--border-light);
+
+            box-shadow:
+                0 25px 60px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .38
+                );
+        }
+
+        .card:hover::before,
+        .card:hover::after {
+            opacity:
+                1;
+        }
+
+
+        /* =========================================================
+           POPULAR CARD
+        ========================================================= */
+
+        .card.popular {
+            border:
+                1.5px solid
+                var(--orange);
+
+            box-shadow:
+                0 20px 55px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .10
+                );
+        }
+
+        .badge {
+            position:
+                absolute;
+
+            top:
+                0;
+
+            right:
+                18px;
+
+            transform:
+                translateY(
+                    -50%
+                );
+
+            padding:
+                6px 13px;
+
+            border-radius:
+                999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color:
+                #fff;
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            box-shadow:
+                0 8px 22px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .18
+                );
+        }
+
+
+        /* =========================================================
+           CARD TEXT
+        ========================================================= */
+
+        .card-head {
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+        }
+
+        .card-label {
+            color:
+                var(--cyan);
+
+            font-size:
+                8px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.4px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .card-num {
+            color:
+                #56606d;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+        }
+
+        .card-title {
+            margin-top:
+                13px;
+
+            color:
+                var(--white);
+
+            font-size:
+                21px;
+
+            line-height:
+                1.25;
+        }
+
+        .card-desc {
+            min-height:
+                52px;
+
+            margin-top:
+                7px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            line-height:
+                1.6;
+        }
+
+
+        /* =========================================================
+           PRICE
+        ========================================================= */
+
+        .price {
+            display:
+                flex;
+
+            align-items:
+                baseline;
+
+            gap:
+                4px;
+
+            margin-top:
+                18px;
+
+            color:
+                var(--white);
+
+            font-size:
+                35px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -1.2px;
+        }
+
+        .price span {
+            color:
+                var(--muted);
+
+            font-size:
+                9px;
+
+            font-weight:
+                500;
+
+            letter-spacing:
+                0;
+        }
+
+
+        .divider {
+            width:
+                100%;
+
+            height:
+                1px;
+
+            margin:
+                17px 0;
+
+            background:
+                var(--border);
+        }
+
+
+        /* =========================================================
+           FEATURES
+        ========================================================= */
+
+        .features {
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                8px;
+
+            list-style:
+                none;
+        }
+
+        .features li {
+            display:
+                flex;
+
+            align-items:
+                flex-start;
+
+            gap:
+                8px;
+
+            color:
+                var(--text);
+
+            font-size:
+                9.8px;
+
+            line-height:
+                1.45;
+        }
+
+        .features li::before {
+            flex:
+                0 0 auto;
+
+            margin-top:
+                1px;
+
+            font-weight:
+                900;
+        }
+
+        .features li.check::before {
+            content:
+                "✓";
+
+            color:
+                var(--green);
+        }
+
+        .features li.cross {
+            color:
+                #727b87;
+        }
+
+        .features li.cross::before {
+            content:
+                "✕";
+
+            color:
+                var(--red);
+        }
+
+
+        /* =========================================================
+           CARD BUTTON
+        ========================================================= */
+
+        .card-btn {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                7px;
+
+            width:
+                100%;
+
+            min-height:
+                44px;
+
+            margin-top:
+                auto;
+
+            padding:
+                10px;
+
+            border-radius:
+                11px;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            transition:
+                .3s ease;
+        }
+
+        .card-btn.outline {
+            border:
+                1px solid
+                var(--border-light);
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .018
+                );
+
+            color:
+                #fff;
+        }
+
+        .card-btn.outline:hover {
+            color:
+                var(--cyan);
+
+            border-color:
+                var(--cyan);
+
+            transform:
+                translateY(
+                    -2px
+                );
+        }
+
+        .card-btn.primary {
+            border:
+                none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color:
+                #fff;
+
+            box-shadow:
+                0 10px 25px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .14
+                );
+        }
+
+        .card-btn.primary:hover {
+            transform:
+                translateY(
+                    -2px
+                );
+
+            box-shadow:
+                0 15px 30px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .24
+                );
+        }
+
+
+        /* =========================================================
+           ADDONS
+        ========================================================= */
+
+        .info-box {
+            position:
+                relative;
+
+            margin-top:
+                25px;
+
+            padding:
+                24px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .026
+                    ),
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .006
+                    )
+                ),
+
+                var(--card);
+
+            overflow:
+                hidden;
+        }
+
+        .info-box::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                15%;
+
+            right:
+                15%;
+
+            height:
+                1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--orange),
+                    var(--cyan),
+                    transparent
+                );
+        }
+
+        .info-box h2 {
+            margin-bottom:
+                16px;
+
+            color:
+                var(--white);
+
+            font-size:
+                18px;
+
+            line-height:
+                1.3;
+        }
+
+        .addon-grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(
+                        0,
+                        1fr
+                    )
+                );
+
+            gap:
+                10px;
+        }
+
+        .addon {
+            padding:
+                13px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                10px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .018
+                );
+
+            color:
+                var(--text);
+
+            font-size:
+                9.5px;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease;
+        }
+
+        .addon:hover {
+            transform:
+                translateY(
+                    -2px
+                );
+
+            border-color:
+                var(--border-light);
+        }
+
+        .addon::before {
+            content:
+                "•";
+
+            color:
+                var(--orange);
+
+            font-weight:
+                900;
+
+            margin-right:
+                6px;
+        }
+
+
+        /* =========================================================
+           TERMS
+        ========================================================= */
+
+        .terms {
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            gap:
+                9px;
+
+            list-style:
+                none;
+        }
+
+        .terms li {
+            position:
+                relative;
+
+            padding:
+                12px 13px 12px 16px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                10px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .015
+                );
+
+            color:
+                var(--muted);
+
+            font-size:
+                9.3px;
+
+            line-height:
+                1.6;
+        }
+
+        .terms li::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            top:
+                9px;
+
+            bottom:
+                9px;
+
+            width:
+                2px;
+
+            border-radius:
+                10px;
+
+            background:
+                var(--cyan);
+        }
+
+        .terms strong {
+            color:
+                var(--white);
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .final-cta {
+            margin:
+                5px 0 70px;
+        }
+
+        .cta-box {
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            padding:
+                48px 24px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .20
+                );
+
+            border-radius:
+                22px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(
+                        255,
+                        112,
+                        72,
+                        .12
+                    ),
+                    transparent 58%
+                ),
+
+                var(--card);
+
+            text-align:
+                center;
+        }
+
+        .cta-box::before {
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                15%;
+
+            right:
+                15%;
+
+            top:
+                0;
+
+            height:
+                1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--orange),
+                    var(--cyan),
+                    transparent
+                );
+        }
+
+        .cta-box h2 {
+            color:
+                var(--white);
+
+            font-size:
+                clamp(
+                    28px,
+                    4vw,
+                    40px
+                );
+
+            line-height:
+                1.15;
+
+            letter-spacing:
+                -1.2px;
+        }
+
+        .cta-box p {
+            max-width:
+                600px;
+
+            margin:
+                8px auto 21px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+        }
+
+        .cta-btn {
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                12px 21px;
+
+            border-radius:
+                11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--coral)
+                );
+
+            color:
+                #fff;
+
+            font-size:
+                10px;
+
+            font-weight:
+                800;
+
+            transition:
+                .3s ease;
+        }
+
+        .cta-btn:hover {
+            transform:
+                translateY(
+                    -3px
+                );
+
+            box-shadow:
+                0 14px 35px
+                rgba(
+                    255,
+                    112,
+                    72,
+                    .23
+                );
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top:
+                1px solid
+                var(--border);
+
+            padding:
+                27px 0 21px;
+
+            background:
+                #06080c;
+        }
+
+        .footer {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+        }
+
+        .footer-brand h3 {
+            color:
+                var(--white);
+
+            font-size:
+                14px;
+        }
+
+        .footer-brand p {
+            margin-top:
+                3px;
+
+            color:
+                var(--muted);
+
+            font-size:
+                8.5px;
+        }
+
+        .footer-links {
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            justify-content:
+                flex-end;
+
+            gap:
+                13px;
+        }
+
+        .footer-links a {
+            color:
+                var(--muted);
+
+            font-size:
+                8.5px;
+
+            transition:
+                color .25s ease;
+        }
+
+        .footer-links a:hover {
+            color:
+                var(--cyan);
+        }
+
+        .copyright {
+            margin-top:
+                17px;
+
+            color:
+                #56606b;
+
+            font-size:
+                7.5px;
+
+            text-align:
+                center;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hero-copy {
+                max-width:
+                    700px;
+
+                margin:
+                    auto;
+
+                text-align:
+                    center;
+            }
+
+            .hero-desc {
+                margin-left:
+                    auto;
+
+                margin-right:
+                    auto;
+            }
+
+            .hero-actions {
+                justify-content:
+                    center;
+            }
+
+            .showcase {
+                max-width:
+                    640px;
+
+                margin:
+                    auto;
+            }
+
+            .pricing-section-inner.active {
+                grid-template-columns:
+                    1fr;
+
+                max-width:
+                    620px;
+
+                margin:
+                    auto;
+            }
+
+            .addon-grid {
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(
+                            0,
+                            1fr
+                        )
+                    );
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .page {
+                width:
+                    calc(
+                        100% - 30px
+                    );
+            }
+
+            .top {
+                padding-top:
+                    17px;
+            }
+
+            .back-link {
+                padding:
+                    9px 14px;
+
+                font-size:
+                    10px;
+            }
+
+
+            .hero {
+                padding:
+                    40px 0
+                    48px;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        34px,
+                        9vw,
+                        45px
+                    );
+
+                letter-spacing:
+                    -1.5px;
+            }
+
+            .hero-desc {
+                max-width:
+                    340px;
+
+                margin-top:
+                    11px;
+
+                font-size:
+                    10.5px;
+            }
+
+            .hero-actions {
+                margin-top:
+                    18px;
+            }
+
+            .hero-btn {
+                padding:
+                    10px 14px;
+
+                font-size:
+                    9px;
+            }
+
+
+            .showcase {
+                min-height:
+                    345px;
+            }
+
+            .laptop {
+                width:
+                    min(
+                        390px,
+                        88%
+                    );
+            }
+
+            .browser {
+                height:
+                    220px;
+            }
+
+            .browser-hero {
+                margin-top:
+                    15px;
+            }
+
+            .browser-art {
+                height:
+                    105px;
+            }
+
+            .phone {
+                width:
+                    92px;
+
+                right:
+                    -2px;
+
+                bottom:
+                    4px;
+            }
+
+            .phone-screen {
+                min-height:
+                    175px;
+            }
+
+            .quick-stats {
+                margin-top:
+                    8px;
+            }
+
+
+            .pricing-section {
+                padding-bottom:
+                    55px;
+            }
+
+            .section-heading {
+                margin-bottom:
+                    22px;
+            }
+
+            .section-heading h2 {
+                font-size:
+                    25px;
+            }
+
+            .section-heading p {
+                font-size:
+                    10px;
+            }
+
+
+            .toggle-box {
+                width:
+                    100%;
+
+                border-radius:
+                    15px;
+            }
+
+            .toggle-btn {
+                flex:
+                    1 1 30%;
+
+                padding:
+                    9px 5px;
+
+                font-size:
+                    7.5px;
+            }
+
+
+            .pricing-section-inner.active {
+                width:
+                    100%;
+            }
+
+            .card {
+                min-height:
+                    0;
+
+                padding:
+                    21px 17px 18px;
+
+                border-radius:
+                    18px;
+            }
+
+            .card-title {
+                font-size:
+                    19px;
+            }
+
+            .card-desc {
+                min-height:
+                    0;
+
+                font-size:
+                    10px;
+            }
+
+            .price {
+                font-size:
+                    32px;
+            }
+
+            .features {
+                gap:
+                    8px;
+            }
+
+            .features li {
+                font-size:
+                    9.8px;
+            }
+
+            .card-btn {
+                margin-top:
+                    20px;
+            }
+
+
+            .addon-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .info-box {
+                padding:
+                    18px;
+
+                border-radius:
+                    16px;
+            }
+
+            .info-box h2 {
+                font-size:
+                    17px;
+            }
+
+            .terms li {
+                font-size:
+                    8.8px;
+            }
+
+
+            .final-cta {
+                margin-bottom:
+                    53px;
+            }
+
+            .cta-box {
+                padding:
+                    36px 17px;
+
+                border-radius:
+                    19px;
+            }
+
+            .cta-box h2 {
+                font-size:
+                    26px;
+            }
+
+            .cta-box p {
+                font-size:
+                    10px;
+            }
+
+            .cta-btn {
+                width:
+                    100%;
+
+                font-size:
+                    10px;
+            }
+
+
+            footer {
+                padding:
+                    24px 0 20px;
+            }
+
+            .footer {
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+            }
+
+            .footer-links {
+                justify-content:
+                    center;
+            }
+
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 420px) {
+
+            .page {
+                width:
+                    calc(
+                        100% - 24px
+                    );
+            }
+
+            .hero {
+                padding-top:
+                    32px;
+            }
+
+            .hero h1 {
+                font-size:
+                    31px;
+            }
+
+            .hero-desc {
+                font-size:
+                    10px;
+            }
+
+            .showcase {
+                min-height:
+                    310px;
+            }
+
+            .browser {
+                height:
+                    190px;
+            }
+
+            .laptop {
+                width:
+                    91%;
+            }
+
+            .phone {
+                width:
+                    82px;
+            }
+
+            .phone-screen {
+                min-height:
+                    150px;
+            }
+
+            .card {
+                padding:
+                    19px 15px 17px;
+            }
+
+            .card-title {
+                font-size:
+                    18px;
+            }
+
+            .price {
+                font-size:
+                    30px;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior:
+                    auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="container">
-        <a href="about.html" class="back-link">&larr; Back to Services </a>
 
-        <div class="header">
-            <h1>Web & Mobile App Packages</h1>
-            <p>Transparent pricing, defined scope, and zero hidden risks.</p>
-        </div>
+    <!-- =========================================================
+         AMBIENT BACKGROUND
+    ========================================================= -->
 
-        <!-- Filter Buttons -->
-        <div class="toggle-container">
-            <div class="toggle-box">
-                <button class="toggle-btn" onclick="switchTab('web', this)">🌐 Web Only</button>
-                <button class="toggle-btn" onclick="switchTab('app', this)">📱 Mobile App Only</button>
-                <button class="toggle-btn active" onclick="switchTab('combo', this)">🔥 Web + App Combo</button>
-            </div>
-        </div>
+    <div class="ambient">
 
-        <!-- 1. WEB ONLY PACKAGES -->
-        <div id="web-section" class="pricing-section">
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Web Basic</h2>
-                    <p class="card-desc">Starter website for small businesses.</p>
-                    <div class="price">₹2,499 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Up to 3 Pages ✓</li>
-                        <li class="check">Responsive Mobile Design ✓</li>
-                        <li class="check">WhatsApp & Call Button ✓</li>
-                        <li class="check">Basic Contact Form ✓</li>
-                        <li class="check">Free SSL Certificate ✓</li>
-                        <li class="cross">Domain/Hosting (Client Pays / Add-on)</li>
-                        <li class="cross">E-Commerce / Payment Gateway</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose Web Basic</a>
-            </div>
+        <div class="ambient-orb orb-one"></div>
 
-            <div class="card popular">
-                <span class="badge">⭐ MOST POPULAR</span>
-                <div>
-                    <h2 class="card-title">Web Standard</h2>
-                    <p class="card-desc">Complete website for growing businesses.</p>
-                    <div class="price">₹4,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Up to 7 Pages ✓</li>
-                        <li class="check">Domain Included (1 Year) ✓</li>
-                        <li class="check">Hosting Included (1 Year) ✓</li>
-                        <li class="check">Basic SEO & Google Maps Setup ✓</li>
-                        <li class="check">Speed Optimization ✓</li>
-                        <li class="cross">Payment Gateway / E-Commerce</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-primary">Choose Web Standard</a>
-            </div>
+        <div class="ambient-orb orb-two"></div>
 
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Web Premium</h2>
-                    <p class="card-desc">Full Business / E-Commerce Website.</p>
-                    <div class="price">₹9,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Up to 12 Pages ✓</li>
-                        <li class="check">Domain + Hosting Included (1 Year) ✓</li>
-                        <li class="check">E-Commerce Product Catalogue ✓</li>
-                        <li class="check">Payment Gateway Integration ✓</li>
-                        <li class="check">Admin Control Panel ✓</li>
-                        <li class="check">Basic Security & SEO Setup ✓</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose Web Premium</a>
-            </div>
-        </div>
-
-        <!-- 2. MOBILE APP ONLY PACKAGES -->
-        <div id="app-section" class="pricing-section">
-            <div class="card">
-                <div>
-                    <h2 class="card-title">App Basic</h2>
-                    <p class="card-desc">Basic Android app for businesses and services.</p>
-                    <div class="price">₹2,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Android WebView App ✓</li>
-                        <li class="check">App Icon & Splash Screen ✓</li>
-                        <li class="check">APK File Delivery ✓</li>
-                        <li class="cross">Push Notifications</li>
-                        <li class="cross">Play Store Publishing</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose App Basic</a>
-            </div>
-
-            <div class="card popular">
-                <span class="badge">⭐ MOST POPULAR</span>
-                <div>
-                    <h2 class="card-title">App Standard</h2>
-                    <p class="card-desc">Professional Android app for growing businesses.</p>
-                    <div class="price">₹9,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Native Android App ✓</li>
-                        <li class="check">Up to 8 Screens ✓</li>
-                        <li class="check">Push Notifications ✓</li>
-                        <li class="check">Basic Backend / API Integration ✓</li>
-                        <li class="check">Play Store Publishing Support ✓</li>
-                        <li class="cross">Google Play Developer Account Fee (Paid by Client)</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-primary">Choose App Standard</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h2 class="card-title">App Premium</h2>
-                    <p class="card-desc">Advanced Android & iOS business application.</p>
-                    <div class="price">₹24,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Android + iOS App ✓</li>
-                        <li class="check">Up to 15 Screens ✓</li>
-                        <li class="check">Admin Control Panel ✓</li>
-                        <li class="check">Push Notifications ✓</li>
-                        <li class="check">Payment Gateway Integration ✓</li>
-                        <li class="check">Play Store & App Store Support ✓</li>
-                        <li class="cross">Apple Developer Account Fee (Paid by Client)</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose App Premium</a>
-            </div>
-        </div>
-
-        <!-- 3. WEB + APP COMBO PACKAGES (ACTIVE BY DEFAULT) -->
-        <div id="combo-section" class="pricing-section active">
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Basic Combo</h2>
-                    <p class="card-desc">Entry package for small businesses.</p>
-                    <div class="price">₹5,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Up to 5 Pages Responsive Website ✓</li>
-                        <li class="check">Android WebView App (APK) ✓</li>
-                        <li class="check">WhatsApp & Call Integration ✓</li>
-                        <li class="check">Basic Contact Form ✓</li>
-                        <li class="cross">Domain/Hosting (Add-on / Client Account)</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose Basic Combo</a>
-            </div>
-
-            <div class="card popular">
-                <span class="badge">⭐ MOST POPULAR</span>
-                <div>
-                    <h2 class="card-title">Standard Combo</h2>
-                    <p class="card-desc">Complete digital package for growing businesses.</p>
-                    <div class="price">₹12,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">Up to 10 Pages Website ✓</li>
-                        <li class="check">Native Android App (Up to 10 Screens) ✓</li>
-                        <li class="check">Domain + Hosting Included (1 Year) ✓</li>
-                        <li class="check">Admin Panel & Push Notifications ✓</li>
-                        <li class="check">Payment Gateway Integration ✓</li>
-                        <li class="check">Play Store Publishing Support ✓</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-primary">Choose Standard Combo</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Premium Combo</h2>
-                    <p class="card-desc">Complete digital solution for established businesses.</p>
-                    <div class="price">₹24,999 <span>/ one-time</span></div>
-                    <ul class="features-list">
-                        <li class="check">E-Commerce / Business Website (Up to 15 Pages) ✓</li>
-                        <li class="check">Android + iOS App (Up to 15 Screens) ✓</li>
-                        <li class="check">Domain + Cloud Hosting (1 Year) ✓</li>
-                        <li class="check">Full Admin Panel & Push Notifications ✓</li>
-                        <li class="check">Payment Gateway Integration ✓</li>
-                        <li class="check">Play Store & App Store Support ✓</li>
-                        <li class="check">30-Day Priority Technical Support ✓</li>
-                    </ul>
-                </div>
-                <a href="contact.html" class="btn btn-outline">Choose Premium Combo</a>
-            </div>
-        </div>
-
-        <!-- Additional Services & Charges -->
-        <div class="info-box">
-            <h2>🛠️ Additional Add-ons & Charges</h2>
-            <ul class="grid-list">
-                <li>Extra Website Page: ₹300 / page</li>
-                <li>Extra App Screen: ₹500 / screen</li>
-                <li>Extra Revision: ₹300 / request</li>
-                <li>Logo Design: ₹999 onwards</li>
-                <li>Advanced SEO Package: ₹2,999 onwards</li>
-                <li>Monthly Maintenance: ₹999 / month</li>
-                <li>Custom Features / Development: Get a Quote</li>
-            </ul>
-        </div>
-
-        <!-- Terms & Payment Milestone -->
-        <div class="info-box" style="margin-top: 25px;">
-            <h2>📋 Important Terms & Payment Terms</h2>
-            <ul class="terms-list">
-                <li><strong>Payment Schedule:</strong> 50% Advance to start work + 50% before final source/deployment
-                    for projects up to ₹5,000.<br>For projects above ₹5,000: 40% Advance + 40% Demo Approval + 20% Final
-                    Handover.</li>
-                <li><strong>Third-Party Fees:</strong> Google Play Developer account ($25 one-time) & Apple Developer
-                    account ($99/year) fees are strictly payable by the client.</li>
-                <li><strong>Renewals:</strong> Domain and Hosting included plans are valid for 1 Year. Renewal charges
-                    apply from Year 2 based on official provider rates.</li>
-                <li><strong>Payment Gateway:</strong> Gateway merchant transaction charges will be deducted by the
-                    respective gateway provider.</li>
-            </ul>
-        </div>
+        <div class="ambient-orb orb-three"></div>
 
     </div>
 
+
+
+    <div class="page">
+
+
+        <!-- =====================================================
+             BACK TO HOME
+        ====================================================== -->
+
+        <div class="top">
+
+            <a
+                href="index.html"
+                class="back-link">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <header class="hero">
+
+            <div class="hero-grid">
+
+
+                <!-- HERO CONTENT -->
+
+                <div class="hero-copy">
+
+                    <div class="eyebrow">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        WEB • MOBILE APP • DIGITAL PRODUCTS
+
+                    </div>
+
+
+                    <h1>
+
+                        Build Digital
+
+                        <span>
+                            Products That Work.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-desc">
+
+                        From business websites and e-commerce stores
+                        to Android and iOS applications, we build
+                        modern digital experiences designed around
+                        your business goals.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="contact.html"
+                            class="hero-btn primary">
+
+                            Start Your Project
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#packages"
+                            class="hero-btn secondary">
+
+                            View Packages
+
+                            <i class="fa-solid fa-angle-down"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DEVICE SHOWCASE
+                ================================================== -->
+
+                <div class="showcase">
+
+                    <div class="showcase-glow"></div>
+
+
+                    <!-- LAPTOP -->
+
+                    <div class="laptop">
+
+                        <div class="laptop-screen">
+
+                            <div class="browser">
+
+
+                                <div class="browser-top">
+
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+
+                                </div>
+
+
+                                <div class="browser-body">
+
+
+                                    <div class="browser-nav">
+
+                                        <div class="browser-logo">
+                                            ZIPPYGROW
+                                        </div>
+
+
+                                        <div class="browser-menu">
+
+                                            <span>
+                                                HOME
+                                            </span>
+
+                                            <span>
+                                                SERVICES
+                                            </span>
+
+                                            <span>
+                                                CONTACT
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="browser-hero">
+
+
+                                        <div>
+
+                                            <div class="browser-copy-line"></div>
+
+                                            <div class="browser-copy-line two"></div>
+
+                                            <div class="browser-small-line"></div>
+
+                                            <div class="browser-cta"></div>
+
+                                        </div>
+
+
+                                        <div class="browser-art">
+
+                                            <div class="browser-card a"></div>
+
+                                            <div class="browser-card b"></div>
+
+                                            <div class="browser-orb"></div>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="laptop-base"></div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="phone">
+
+                        <div class="phone-screen">
+
+
+                            <div class="phone-notch"></div>
+
+
+                            <div class="phone-ui">
+
+                                <div class="phone-head"></div>
+
+
+                                <div class="phone-image"></div>
+
+
+                                <div class="phone-line"></div>
+
+                                <div class="phone-line small"></div>
+
+
+                                <div class="phone-button"></div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             PACKAGES
+        ====================================================== -->
+
+        <section
+            class="pricing-section"
+            id="packages">
+
+
+            <div class="section-heading">
+
+                <div class="label">
+                    DEVELOPMENT PACKAGES
+                </div>
+
+                <h2>
+                    Choose Your Development Plan
+                </h2>
+
+                <p>
+                    Transparent pricing, clear scope and flexible
+                    options for websites, mobile applications and
+                    complete digital products.
+                </p>
+
+            </div>
+
+
+
+            <!-- TOGGLE -->
+
+            <div class="toggle-container">
+
+                <div class="toggle-box">
+
+
+                    <button
+                        class="toggle-btn"
+                        data-tab="web">
+
+                        🌐 Web Only
+
+                    </button>
+
+
+                    <button
+                        class="toggle-btn"
+                        data-tab="app">
+
+                        📱 Mobile App Only
+
+                    </button>
+
+
+                    <button
+                        class="toggle-btn active"
+                        data-tab="combo">
+
+                        🔥 Web + App Combo
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 WEB ONLY
+            ================================================== -->
+
+            <div
+                id="web-section"
+                class="pricing-section-inner">
+
+
+                <!-- WEB BASIC -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                STARTER
+                            </span>
+
+                            <span class="card-num">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Web Basic
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Starter website for small businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹2,499
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Up to 3 Pages
+                            </li>
+
+                            <li class="check">
+                                Responsive Mobile Design
+                            </li>
+
+                            <li class="check">
+                                WhatsApp & Call Button
+                            </li>
+
+                            <li class="check">
+                                Basic Contact Form
+                            </li>
+
+                            <li class="check">
+                                Free SSL Certificate
+                            </li>
+
+                            <li class="cross">
+                                Domain/Hosting (Client Pays / Add-on)
+                            </li>
+
+                            <li class="cross">
+                                E-Commerce / Payment Gateway
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose Web Basic
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- WEB STANDARD -->
+
+                <article class="card popular">
+
+                    <span class="badge">
+                        ⭐ MOST POPULAR
+                    </span>
+
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                GROWTH
+                            </span>
+
+                            <span class="card-num">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Web Standard
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Complete website for growing businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹4,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Up to 7 Pages
+                            </li>
+
+                            <li class="check">
+                                Domain Included (1 Year)
+                            </li>
+
+                            <li class="check">
+                                Hosting Included (1 Year)
+                            </li>
+
+                            <li class="check">
+                                Basic SEO & Google Maps Setup
+                            </li>
+
+                            <li class="check">
+                                Speed Optimization
+                            </li>
+
+                            <li class="cross">
+                                Payment Gateway / E-Commerce
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn primary">
+
+                        Choose Web Standard
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- WEB PREMIUM -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                PROFESSIONAL
+                            </span>
+
+                            <span class="card-num">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Web Premium
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Full Business / E-Commerce Website.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹9,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Up to 12 Pages
+                            </li>
+
+                            <li class="check">
+                                Domain + Hosting Included (1 Year)
+                            </li>
+
+                            <li class="check">
+                                E-Commerce Product Catalogue
+                            </li>
+
+                            <li class="check">
+                                Payment Gateway Integration
+                            </li>
+
+                            <li class="check">
+                                Admin Control Panel
+                            </li>
+
+                            <li class="check">
+                                Basic Security & SEO Setup
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose Web Premium
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MOBILE APP ONLY
+            ================================================== -->
+
+            <div
+                id="app-section"
+                class="pricing-section-inner">
+
+
+                <!-- APP BASIC -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                STARTER
+                            </span>
+
+                            <span class="card-num">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            App Basic
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Basic Android app for businesses and services.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹2,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Android WebView App
+                            </li>
+
+                            <li class="check">
+                                App Icon & Splash Screen
+                            </li>
+
+                            <li class="check">
+                                APK File Delivery
+                            </li>
+
+                            <li class="cross">
+                                Push Notifications
+                            </li>
+
+                            <li class="cross">
+                                Play Store Publishing
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose App Basic
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- APP STANDARD -->
+
+                <article class="card popular">
+
+                    <span class="badge">
+                        ⭐ MOST POPULAR
+                    </span>
+
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                GROWTH
+                            </span>
+
+                            <span class="card-num">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            App Standard
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Professional Android app for growing businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹9,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Native Android App
+                            </li>
+
+                            <li class="check">
+                                Up to 8 Screens
+                            </li>
+
+                            <li class="check">
+                                Push Notifications
+                            </li>
+
+                            <li class="check">
+                                Basic Backend / API Integration
+                            </li>
+
+                            <li class="check">
+                                Play Store Publishing Support
+                            </li>
+
+                            <li class="cross">
+                                Google Play Developer Account Fee
+                                (Paid by Client)
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn primary">
+
+                        Choose App Standard
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- APP PREMIUM -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                PROFESSIONAL
+                            </span>
+
+                            <span class="card-num">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            App Premium
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Advanced Android & iOS business application.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹24,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Android + iOS App
+                            </li>
+
+                            <li class="check">
+                                Up to 15 Screens
+                            </li>
+
+                            <li class="check">
+                                Admin Control Panel
+                            </li>
+
+                            <li class="check">
+                                Push Notifications
+                            </li>
+
+                            <li class="check">
+                                Payment Gateway Integration
+                            </li>
+
+                            <li class="check">
+                                Play Store & App Store Support
+                            </li>
+
+                            <li class="cross">
+                                Apple Developer Account Fee
+                                (Paid by Client)
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose App Premium
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COMBO
+            ================================================== -->
+
+            <div
+                id="combo-section"
+                class="pricing-section-inner active">
+
+
+                <!-- BASIC COMBO -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                STARTER
+                            </span>
+
+                            <span class="card-num">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Basic Combo
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Entry package for small businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹5,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Up to 5 Pages Responsive Website
+                            </li>
+
+                            <li class="check">
+                                Android WebView App (APK)
+                            </li>
+
+                            <li class="check">
+                                WhatsApp & Call Integration
+                            </li>
+
+                            <li class="check">
+                                Basic Contact Form
+                            </li>
+
+                            <li class="cross">
+                                Domain/Hosting
+                                (Add-on / Client Account)
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose Basic Combo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- STANDARD COMBO -->
+
+                <article class="card popular">
+
+                    <span class="badge">
+                        ⭐ MOST POPULAR
+                    </span>
+
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                GROWTH
+                            </span>
+
+                            <span class="card-num">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Standard Combo
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Complete digital package for growing businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹12,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                Up to 10 Pages Website
+                            </li>
+
+                            <li class="check">
+                                Native Android App
+                                (Up to 10 Screens)
+                            </li>
+
+                            <li class="check">
+                                Domain + Hosting Included (1 Year)
+                            </li>
+
+                            <li class="check">
+                                Admin Panel & Push Notifications
+                            </li>
+
+                            <li class="check">
+                                Payment Gateway Integration
+                            </li>
+
+                            <li class="check">
+                                Play Store Publishing Support
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn primary">
+
+                        Choose Standard Combo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PREMIUM COMBO -->
+
+                <article class="card">
+
+                    <div>
+
+                        <div class="card-head">
+
+                            <span class="card-label">
+                                PROFESSIONAL
+                            </span>
+
+                            <span class="card-num">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+                            Premium Combo
+                        </h3>
+
+
+                        <p class="card-desc">
+                            Complete digital solution for established businesses.
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹24,999
+
+                            <span>
+                                / one-time
+                            </span>
+
+                        </div>
+
+
+                        <div class="divider"></div>
+
+
+                        <ul class="features">
+
+                            <li class="check">
+                                E-Commerce / Business Website
+                                (Up to 15 Pages)
+                            </li>
+
+                            <li class="check">
+                                Android + iOS App
+                                (Up to 15 Screens)
+                            </li>
+
+                            <li class="check">
+                                Domain + Cloud Hosting (1 Year)
+                            </li>
+
+                            <li class="check">
+                                Full Admin Panel &
+                                Push Notifications
+                            </li>
+
+                            <li class="check">
+                                Payment Gateway Integration
+                            </li>
+
+                            <li class="check">
+                                Play Store & App Store Support
+                            </li>
+
+                            <li class="check">
+                                30-Day Priority Technical Support
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="card-btn outline">
+
+                        Choose Premium Combo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK STATS
+            ================================================== -->
+
+            <div class="quick-stats"
+                style="
+                    max-width:620px;
+                    margin:25px auto 0;
+                ">
+
+                <div class="quick-stat">
+
+                    <strong>
+                        100%
+                    </strong>
+
+                    <span>
+                        RESPONSIVE
+                    </span>
+
+                </div>
+
+
+                <div class="quick-stat">
+
+                    <strong>
+                        SSL
+                    </strong>
+
+                    <span>
+                        SECURITY
+                    </span>
+
+                </div>
+
+
+                <div class="quick-stat">
+
+                    <strong>
+                        SEO
+                    </strong>
+
+                    <span>
+                        READY
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ADDITIONAL ADDONS
+        ====================================================== -->
+
+        <section class="pricing-section">
+
+            <div class="section-heading">
+
+                <div class="label">
+                    EXTRA SERVICES
+                </div>
+
+                <h2>
+                    Additional Add-ons & Charges
+                </h2>
+
+                <p>
+                    Add extra features and services whenever your
+                    project requires them.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="addon-grid">
+
+
+                    <div class="addon">
+                        Extra Website Page:
+                        ₹300 / page
+                    </div>
+
+
+                    <div class="addon">
+                        Extra App Screen:
+                        ₹500 / screen
+                    </div>
+
+
+                    <div class="addon">
+                        Extra Revision:
+                        ₹300 / request
+                    </div>
+
+
+                    <div class="addon">
+                        Logo Design:
+                        ₹999 onwards
+                    </div>
+
+
+                    <div class="addon">
+                        Advanced SEO Package:
+                        ₹2,999 onwards
+                    </div>
+
+
+                    <div class="addon">
+                        Monthly Maintenance:
+                        ₹999 / month
+                    </div>
+
+
+                    <div class="addon">
+                        Custom Features / Development:
+                        Get a Quote
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TERMS
+        ====================================================== -->
+
+        <section class="pricing-section">
+
+            <div class="section-heading">
+
+                <div class="label">
+                    TRANSPARENCY
+                </div>
+
+                <h2>
+                    Important Terms & Payment Terms
+                </h2>
+
+                <p>
+                    Clear terms help keep your website and app project
+                    smooth from start to final handover.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <ul class="terms">
+
+
+                    <li>
+
+                        <strong>
+                            Payment Schedule:
+                        </strong>
+
+                        50% Advance to start work + 50% before
+                        final source/deployment for projects up to
+                        ₹5,000.
+
+                        <br>
+
+                        For projects above ₹5,000:
+                        40% Advance + 40% Demo Approval +
+                        20% Final Handover.
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Third-Party Fees:
+                        </strong>
+
+                        Google Play Developer account
+                        ($25 one-time) & Apple Developer account
+                        ($99/year) fees are strictly payable by the client.
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Renewals:
+                        </strong>
+
+                        Domain and Hosting included plans are valid
+                        for 1 Year. Renewal charges apply from Year 2
+                        based on official provider rates.
+
+                    </li>
+
+
+                    <li>
+
+                        <strong>
+                            Payment Gateway:
+                        </strong>
+
+                        Gateway merchant transaction charges will be
+                        deducted by the respective gateway provider.
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta">
+
+            <div class="cta-box">
+
+                <h2>
+                    Have a Website or App Idea?
+                </h2>
+
+                <p>
+                    Tell us what you want to build and we'll help
+                    you choose the right development solution.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="cta-btn">
+
+                    Discuss Your Project
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="page">
+
+            <div class="footer">
+
+
+                <div class="footer-brand">
+
+                    <h3>
+                        ZippyGrow Media
+                    </h3>
+
+                    <p>
+                        Creative • Digital • Growth
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a
+                        href="https://www.zippygrowmedia.in"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        www.zippygrowmedia.in
+
+                    </a>
+
+
+                    <a
+                        href="mailto:zippygrowmedia@gmail.com">
+
+                        zippygrowmedia@gmail.com
+
+                    </a>
+
+
+                    <a
+                        href="tel:+919534680179">
+
+                        9534680179
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 ZippyGrow Media. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script>
-        function switchTab(tab, btnElement) {
-            document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.pricing-section').forEach(sec => sec.classList.remove('active'));
 
-            btnElement.classList.add('active');
+        /* =====================================================
+           TAB SWITCHING
+        ===================================================== */
 
-            if (tab === 'web') {
-                document.getElementById('web-section').classList.add('active');
-            } else if (tab === 'app') {
-                document.getElementById('app-section').classList.add('active');
-            } else if (tab === 'combo') {
-                document.getElementById('combo-section').classList.add('active');
-            }
+        const toggleButtons =
+            document.querySelectorAll(
+                ".toggle-btn"
+            );
+
+
+        const sections = {
+
+            web:
+                document.getElementById(
+                    "web-section"
+                ),
+
+            app:
+                document.getElementById(
+                    "app-section"
+                ),
+
+            combo:
+                document.getElementById(
+                    "combo-section"
+                )
+
+        };
+
+
+        function switchTab(tab) {
+
+            toggleButtons.forEach(
+                button => {
+
+                    button.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            document
+                .querySelector(
+                    `.toggle-btn[data-tab="${tab}"]`
+                )
+                .classList.add(
+                    "active"
+                );
+
+
+            Object.values(
+                sections
+            ).forEach(
+                section => {
+
+                    section.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            sections[tab].classList.add(
+                "active"
+            );
+
         }
+
+
+        toggleButtons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+                        switchTab(
+                            button.dataset.tab
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SMOOTH PACKAGE SCROLL
+        ===================================================== */
+
+        document
+            .querySelectorAll(
+                'a[href="#packages"]'
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        event => {
+
+                            event.preventDefault();
+
+                            document
+                                .getElementById(
+                                    "packages"
+                                )
+                                .scrollIntoView(
+                                    {
+                                        behavior:
+                                            "smooth",
+                                        block:
+                                            "start"
+                                    }
+                                );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           CARD TILT
+        ===================================================== */
+
+        const cards =
+            document.querySelectorAll(
+                ".card"
+            );
+
+
+        cards.forEach(
+            card => {
+
+                card.addEventListener(
+                    "mousemove",
+                    event => {
+
+                        if (
+                            window.innerWidth < 900
+                        ) {
+                            return;
+                        }
+
+
+                        const rect =
+                            card.getBoundingClientRect();
+
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+
+                        const rotateY =
+                            (
+                                x /
+                                rect.width -
+                                0.5
+                            ) * 4;
+
+
+                        const rotateX =
+                            (
+                                0.5 -
+                                y /
+                                rect.height
+                            ) * 4;
+
+
+                        card.style.transform =
+                            `
+                                translateY(-8px)
+                                rotateX(${rotateX}deg)
+                                rotateY(${rotateY}deg)
+                            `;
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        card.style.transform =
+                            "";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           PARALLAX DEVICE
+        ===================================================== */
+
+        const showcase =
+            document.querySelector(
+                ".showcase"
+            );
+
+
+        if (showcase) {
+
+            document.addEventListener(
+                "mousemove",
+                event => {
+
+                    if (
+                        window.innerWidth < 900
+                    ) {
+                        return;
+                    }
+
+
+                    const x =
+                        (
+                            event.clientX /
+                            window.innerWidth -
+                            .5
+                        );
+
+
+                    const y =
+                        (
+                            event.clientY /
+                            window.innerHeight -
+                            .5
+                        );
+
+
+                    showcase.style.transform =
+                        `
+                            translate(
+                                ${x * 5}px,
+                                ${y * 5}px
+                            )
+                        `;
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           INTERSECTION REVEAL
+        ===================================================== */
+
+        const infoBoxes =
+            document.querySelectorAll(
+                ".info-box, .section-heading"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.style.opacity =
+                                    "1";
+
+                                entry.target.style.transform =
+                                    "translateY(0)";
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold:
+                        0.08
+                }
+            );
+
+
+        infoBoxes.forEach(
+            element => {
+
+                element.style.opacity =
+                    "0";
+
+                element.style.transform =
+                    "translateY(18px)";
+
+                element.style.transition =
+                    "opacity .65s ease, transform .65s ease";
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
     </script>
+
+
 </body>
 
 </html>
