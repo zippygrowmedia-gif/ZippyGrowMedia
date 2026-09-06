@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Engine Optimization | ZippyGrow Media</title>
+
+    <meta name="description"
+        content="Professional SEO services including keyword research, on-page SEO, technical SEO, local SEO and Google search optimization by ZippyGrow Media.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --bg:#0b0d12;
+    --card:#171a21;
+    --card-hover:#1b1f27;
+
+    --border:#292e39;
+    --border-light:#343b48;
+
+    --white:#f7f8fa;
+    --text:#d7dbe3;
+    --muted:#9299a7;
+
+    --orange:#ff7048;
+    --orange-light:#ff9a5c;
+    --coral:#ff5360;
+
+    --cyan:#61e8ff;
+    --green:#00ee88;
+
+    --radius:21px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255,112,72,.08),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+}
+
+
+/* =========================================================
+   BACK HOME
+========================================================= */
+
+.back-wrap{
+    padding-top:24px;
+}
+
+.back-home{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:10px 17px;
+
+    border:1px solid var(--border);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    font-size:12px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.back-home:hover{
+    transform:translateX(-3px);
+
+    color:#fff;
+
+    border-color:rgba(97,232,255,.35);
+
+    background:rgba(97,232,255,.05);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    padding:58px 0 28px;
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 13px;
+    margin-bottom:14px;
+
+    border:1px solid rgba(97,232,255,.2);
+    border-radius:999px;
+
+    background:rgba(97,232,255,.04);
+
+    color:var(--cyan);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    max-width:900px;
+    margin:auto;
+
+    color:var(--white);
+
+    font-size:clamp(40px,6vw,72px);
+
+    line-height:1.04;
+    letter-spacing:-2.7px;
+
+    font-weight:800;
+}
+
+.hero h1 span{
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--orange-light)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:16px auto 0;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.65;
+}
+
+.gradient-line{
+    width:85px;
+    height:3px;
+
+    margin:19px auto 0;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--cyan)
+        );
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:30px 0 72px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-heading h2{
+    color:var(--white);
+
+    font-size:clamp(28px,4vw,41px);
+
+    line-height:1.15;
+    letter-spacing:-1.3px;
+}
+
+.section-heading p{
+    max-width:650px;
+
+    margin:8px auto 0;
+
+    color:var(--muted);
+
+    font-size:12.5px;
+}
+
+
+/* =========================================================
+   SEO PACKAGES
+========================================================= */
+
+.package-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:22px;
+}
+
+.package-card{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:555px;
+
+    padding:28px 26px 24px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.007)
+        ),
+        var(--card);
+
+    transition:.3s ease;
+}
+
+.package-card:hover{
+    transform:translateY(-6px);
+
+    border-color:var(--border-light);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+}
+
+.package-card.featured{
+    border:2px solid var(--orange);
+
+    box-shadow:
+        0 0 0 1px rgba(255,112,72,.08),
+        0 25px 65px rgba(255,112,72,.11);
+}
+
+.popular-badge{
+    position:absolute;
+
+    top:-14px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    min-width:155px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:9px;
+    font-weight:800;
+}
+
+.package-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.package-type{
+    color:var(--cyan);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+}
+
+.package-number{
+    color:#59616e;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.package-card h3{
+    margin-top:13px;
+
+    color:var(--white);
+
+    font-size:22px;
+    line-height:1.25;
+}
+
+.package-description{
+    min-height:55px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:11.5px;
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price{
+    display:flex;
+    align-items:baseline;
+
+    gap:4px;
+
+    margin-top:20px;
+
+    white-space:nowrap;
+}
+
+.currency{
+    color:var(--orange-light);
+
+    font-size:21px;
+    font-weight:700;
+}
+
+.amount{
+    color:var(--white);
+
+    font-size:39px;
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+}
+
+.duration{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.divider{
+    height:1px;
+
+    margin:20px 0;
+
+    background:var(--border);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features{
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    list-style:none;
+}
+
+.features li{
+    display:flex;
+    align-items:flex-start;
+
+    gap:9px;
+
+    color:var(--text);
+
+    font-size:11.5px;
+    line-height:1.45;
+}
+
+.features i{
+    flex:0 0 auto;
+
+    margin-top:3px;
+
+    color:var(--green);
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.package-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+    min-height:47px;
+
+    margin-top:auto;
+
+    padding:11px 15px;
+
+    border:1px solid var(--border-light);
+    border-radius:12px;
+
+    background:rgba(255,255,255,.02);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.package-btn:hover{
+    border-color:var(--cyan);
+
+    background:rgba(97,232,255,.06);
+}
+
+.featured .package-btn{
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(255,112,72,.2);
+}
+
+
+/* =========================================================
+   SEO SERVICES
+========================================================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.service-card{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:17px 19px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+
+    transition:.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(97,232,255,.22);
+
+    background:var(--card-hover);
+}
+
+.service-left{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+}
+
+.service-icon{
+    flex:0 0 auto;
+
+    width:39px;
+    height:39px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(97,232,255,.055);
+
+    color:var(--cyan);
+
+    font-size:13px;
+}
+
+.service-text h3{
+    color:var(--white);
+
+    font-size:12.5px;
+    line-height:1.35;
+}
+
+.service-text p{
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:9.5px;
+    line-height:1.4;
+}
+
+.service-price{
+    flex:0 0 auto;
+
+    color:var(--orange-light);
+
+    font-size:11px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   SEO PROCESS
+========================================================= */
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.process-card{
+    padding:20px 17px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+
+    text-align:center;
+
+    transition:.3s ease;
+}
+
+.process-card:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(255,112,72,.25);
+}
+
+.process-number{
+    width:35px;
+    height:35px;
+
+    margin:0 auto 12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,112,72,.16),
+            rgba(97,232,255,.06)
+        );
+
+    color:var(--orange-light);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.process-card h3{
+    color:var(--white);
+
+    font-size:12px;
+}
+
+.process-card p{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:9.5px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.term-card{
+    padding:19px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+}
+
+.term-card h3{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--white);
+
+    font-size:13px;
+}
+
+.term-card h3 i{
+    color:var(--orange-light);
+
+    font-size:12px;
+}
+
+.term-card p{
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:10.5px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.final-cta{
+    padding:0 0 75px;
+}
+
+.cta-box{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:50px 25px;
+
+    border:1px solid rgba(255,112,72,.22);
+
+    border-radius:24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,112,72,.12),
+            transparent 55%
+        ),
+        var(--card);
+
+    text-align:center;
+}
+
+.cta-box::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:15%;
+    right:15%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            var(--cyan),
+            transparent
+        );
+}
+
+.cta-box h2{
+    color:var(--white);
+
+    font-size:clamp(28px,4vw,41px);
+
+    line-height:1.15;
+    letter-spacing:-1.2px;
+}
+
+.cta-box p{
+    max-width:600px;
+
+    margin:9px auto 22px;
+
+    color:var(--muted);
+
+    font-size:12.5px;
+}
+
+.cta-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    padding:13px 24px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.cta-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(255,112,72,.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:28px 0 22px;
+
+    border-top:1px solid var(--border);
+
+    background:#080a0f;
+}
+
+.footer{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-brand h3{
+    color:var(--white);
+
+    font-size:15px;
+}
+
+.footer-brand p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+    gap:14px;
+}
+
+.footer-links a{
+    color:var(--muted);
+
+    font-size:10px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--cyan);
+}
+
+.copyright{
+    margin-top:18px;
+
+    color:#5e6570;
+
+    font-size:9px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .process-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:900px){
+
+    .package-grid{
+        grid-template-columns:1fr;
+
+        max-width:620px;
+
+        margin:auto;
+    }
+
+    .package-card{
+        min-height:0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:720px){
+
+    .container{
+        width:calc(100% - 30px);
+
+        max-width:620px;
+    }
+
+
+    .back-wrap{
+        padding-top:17px;
+    }
+
+    .back-home{
+        padding:9px 14px;
+
+        font-size:11px;
+    }
+
+
+    .hero{
+        padding:40px 0 18px;
+    }
+
+    .eyebrow{
+        padding:6px 10px;
+
+        margin-bottom:11px;
+
+        font-size:8px;
+
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:clamp(32px,9.5vw,42px);
+
+        line-height:1.08;
+
+        letter-spacing:-1.3px;
+    }
+
+    .hero p{
+        max-width:330px;
+
+        margin-top:11px;
+
+        font-size:11.5px;
+
+        line-height:1.55;
+    }
+
+    .gradient-line{
+        width:65px;
+
+        height:2px;
+
+        margin-top:14px;
+    }
+
+
+    .section{
+        padding:20px 0 55px;
+    }
+
+    .section-heading{
+        margin-bottom:23px;
+    }
+
+    .section-heading h2{
+        font-size:25px;
+    }
+
+    .section-heading p{
+        font-size:11px;
+    }
+
+
+    .package-grid{
+        width:100%;
+
+        gap:25px;
+    }
+
+    .package-card{
+        width:100%;
+
+        padding:22px 17px 19px;
+
+        border-radius:18px;
+    }
+
+    .package-card.featured{
+        border-width:1px;
+    }
+
+    .popular-badge{
+        top:-12px;
+
+        min-width:145px;
+
+        padding:6px 10px;
+
+        font-size:8px;
+    }
+
+    .package-card h3{
+        font-size:20px;
+    }
+
+    .package-description{
+        min-height:0;
+
+        font-size:11px;
+    }
+
+    .price{
+        margin-top:16px;
+    }
+
+    .currency{
+        font-size:19px;
+    }
+
+    .amount{
+        font-size:34px;
+    }
+
+    .duration{
+        font-size:9px;
+    }
+
+    .divider{
+        margin:17px 0;
+    }
+
+    .features{
+        gap:9px;
+    }
+
+    .features li{
+        font-size:10.8px;
+    }
+
+    .package-btn{
+        min-height:45px;
+
+        margin-top:20px;
+
+        font-size:11px;
+    }
+
+
+    .service-grid{
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .service-card{
+        padding:14px;
+
+        border-radius:14px;
+    }
+
+    .service-left{
+        gap:10px;
+    }
+
+    .service-icon{
+        width:34px;
+        height:34px;
+
+        border-radius:9px;
+
+        font-size:11px;
+    }
+
+    .service-text h3{
+        font-size:11.5px;
+    }
+
+    .service-text p{
+        font-size:8.8px;
+    }
+
+    .service-price{
+        font-size:9.5px;
+    }
+
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+    .process-card{
+        padding:17px 12px;
+    }
+
+    .process-card h3{
+        font-size:11px;
+    }
+
+    .process-card p{
+        font-size:8.5px;
+    }
+
+
+    .terms-grid{
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .term-card{
+        padding:16px;
+
+        border-radius:14px;
+    }
+
+    .term-card h3{
+        font-size:12px;
+    }
+
+    .term-card p{
+        font-size:10px;
+    }
+
+
+    .final-cta{
+        padding-bottom:55px;
+    }
+
+    .cta-box{
+        padding:36px 17px;
+
+        border-radius:19px;
+    }
+
+    .cta-box h2{
+        font-size:26px;
+    }
+
+    .cta-box p{
+        font-size:11px;
+
+        margin-bottom:19px;
+    }
+
+    .cta-btn{
+        width:100%;
+
+        font-size:11.5px;
+    }
+
+
+    footer{
+        padding:25px 0 20px;
+    }
+
+    .footer{
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+
+        gap:8px 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media(max-width:430px){
+
+    .container{
+        width:calc(100% - 28px);
+    }
+
+    .hero{
+        padding-top:32px;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:10.8px;
+    }
+
+    .section-heading h2{
+        font-size:23px;
+    }
+
+    .package-card{
+        padding:21px 16px 18px;
+    }
+
+    .package-card h3{
+        font-size:19px;
+    }
+
+    .amount{
+        font-size:32px;
+    }
+
+    .features li{
+        font-size:10.3px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACK TO HOME
+========================================================= -->
+
+<div class="back-wrap">
+
+    <div class="container">
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            SEARCH ENGINE OPTIMIZATION
+        </div>
+
+        <h1>
+            Get Found.
+            <span>Grow Organically.</span>
+        </h1>
+
+        <p>
+            Improve your Google visibility, attract the right audience
+            and generate more organic traffic with a practical SEO strategy.
+        </p>
+
+        <div class="gradient-line"></div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     SEO PACKAGES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                SEO Packages
+            </h2>
+
+            <p>
+                Flexible SEO plans designed for businesses at different
+                stages of online growth.
+            </p>
+
+        </div>
+
+
+
+        <div class="package-grid">
+
+
+            <!-- BASIC -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        STARTER
+                    </span>
+
+                    <span class="package-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    SEO Starter
+                </h3>
+
+
+                <p class="package-description">
+                    A practical SEO foundation for small businesses
+                    looking to improve their search visibility.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">2,999</span>
+
+                    <span class="duration">
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Keyword Research
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic On-Page SEO
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Meta Title &amp; Description
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        SEO-Friendly Content Guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Technical Check
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Monthly SEO Report
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Starter
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- GROWTH -->
+
+            <article class="package-card featured">
+
+                <div class="popular-badge">
+                    ⭐ MOST POPULAR
+                </div>
+
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        GROWTH
+                    </span>
+
+                    <span class="package-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    SEO Growth
+                </h3>
+
+
+                <p class="package-description">
+                    Complete SEO support focused on increasing organic
+                    traffic, rankings and relevant search visibility.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">5,999</span>
+
+                    <span class="duration">
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Detailed Keyword Research
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        On-Page SEO Optimization
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Technical SEO Audit
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Content Optimization
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Internal Linking Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Local SEO Support
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Monthly Ranking Report
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Growth
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PROFESSIONAL -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        PROFESSIONAL
+                    </span>
+
+                    <span class="package-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    SEO Pro
+                </h3>
+
+
+                <p class="package-description">
+                    Advanced SEO support for businesses competing
+                    for stronger rankings and long-term organic growth.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">9,999</span>
+
+                    <span class="duration">
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Keyword Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Complete On-Page SEO
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Technical SEO Optimization
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Content SEO Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Local SEO &amp; Google Business Support
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Competitor Research
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Conversion-Focused SEO
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Detailed Monthly Reporting
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Pro
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SEO SERVICES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                SEO Services
+            </h2>
+
+            <p>
+                Everything you need to improve your website's
+                search visibility and organic presence.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <!-- 01 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Keyword Research
+                        </h3>
+
+                        <p>
+                            Find relevant keywords your customers search for
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            On-Page SEO
+                        </h3>
+
+                        <p>
+                            Optimize pages for search engines and users
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Technical SEO
+                        </h3>
+
+                        <p>
+                            Improve technical website performance and structure
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Local SEO
+                        </h3>
+
+                        <p>
+                            Improve visibility in local Google searches
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Google Business Profile SEO
+                        </h3>
+
+                        <p>
+                            Optimize your local business presence
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-pen"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            SEO Content Optimization
+                        </h3>
+
+                        <p>
+                            Improve content for relevance and search intent
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Internal Linking
+                        </h3>
+
+                        <p>
+                            Build a stronger website content structure
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 08 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            SEO Audit
+                        </h3>
+
+                        <p>
+                            Find technical and on-page SEO opportunities
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    ₹999 onwards
+                </div>
+
+            </div>
+
+
+
+            <!-- 09 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Competitor SEO Research
+                        </h3>
+
+                        <p>
+                            Understand competitor search strategies
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 10 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Ranking Tracking
+                        </h3>
+
+                        <p>
+                            Track keyword positions and SEO progress
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 11 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            SEO Strategy
+                        </h3>
+
+                        <p>
+                            Build a practical long-term SEO roadmap
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 12 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            SEO Reporting
+                        </h3>
+
+                        <p>
+                            Clear reports with traffic and ranking insights
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SEO PROCESS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Our SEO Process
+            </h2>
+
+            <p>
+                A clear process designed to improve your search presence
+                step by step.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Audit
+                </h3>
+
+                <p>
+                    Understand your website and identify SEO opportunities.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Research
+                </h3>
+
+                <p>
+                    Find keywords and understand your target audience.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Optimize
+                </h3>
+
+                <p>
+                    Improve pages, content and technical SEO factors.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Grow
+                </h3>
+
+                <p>
+                    Track performance and continuously improve the strategy.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TERMS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Important Terms
+            </h2>
+
+            <p>
+                Clear expectations for a professional SEO campaign.
+            </p>
+
+        </div>
+
+
+
+        <div class="terms-grid">
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment
+                </h3>
+
+                <p>
+                    Payment schedule depends on the selected SEO package
+                    and service scope.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-chart-line"></i>
+                    SEO Results
+                </h3>
+
+                <p>
+                    SEO results depend on competition, website condition,
+                    industry and search engine factors. Specific rankings
+                    cannot be guaranteed.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-file-lines"></i>
+                    Client Content
+                </h3>
+
+                <p>
+                    Client must provide correct business information,
+                    website access and required content when needed.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-clock"></i>
+                    Timeline
+                </h3>
+
+                <p>
+                    SEO is a long-term process. Improvements may take
+                    time depending on the website and competition.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-list-check"></i>
+                    Custom Requirements
+                </h3>
+
+                <p>
+                    Work outside the selected package scope will be
+                    quoted separately.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-rotate"></i>
+                    Monthly Work
+                </h3>
+
+                <p>
+                    Monthly SEO activities depend on the selected plan
+                    and current website requirements.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready to Get Found on Google?
+            </h2>
+
+            <p>
+                Tell us about your business and website.
+                Let's build an SEO strategy designed for long-term growth.
+            </p>
+
+            <a href="contact.html" class="cta-btn">
+
+                Start Your SEO
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer">
+
+
+            <div class="footer-brand">
+
+                <h3>
+                    ZippyGrow Media
+                </h3>
+
+                <p>
+                    Digital Growth • Branding • Marketing
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://www.zippygrowmedia.in"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    www.zippygrowmedia.in
+
+                </a>
+
+                <a href="mailto:zippygrowmedia@gmail.com">
+
+                    zippygrowmedia@gmail.com
+
+                </a>
+
+                <a href="tel:+919534680179">
+
+                    9534680179
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ZippyGrow Media. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
