@@ -3025,7 +3025,519 @@
 
         }
 
-    </style>
+    
+/* =========================================================
+   FINAL MOBILE / CARD TYPOGRAPHY FIX
+   Keeps the original content and animations intact.
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        width: calc(100% - 28px);
+        max-width: 620px;
+    }
+
+    .pricing-section-inner.active {
+        width: 100%;
+        gap: 20px;
+    }
+
+    /* IMPORTANT: Most Popular badge will not be clipped */
+    .card {
+        overflow: visible;
+        min-height: 0;
+        padding: 25px 20px 21px;
+        border-radius: 19px;
+    }
+
+    .card::after {
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .badge {
+        top: 15px;
+        right: 15px;
+        transform: translateY(-50%);
+        z-index: 20;
+        padding: 7px 13px;
+        font-size: 9px;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    .card-title {
+        font-size: 22px;
+        line-height: 1.28;
+        padding-right: 0 !important;
+    }
+
+    .card-desc {
+        min-height: 0;
+        margin-top: 8px;
+        font-size: 12.5px;
+        line-height: 1.65;
+    }
+
+    .price {
+        margin-top: 19px;
+        font-size: 36px;
+        letter-spacing: -1.3px;
+    }
+
+    .price span {
+        font-size: 10px;
+    }
+
+    .divider {
+        margin: 18px 0;
+    }
+
+    .features {
+        gap: 10px;
+    }
+
+    .features li {
+        font-size: 12px;
+        line-height: 1.55;
+        gap: 9px;
+    }
+
+    .card-btn {
+        min-height: 47px;
+        margin-top: 22px;
+        padding: 11px 12px;
+        font-size: 11px;
+    }
+
+    .addon {
+        padding: 14px;
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .terms li {
+        padding: 13px 14px 13px 17px;
+        font-size: 10.5px;
+        line-height: 1.65;
+    }
+
+    .info-box h2 {
+        font-size: 18px;
+    }
+
+    .toggle-btn {
+        padding: 10px 7px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .page {
+        width: calc(100% - 24px);
+    }
+
+    .card {
+        padding: 24px 18px 20px;
+    }
+
+    .badge {
+        top: 14px;
+        right: 13px;
+        padding: 7px 11px;
+        font-size: 8px;
+    }
+
+    .card-title {
+        font-size: 21px;
+    }
+
+    .card-desc {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 34px;
+    }
+
+    .features li {
+        font-size: 11.5px;
+    }
+
+    .card-btn {
+        font-size: 10.5px;
+    }
+
+    .addon {
+        font-size: 10.5px;
+    }
+
+    .terms li {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   READABILITY UPGRADE
+   Increase all supporting text to a comfortable, professional
+   size without removing the existing animations/design.
+========================================================= */
+
+body {
+    font-size: 16px;
+}
+
+.hero-desc {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.hero-btn {
+    font-size: 12px;
+}
+
+.section-heading .label,
+.card-label {
+    font-size: 10px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.toggle-btn {
+    font-size: 12px;
+}
+
+.card-title {
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.price {
+    font-size: 40px;
+}
+
+.price span {
+    font-size: 12px;
+}
+
+.features li {
+    font-size: 13.5px;
+    line-height: 1.55;
+}
+
+.card-btn {
+    min-height: 48px;
+    font-size: 12px;
+}
+
+.info-box h2 {
+    font-size: 21px;
+}
+
+.addon {
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.terms li {
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.cta-box p {
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.cta-btn {
+    font-size: 12px;
+}
+
+.footer-brand h3 {
+    font-size: 16px;
+}
+
+.footer-brand p,
+.footer-links a {
+    font-size: 10px;
+}
+
+.copyright {
+    font-size: 9px;
+}
+
+/* Keep mobile readable too */
+@media (max-width: 700px) {
+    .hero-desc {
+        font-size: 13px;
+    }
+
+    .section-heading .label,
+    .card-label {
+        font-size: 9px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .toggle-btn {
+        font-size: 10px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .card-desc {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 36px;
+    }
+
+    .price span {
+        font-size: 11px;
+    }
+
+    .features li {
+        font-size: 12.5px;
+    }
+
+    .card-btn {
+        font-size: 11px;
+    }
+
+    .addon {
+        font-size: 12px;
+    }
+
+    .terms li {
+        font-size: 12px;
+    }
+
+    .cta-box p {
+        font-size: 12px;
+    }
+
+    .footer-brand p,
+    .footer-links a {
+        font-size: 9.5px;
+    }
+
+    .copyright {
+        font-size: 8.5px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-desc {
+        font-size: 12.5px;
+    }
+
+    .card-title {
+        font-size: 21px;
+    }
+
+    .card-desc {
+        font-size: 12.5px;
+    }
+
+    .features li {
+        font-size: 12px;
+    }
+
+    .addon {
+        font-size: 11.5px;
+    }
+
+    .terms li {
+        font-size: 11.5px;
+    }
+}
+
+
+/* =========================================================
+   FINAL READABILITY + POPULAR BADGE FIX
+========================================================= */
+
+/* Normal, comfortable desktop typography */
+.card-desc {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+}
+
+.features li {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+.price {
+    font-size: 42px !important;
+}
+
+.price span {
+    font-size: 12px !important;
+}
+
+.addon {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+.terms li {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+}
+
+.info-box h2 {
+    font-size: 22px !important;
+}
+
+.section-heading p {
+    font-size: 14px !important;
+}
+
+/* POPULAR BADGE: keep it completely inside the card */
+.card {
+    overflow: visible !important;
+}
+
+.card.popular {
+    overflow: visible !important;
+}
+
+.badge {
+    top: 14px !important;
+    right: 16px !important;
+    transform: none !important;
+    z-index: 50 !important;
+    padding: 8px 14px !important;
+    font-size: 10px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+/* Give popular cards room for the badge */
+.card.popular .card-head {
+    padding-top: 24px !important;
+}
+
+.card.popular .card-title {
+    padding-right: 145px !important;
+}
+
+/* =========================================================
+   MOBILE — larger readable text, without making cards huge
+========================================================= */
+@media (max-width: 700px) {
+
+    .card-desc {
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+
+    .features li {
+        font-size: 13.5px !important;
+        line-height: 1.6 !important;
+    }
+
+    .price {
+        font-size: 38px !important;
+    }
+
+    .price span {
+        font-size: 11px !important;
+    }
+
+    .addon {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .terms li {
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+    }
+
+    .info-box h2 {
+        font-size: 19px !important;
+    }
+
+    .section-heading p {
+        font-size: 13px !important;
+    }
+
+    /* Badge stays fully visible inside every popular card */
+    .badge {
+        top: 13px !important;
+        right: 13px !important;
+        transform: none !important;
+        padding: 8px 12px !important;
+        font-size: 9px !important;
+    }
+
+    .card.popular .card-head {
+        padding-top: 25px !important;
+    }
+
+    .card.popular .card-title {
+        padding-right: 0 !important;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .card-desc {
+        font-size: 13.5px !important;
+    }
+
+    .features li {
+        font-size: 13px !important;
+    }
+
+    .price {
+        font-size: 36px !important;
+    }
+
+    .addon {
+        font-size: 12.5px !important;
+    }
+
+    .terms li {
+        font-size: 12.5px !important;
+    }
+
+    .badge {
+        top: 12px !important;
+        right: 11px !important;
+        padding: 7px 10px !important;
+        font-size: 8px !important;
+    }
+
+    .card.popular .card-head {
+        padding-top: 25px !important;
+    }
+}
+
+</style>
 
 </head>
 
