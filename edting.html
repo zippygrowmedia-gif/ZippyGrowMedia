@@ -1,0 +1,2691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Editing & Content Reels | ZippyGrow Media</title>
+
+<meta name="description"
+content="Professional video editing, Instagram reels, promotional videos, short-form content and brand videos by ZippyGrow Media.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+:root{
+    --bg:#090c11;
+    --card:#141922;
+    --card2:#181e28;
+
+    --border:#28313d;
+    --border2:#374250;
+
+    --white:#f7f9fb;
+    --text:#d7dce4;
+    --muted:#929ba8;
+
+    --orange:#ff7048;
+    --orange2:#ff9a5c;
+    --coral:#ff5360;
+
+    --cyan:#61e8ff;
+    --green:#00e889;
+
+    --radius:20px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(255,112,72,.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 5% 45%,
+            rgba(97,232,255,.045),
+            transparent 25%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    font-family:"Inter",Arial,sans-serif;
+
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1160px,calc(100% - 40px));
+    margin:auto;
+}
+
+
+/* =========================
+BACK
+========================= */
+
+.back-area{
+    padding-top:24px;
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 15px;
+
+    border:1px solid var(--border);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    font-size:11px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.back-btn:hover{
+    transform:translateX(-3px);
+
+    color:var(--cyan);
+
+    border-color:rgba(97,232,255,.35);
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    padding:55px 0 42px;
+}
+
+.hero-layout{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.hero-content{
+    max-width:610px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 12px;
+
+    border:1px solid rgba(255,112,72,.23);
+    border-radius:50px;
+
+    background:rgba(255,112,72,.045);
+
+    color:var(--orange2);
+
+    font-size:8.5px;
+    font-weight:800;
+
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+}
+
+.eyebrow i{
+    font-size:8px;
+}
+
+.hero h1{
+    margin-top:17px;
+
+    color:var(--white);
+
+    font-size:clamp(40px,5.5vw,66px);
+
+    line-height:1.04;
+
+    letter-spacing:-2.8px;
+
+    font-weight:800;
+}
+
+.hero h1 span{
+    display:block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--orange2)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-text{
+    max-width:590px;
+
+    margin-top:16px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.hero-btns{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:23px;
+}
+
+.main-btn,
+.outline-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 18px;
+
+    border-radius:11px;
+
+    font-size:10.5px;
+
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.main-btn{
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+}
+
+.main-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(255,112,72,.22);
+}
+
+.outline-btn{
+    border:1px solid var(--border2);
+
+    background:rgba(255,255,255,.02);
+
+    color:var(--text);
+}
+
+.outline-btn:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+}
+
+
+/* =========================
+VIDEO VISUAL
+========================= */
+
+.video-preview{
+    position:relative;
+
+    padding:16px;
+
+    border:1px solid var(--border);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.008)
+        ),
+        var(--card);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30);
+
+    overflow:hidden;
+}
+
+.video-preview::before{
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    top:-90px;
+    right:-70px;
+
+    border-radius:50%;
+
+    background:rgba(255,112,72,.12);
+
+    filter:blur(15px);
+}
+
+.video-screen{
+    position:relative;
+
+    min-height:290px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252c37,
+            #0d1118 60%,
+            #161b24
+        );
+}
+
+.video-screen::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255,112,72,.14),
+            transparent 70%
+        );
+}
+
+.play-btn{
+    position:relative;
+
+    width:62px;
+    height:62px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:18px;
+
+    box-shadow:
+        0 12px 35px rgba(255,112,72,.3);
+}
+
+.video-label{
+    position:absolute;
+
+    left:15px;
+    top:14px;
+
+    padding:5px 8px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:7px;
+
+    background:rgba(0,0,0,.35);
+
+    color:#fff;
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+.video-duration{
+    position:absolute;
+
+    right:15px;
+    bottom:14px;
+
+    padding:5px 8px;
+
+    border-radius:7px;
+
+    background:rgba(0,0,0,.55);
+
+    color:#fff;
+
+    font-size:8px;
+}
+
+.timeline{
+    display:flex;
+
+    gap:7px;
+
+    margin-top:11px;
+}
+
+.timeline span{
+    height:6px;
+
+    flex:1;
+
+    border-radius:20px;
+
+    background:#252d38;
+}
+
+.timeline span:nth-child(2){
+    flex:1.5;
+
+    background:var(--orange);
+}
+
+.timeline span:nth-child(4){
+    flex:1.2;
+
+    background:var(--cyan);
+}
+
+.edit-info{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:8px;
+
+    margin-top:10px;
+}
+
+.edit-stat{
+    padding:10px 6px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.018);
+
+    text-align:center;
+}
+
+.edit-stat strong{
+    display:block;
+
+    color:var(--white);
+
+    font-size:12px;
+}
+
+.edit-stat span{
+    display:block;
+
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:7px;
+}
+
+
+/* =========================
+SECTION
+========================= */
+
+.section{
+    padding:42px 0 68px;
+}
+
+.section-heading{
+    margin-bottom:27px;
+}
+
+.section-heading.center{
+    text-align:center;
+}
+
+.section-heading h2{
+    color:var(--white);
+
+    font-size:clamp(27px,4vw,40px);
+
+    line-height:1.15;
+
+    letter-spacing:-1.3px;
+}
+
+.section-heading p{
+    max-width:650px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+.center p{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* =========================
+VIDEO SERVICES
+========================= */
+
+.services{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:11px;
+}
+
+.service{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:15px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--card);
+
+    transition:.3s ease;
+}
+
+.service:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(255,112,72,.25);
+
+    background:var(--card2);
+}
+
+.service-icon{
+    flex:0 0 auto;
+
+    width:37px;
+    height:37px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,112,72,.075);
+
+    color:var(--orange2);
+
+    font-size:12px;
+}
+
+.service h3{
+    color:var(--white);
+
+    font-size:11.5px;
+}
+
+.service p{
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:8.8px;
+}
+
+
+/* =========================
+PACKAGES
+========================= */
+
+.package-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:19px;
+}
+
+.package{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:24px;
+
+    border:1px solid var(--border);
+
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.03),
+            transparent
+        ),
+        var(--card);
+
+    transition:.3s ease;
+}
+
+.package:hover{
+    transform:translateY(-5px);
+
+    border-color:var(--border2);
+}
+
+.package.featured{
+    border-color:var(--orange);
+
+    box-shadow:
+        0 0 40px rgba(255,112,72,.09);
+}
+
+.package-badge{
+    position:absolute;
+
+    top:-12px;
+    right:17px;
+
+    padding:5px 10px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:8px;
+
+    font-weight:800;
+}
+
+.package-label{
+    color:var(--cyan);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1.3px;
+}
+
+.package h3{
+    margin-top:8px;
+
+    color:var(--white);
+
+    font-size:20px;
+}
+
+.package-desc{
+    min-height:53px;
+
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:10.5px;
+
+    line-height:1.55;
+}
+
+.price{
+    margin-top:17px;
+
+    color:var(--white);
+
+    font-size:30px;
+
+    font-weight:800;
+
+    letter-spacing:-1px;
+}
+
+.price span{
+    color:var(--muted);
+
+    font-size:9px;
+
+    font-weight:500;
+}
+
+.line{
+    height:1px;
+
+    margin:17px 0;
+
+    background:var(--border);
+}
+
+.package ul{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+    list-style:none;
+}
+
+.package li{
+    display:flex;
+
+    gap:8px;
+
+    color:var(--text);
+
+    font-size:10.5px;
+
+    line-height:1.4;
+}
+
+.package li i{
+    margin-top:3px;
+
+    color:var(--green);
+
+    font-size:9px;
+}
+
+.package-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:22px;
+
+    padding:11px;
+
+    border:1px solid var(--border2);
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-size:10.5px;
+
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.package-btn:hover{
+    color:var(--cyan);
+
+    border-color:var(--cyan);
+}
+
+.featured .package-btn{
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+}
+
+
+/* =========================
+PROCESS
+========================= */
+
+.process{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.step{
+    padding:18px 12px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--card);
+
+    text-align:center;
+}
+
+.step-number{
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 10px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,112,72,.10);
+
+    color:var(--orange2);
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+.step h3{
+    color:var(--white);
+
+    font-size:11px;
+}
+
+.step p{
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:8.5px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+ADD-ONS
+========================= */
+
+.addons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.addon{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:14px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+    background:var(--card);
+}
+
+.addon-name{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--text);
+
+    font-size:10.5px;
+}
+
+.addon-name i{
+    color:var(--cyan);
+
+    font-size:10px;
+}
+
+.addon-price{
+    color:var(--orange2);
+
+    font-size:9.5px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+/* =========================
+TERMS
+========================= */
+
+.terms{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.term{
+    padding:17px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--card);
+}
+
+.term h3{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--white);
+
+    font-size:11.5px;
+}
+
+.term h3 i{
+    color:var(--orange2);
+
+    font-size:10px;
+}
+
+.term p{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    line-height:1.55;
+}
+
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+    padding:0 0 70px;
+}
+
+.cta-box{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:48px 25px;
+
+    border:1px solid rgba(255,112,72,.22);
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,112,72,.13),
+            transparent 55%
+        ),
+        var(--card);
+
+    text-align:center;
+}
+
+.cta-box::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:15%;
+    right:15%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            var(--cyan),
+            transparent
+        );
+}
+
+.cta-box h2{
+    color:var(--white);
+
+    font-size:clamp(27px,4vw,40px);
+
+    line-height:1.15;
+
+    letter-spacing:-1.2px;
+}
+
+.cta-box p{
+    max-width:570px;
+
+    margin:8px auto 21px;
+
+    color:var(--muted);
+
+    font-size:11.5px;
+}
+
+.cta-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 21px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.cta-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 32px rgba(255,112,72,.22);
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    padding:27px 0 20px;
+
+    border-top:1px solid var(--border);
+
+    background:#07090d;
+}
+
+.footer{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer h3{
+    color:var(--white);
+
+    font-size:14px;
+}
+
+.footer p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+    gap:13px;
+}
+
+.footer-links a{
+    color:var(--muted);
+
+    font-size:9px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--cyan);
+}
+
+.copyright{
+    margin-top:17px;
+
+    color:#59616c;
+
+    font-size:8px;
+
+    text-align:center;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+    .hero-layout{
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .hero-content{
+        max-width:700px;
+
+        margin:auto;
+
+        text-align:center;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-btns{
+        justify-content:center;
+    }
+
+    .video-preview{
+        max-width:620px;
+
+        width:100%;
+
+        margin:auto;
+    }
+
+    .package-grid{
+        grid-template-columns:1fr;
+
+        max-width:620px;
+
+        margin:auto;
+    }
+
+    .package{
+        min-height:0;
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:720px){
+
+    .container{
+        width:calc(100% - 30px);
+
+        max-width:620px;
+    }
+
+    .back-area{
+        padding-top:17px;
+    }
+
+
+    .hero{
+        padding:36px 0 28px;
+    }
+
+    .hero h1{
+        font-size:34px;
+
+        letter-spacing:-1.5px;
+    }
+
+    .hero-text{
+        margin-top:12px;
+
+        font-size:11px;
+
+        line-height:1.6;
+    }
+
+    .hero-btns{
+        margin-top:18px;
+
+        gap:8px;
+    }
+
+    .main-btn,
+    .outline-btn{
+        padding:10px 14px;
+
+        font-size:9.5px;
+    }
+
+
+    .video-preview{
+        padding:13px;
+
+        border-radius:18px;
+    }
+
+    .video-screen{
+        min-height:225px;
+
+        border-radius:13px;
+    }
+
+    .play-btn{
+        width:52px;
+        height:52px;
+
+        font-size:15px;
+    }
+
+
+    .section{
+        padding:27px 0 52px;
+    }
+
+    .section-heading{
+        margin-bottom:21px;
+    }
+
+    .section-heading h2{
+        font-size:25px;
+    }
+
+    .section-heading p{
+        font-size:10.5px;
+    }
+
+
+    .services{
+        grid-template-columns:1fr;
+
+        gap:9px;
+    }
+
+    .service{
+        padding:13px 14px;
+    }
+
+    .service-icon{
+        width:34px;
+        height:34px;
+
+        font-size:11px;
+    }
+
+    .service h3{
+        font-size:11px;
+    }
+
+    .service p{
+        font-size:8.5px;
+    }
+
+
+    .package-grid{
+        gap:18px;
+    }
+
+    .package{
+        padding:20px 17px;
+
+        border-radius:17px;
+    }
+
+    .package-desc{
+        min-height:0;
+    }
+
+    .package h3{
+        font-size:19px;
+    }
+
+    .price{
+        font-size:28px;
+    }
+
+    .package li{
+        font-size:10px;
+    }
+
+
+    .process{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:9px;
+    }
+
+    .step{
+        padding:16px 10px;
+    }
+
+
+    .addons{
+        grid-template-columns:1fr;
+
+        gap:8px;
+    }
+
+
+    .terms{
+        grid-template-columns:1fr;
+
+        gap:9px;
+    }
+
+
+    .cta{
+        padding-bottom:53px;
+    }
+
+    .cta-box{
+        padding:36px 17px;
+
+        border-radius:19px;
+    }
+
+    .cta-box h2{
+        font-size:26px;
+    }
+
+    .cta-box p{
+        font-size:10.5px;
+    }
+
+    .cta-btn{
+        width:100%;
+
+        font-size:10.5px;
+    }
+
+
+    .footer{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+
+        gap:8px 12px;
+    }
+
+}
+
+
+/* =========================
+SMALL PHONE
+========================= */
+
+@media(max-width:430px){
+
+    .container{
+        width:calc(100% - 26px);
+    }
+
+    .hero{
+        padding-top:29px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero-text{
+        font-size:10.5px;
+    }
+
+    .eyebrow{
+        font-size:7.5px;
+    }
+
+    .video-screen{
+        min-height:195px;
+    }
+
+    .edit-info{
+        gap:6px;
+    }
+
+    .edit-stat{
+        padding:8px 4px;
+    }
+
+    .edit-stat strong{
+        font-size:10px;
+    }
+
+    .edit-stat span{
+        font-size:6.5px;
+    }
+
+    .package{
+        padding:19px 15px;
+    }
+
+    .package h3{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+BACK HOME
+========================= -->
+
+<div class="back-area">
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-layout">
+
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    VIDEO EDITING & CONTENT
+
+                </div>
+
+
+                <h1>
+
+                    Turn Your Ideas Into
+
+                    <span>Engaging Videos.</span>
+
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Professional video editing for Instagram Reels,
+                    short-form content, promotional videos and
+                    brand storytelling that keeps your audience watching.
+
+                </p>
+
+
+                <div class="hero-btns">
+
+                    <a href="contact.html" class="main-btn">
+
+                        Start Your Video Project
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="#services" class="outline-btn">
+
+                        Explore Services
+
+                        <i class="fa-solid fa-angle-down"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIDEO PREVIEW -->
+
+            <div class="video-preview">
+
+                <div class="video-screen">
+
+                    <div class="video-label">
+                        ZIPPYGROW MEDIA
+                    </div>
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                    <div class="video-duration">
+                        00:29
+                    </div>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <div class="edit-info">
+
+                    <div class="edit-stat">
+
+                        <strong>Reels</strong>
+
+                        <span>
+                            SHORT FORM
+                        </span>
+
+                    </div>
+
+
+                    <div class="edit-stat">
+
+                        <strong>4K</strong>
+
+                        <span>
+                            EXPORT
+                        </span>
+
+                    </div>
+
+
+                    <div class="edit-stat">
+
+                        <strong>Fast</strong>
+
+                        <span>
+                            DELIVERY
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <h2>
+                Video Services
+            </h2>
+
+            <p>
+                From simple edits to complete promotional content,
+                we create videos that match your brand.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instagram Reels
+                    </h3>
+
+                    <p>
+                        Engaging short-form videos for Instagram
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Short-Form Video Editing
+                    </h3>
+
+                    <p>
+                        Fast-paced edits for social platforms
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Promotional Video Ads
+                    </h3>
+
+                    <p>
+                        Product, service and offer promotions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        YouTube Video Editing
+                    </h3>
+
+                    <p>
+                        Clean and engaging long-form video edits
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-film"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Brand Story Videos
+                    </h3>
+
+                    <p>
+                        Videos designed around your brand story
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Motion Graphics
+                    </h3>
+
+                    <p>
+                        Animated text, graphics and visual effects
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-closed-captioning"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Captions & Subtitles
+                    </h3>
+
+                    <p>
+                        Clean subtitles for better engagement
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Music & Sound Design
+                    </h3>
+
+                    <p>
+                        Background music and audio enhancement
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Color Correction
+                    </h3>
+
+                    <p>
+                        Professional color and visual finishing
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-crop-simple"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Platform Resizing
+                    </h3>
+
+                    <p>
+                        Vertical, square and landscape formats
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+PACKAGES
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <h2>
+                Video Editing Packages
+            </h2>
+
+            <p>
+                Simple packages for businesses, creators and brands.
+            </p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+
+            <!-- BASIC -->
+
+            <article class="package">
+
+                <div class="package-label">
+                    STARTER
+                </div>
+
+                <h3>
+                    Reel Starter
+                </h3>
+
+                <p class="package-desc">
+
+                    Perfect for businesses and creators
+                    starting regular short-form content.
+
+                </p>
+
+
+                <div class="price">
+
+                    ₹1,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Short-Form Reel Editing
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Transitions
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Text & Captions
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Music / Sound
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Color Correction
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Starter
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- GROWTH -->
+
+            <article class="package featured">
+
+                <div class="package-badge">
+                    MOST POPULAR
+                </div>
+
+
+                <div class="package-label">
+                    GROWTH
+                </div>
+
+                <h3>
+                    Reels Growth
+                </h3>
+
+                <p class="package-desc">
+
+                    Consistent professional reels for brands
+                    that want stronger social media content.
+
+                </p>
+
+
+                <div class="price">
+
+                    ₹4,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional Reel Editing
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Captions & Subtitles
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Dynamic Transitions
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Sound Effects
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Color Correction
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Brand Style Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Social Media Formats
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Growth
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PRO -->
+
+            <article class="package">
+
+                <div class="package-label">
+                    PROFESSIONAL
+                </div>
+
+                <h3>
+                    Video Pro
+                </h3>
+
+                <p class="package-desc">
+
+                    Complete video content support for brands
+                    running regular promotional campaigns.
+
+                </p>
+
+
+                <div class="price">
+
+                    ₹8,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Reels & Short Videos
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Promotional Video Ads
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Motion Graphics
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional Sound Design
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Color Grading
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Brand Story Videos
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Multiple Platform Formats
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Pro
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+WORKFLOW
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <h2>
+                Our Editing Workflow
+            </h2>
+
+            <p>
+                A simple process from raw footage to final video.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Brief
+                </h3>
+
+                <p>
+                    Understand the purpose,
+                    audience and video style.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Select
+                </h3>
+
+                <p>
+                    Organize footage and
+                    select the strongest clips.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Edit
+                </h3>
+
+                <p>
+                    Build the video with
+                    cuts, transitions and effects.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Polish
+                </h3>
+
+                <p>
+                    Add sound, captions,
+                    color and branding.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <h3>
+                    Deliver
+                </h3>
+
+                <p>
+                    Final review and
+                    platform-ready export.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+ADD-ONS
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <h2>
+                Optional Add-ons
+            </h2>
+
+            <p>
+                Add extra creative support whenever your project needs it.
+            </p>
+
+        </div>
+
+
+        <div class="addons">
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Advanced Motion Graphics
+
+                </div>
+
+                <div class="addon-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-closed-captioning"></i>
+
+                    Professional Subtitles
+
+                </div>
+
+                <div class="addon-price">
+                    ₹199+
+                </div>
+
+            </div>
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Voice-over Integration
+
+                </div>
+
+                <div class="addon-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-film"></i>
+
+                    Cinematic Color Grading
+
+                </div>
+
+                <div class="addon-price">
+                    ₹499+
+                </div>
+
+            </div>
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Urgent Delivery
+
+                </div>
+
+                <div class="addon-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+            <div class="addon">
+
+                <div class="addon-name">
+
+                    <i class="fa-solid fa-file-video"></i>
+
+                    Extra Video Variation
+
+                </div>
+
+                <div class="addon-price">
+                    ₹399+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+TERMS
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <h2>
+                Important Terms
+            </h2>
+
+            <p>
+                Clear expectations help keep every video project smooth.
+            </p>
+
+        </div>
+
+
+        <div class="terms">
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-file-video"></i>
+
+                    Raw Footage
+
+                </h3>
+
+                <p>
+                    Client should provide clear and usable footage,
+                    logos, images and other required assets.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Revisions
+
+                </h3>
+
+                <p>
+                    Revisions depend on the selected package.
+                    Additional revisions may be charged separately.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-music"></i>
+
+                    Music & Assets
+
+                </h3>
+
+                <p>
+                    Music, stock footage, premium assets or
+                    voice-over requirements may have additional charges.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    Delivery
+
+                </h3>
+
+                <p>
+                    Delivery time depends on video length,
+                    footage quality, complexity and revisions.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    Custom Work
+
+                </h3>
+
+                <p>
+                    Requirements outside the selected package
+                    will be quoted separately.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-hard-drive"></i>
+
+                    Source Files
+
+                </h3>
+
+                <p>
+                    Editable project/source files are provided only
+                    when specifically included in the package.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Have a Video in Mind?
+            </h2>
+
+            <p>
+                Send us your idea, footage or requirements
+                and let's turn it into engaging content.
+            </p>
+
+            <a href="contact.html" class="cta-btn">
+
+                Start Your Video Project
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer">
+
+
+            <div>
+
+                <h3>
+                    ZippyGrow Media
+                </h3>
+
+                <p>
+                    Digital Growth • Branding • Marketing
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://www.zippygrowmedia.in"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    www.zippygrowmedia.in
+
+                </a>
+
+                <a href="mailto:zippygrowmedia@gmail.com">
+
+                    zippygrowmedia@gmail.com
+
+                </a>
+
+                <a href="tel:+919534680179">
+
+                    9534680179
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ZippyGrow Media. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
