@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UI/UX Design & Prototyping | ZippyGrow Media</title>
+
+    <meta name="description"
+        content="Professional UI/UX design, website UI, mobile app UI, Figma prototypes, wireframes and user experience design services by ZippyGrow Media.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --bg:#0b0d12;
+    --card:#171a21;
+    --card-hover:#1b1f27;
+
+    --border:#292e39;
+    --border-light:#343b48;
+
+    --white:#f7f8fa;
+    --text:#d7dbe3;
+    --muted:#9299a7;
+
+    --orange:#ff7048;
+    --orange-light:#ff9a5c;
+    --coral:#ff5360;
+
+    --cyan:#61e8ff;
+    --green:#00ee88;
+
+    --radius:21px;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255,112,72,.08),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-wrap{
+    padding-top:24px;
+}
+
+.back-home{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:10px 17px;
+
+    border:1px solid var(--border);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    font-size:12px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.back-home:hover{
+    transform:translateX(-3px);
+
+    color:#fff;
+
+    border-color:rgba(97,232,255,.35);
+
+    background:rgba(97,232,255,.05);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    padding:58px 0 28px;
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 13px;
+    margin-bottom:14px;
+
+    border:1px solid rgba(97,232,255,.2);
+    border-radius:999px;
+
+    background:rgba(97,232,255,.04);
+
+    color:var(--cyan);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    max-width:900px;
+    margin:auto;
+
+    color:var(--white);
+
+    font-size:clamp(40px,6vw,72px);
+
+    line-height:1.04;
+    letter-spacing:-2.7px;
+
+    font-weight:800;
+}
+
+.hero h1 span{
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--orange-light)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:16px auto 0;
+
+    color:var(--muted);
+
+    font-size:14px;
+    line-height:1.65;
+}
+
+.gradient-line{
+    width:85px;
+    height:3px;
+
+    margin:19px auto 0;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--cyan)
+        );
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    padding:30px 0 72px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-heading h2{
+    color:var(--white);
+
+    font-size:clamp(28px,4vw,41px);
+
+    line-height:1.15;
+    letter-spacing:-1.3px;
+}
+
+.section-heading p{
+    max-width:650px;
+
+    margin:8px auto 0;
+
+    color:var(--muted);
+
+    font-size:12.5px;
+}
+
+
+/* =========================================================
+   PACKAGES
+========================================================= */
+
+.package-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:22px;
+}
+
+.package-card{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:555px;
+
+    padding:28px 26px 24px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.007)
+        ),
+        var(--card);
+
+    transition:.3s ease;
+}
+
+.package-card:hover{
+    transform:translateY(-6px);
+
+    border-color:var(--border-light);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.25);
+}
+
+.package-card.featured{
+    border:2px solid var(--orange);
+
+    box-shadow:
+        0 0 0 1px rgba(255,112,72,.08),
+        0 25px 65px rgba(255,112,72,.11);
+}
+
+.popular-badge{
+    position:absolute;
+
+    top:-14px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    min-width:155px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:9px;
+    font-weight:800;
+}
+
+.package-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.package-type{
+    color:var(--cyan);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+}
+
+.package-number{
+    color:#59616e;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.package-card h3{
+    margin-top:13px;
+
+    color:var(--white);
+
+    font-size:22px;
+    line-height:1.25;
+}
+
+.package-description{
+    min-height:55px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:11.5px;
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.price{
+    display:flex;
+    align-items:baseline;
+
+    gap:4px;
+
+    margin-top:20px;
+
+    white-space:nowrap;
+}
+
+.currency{
+    color:var(--orange-light);
+
+    font-size:21px;
+    font-weight:700;
+}
+
+.amount{
+    color:var(--white);
+
+    font-size:39px;
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+}
+
+.duration{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.divider{
+    height:1px;
+
+    margin:20px 0;
+
+    background:var(--border);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features{
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    list-style:none;
+}
+
+.features li{
+    display:flex;
+    align-items:flex-start;
+
+    gap:9px;
+
+    color:var(--text);
+
+    font-size:11.5px;
+    line-height:1.45;
+}
+
+.features i{
+    flex:0 0 auto;
+
+    margin-top:3px;
+
+    color:var(--green);
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.package-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+    min-height:47px;
+
+    margin-top:auto;
+
+    padding:11px 15px;
+
+    border:1px solid var(--border-light);
+    border-radius:12px;
+
+    background:rgba(255,255,255,.02);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.package-btn:hover{
+    border-color:var(--cyan);
+
+    background:rgba(97,232,255,.06);
+}
+
+.featured .package-btn{
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(255,112,72,.2);
+}
+
+
+/* =========================================================
+   UI/UX SERVICES
+========================================================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.service-card{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:17px 19px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+
+    transition:.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(97,232,255,.22);
+
+    background:var(--card-hover);
+}
+
+.service-left{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+}
+
+.service-icon{
+    flex:0 0 auto;
+
+    width:39px;
+    height:39px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(97,232,255,.055);
+
+    color:var(--cyan);
+
+    font-size:13px;
+}
+
+.service-text h3{
+    color:var(--white);
+
+    font-size:12.5px;
+    line-height:1.35;
+}
+
+.service-text p{
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:9.5px;
+    line-height:1.4;
+}
+
+.service-price{
+    flex:0 0 auto;
+
+    color:var(--orange-light);
+
+    font-size:11px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.process-card{
+    padding:20px 17px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+
+    text-align:center;
+
+    transition:.3s ease;
+}
+
+.process-card:hover{
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(255,112,72,.25);
+}
+
+.process-number{
+    width:35px;
+    height:35px;
+
+    margin:0 auto 12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,112,72,.16),
+            rgba(97,232,255,.06)
+        );
+
+    color:var(--orange-light);
+
+    font-size:11px;
+    font-weight:800;
+}
+
+.process-card h3{
+    color:var(--white);
+
+    font-size:12px;
+}
+
+.process-card p{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:9.5px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.term-card{
+    padding:19px;
+
+    border:1px solid var(--border);
+    border-radius:15px;
+
+    background:var(--card);
+}
+
+.term-card h3{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--white);
+
+    font-size:13px;
+}
+
+.term-card h3 i{
+    color:var(--orange-light);
+
+    font-size:12px;
+}
+
+.term-card p{
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:10.5px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.final-cta{
+    padding:0 0 75px;
+}
+
+.cta-box{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:50px 25px;
+
+    border:
+        1px solid rgba(255,112,72,.22);
+
+    border-radius:24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,112,72,.12),
+            transparent 55%
+        ),
+        var(--card);
+
+    text-align:center;
+}
+
+.cta-box::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:15%;
+    right:15%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            var(--cyan),
+            transparent
+        );
+}
+
+.cta-box h2{
+    color:var(--white);
+
+    font-size:clamp(28px,4vw,41px);
+
+    line-height:1.15;
+    letter-spacing:-1.2px;
+}
+
+.cta-box p{
+    max-width:600px;
+
+    margin:9px auto 22px;
+
+    color:var(--muted);
+
+    font-size:12.5px;
+}
+
+.cta-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    padding:13px 24px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.cta-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(255,112,72,.25);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:28px 0 22px;
+
+    border-top:1px solid var(--border);
+
+    background:#080a0f;
+}
+
+.footer{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-brand h3{
+    color:var(--white);
+
+    font-size:15px;
+}
+
+.footer-brand p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+    gap:14px;
+}
+
+.footer-links a{
+    color:var(--muted);
+
+    font-size:10px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--cyan);
+}
+
+.copyright{
+    margin-top:18px;
+
+    color:#5e6570;
+
+    font-size:9px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .process-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+/* =========================================================
+   SMALL DESKTOP / TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .package-grid{
+        grid-template-columns:1fr;
+
+        max-width:620px;
+
+        margin:auto;
+    }
+
+    .package-card{
+        min-height:0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:720px){
+
+    .container{
+        width:calc(100% - 30px);
+
+        max-width:620px;
+    }
+
+
+    /* Back */
+
+    .back-wrap{
+        padding-top:17px;
+    }
+
+    .back-home{
+        padding:9px 14px;
+
+        font-size:11px;
+    }
+
+
+    /* Hero */
+
+    .hero{
+        padding:40px 0 18px;
+    }
+
+    .eyebrow{
+        padding:6px 10px;
+
+        margin-bottom:11px;
+
+        font-size:8px;
+
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(32px,9.5vw,42px);
+
+        line-height:1.08;
+
+        letter-spacing:-1.3px;
+    }
+
+    .hero p{
+        max-width:330px;
+
+        margin-top:11px;
+
+        font-size:11.5px;
+
+        line-height:1.55;
+    }
+
+    .gradient-line{
+        width:65px;
+
+        height:2px;
+
+        margin-top:14px;
+    }
+
+
+    /* Section */
+
+    .section{
+        padding:20px 0 55px;
+    }
+
+    .section-heading{
+        margin-bottom:23px;
+    }
+
+    .section-heading h2{
+        font-size:25px;
+    }
+
+    .section-heading p{
+        font-size:11px;
+    }
+
+
+    /* Packages */
+
+    .package-grid{
+        width:100%;
+
+        gap:25px;
+    }
+
+    .package-card{
+        width:100%;
+
+        padding:22px 17px 19px;
+
+        border-radius:18px;
+    }
+
+    .package-card.featured{
+        border-width:1px;
+    }
+
+    .popular-badge{
+        top:-12px;
+
+        min-width:145px;
+
+        padding:6px 10px;
+
+        font-size:8px;
+    }
+
+    .package-card h3{
+        font-size:20px;
+    }
+
+    .package-description{
+        min-height:0;
+
+        font-size:11px;
+    }
+
+    .price{
+        margin-top:16px;
+    }
+
+    .currency{
+        font-size:19px;
+    }
+
+    .amount{
+        font-size:34px;
+    }
+
+    .duration{
+        font-size:9px;
+    }
+
+    .divider{
+        margin:17px 0;
+    }
+
+    .features{
+        gap:9px;
+    }
+
+    .features li{
+        font-size:10.8px;
+    }
+
+    .package-btn{
+        min-height:45px;
+
+        margin-top:20px;
+
+        font-size:11px;
+    }
+
+
+    /* Services */
+
+    .service-grid{
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .service-card{
+        padding:14px;
+
+        border-radius:14px;
+    }
+
+    .service-left{
+        gap:10px;
+    }
+
+    .service-icon{
+        width:34px;
+        height:34px;
+
+        border-radius:9px;
+
+        font-size:11px;
+    }
+
+    .service-text h3{
+        font-size:11.5px;
+    }
+
+    .service-text p{
+        font-size:8.8px;
+    }
+
+    .service-price{
+        font-size:9.5px;
+    }
+
+
+    /* Process */
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+    .process-card{
+        padding:17px 12px;
+    }
+
+    .process-card h3{
+        font-size:11px;
+    }
+
+    .process-card p{
+        font-size:8.5px;
+    }
+
+
+    /* Terms */
+
+    .terms-grid{
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .term-card{
+        padding:16px;
+
+        border-radius:14px;
+    }
+
+    .term-card h3{
+        font-size:12px;
+    }
+
+    .term-card p{
+        font-size:10px;
+    }
+
+
+    /* CTA */
+
+    .final-cta{
+        padding-bottom:55px;
+    }
+
+    .cta-box{
+        padding:36px 17px;
+
+        border-radius:19px;
+    }
+
+    .cta-box h2{
+        font-size:26px;
+    }
+
+    .cta-box p{
+        font-size:11px;
+
+        margin-bottom:19px;
+    }
+
+    .cta-btn{
+        width:100%;
+
+        font-size:11.5px;
+    }
+
+
+    /* Footer */
+
+    footer{
+        padding:25px 0 20px;
+    }
+
+    .footer{
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+
+        gap:8px 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media(max-width:430px){
+
+    .container{
+        width:calc(100% - 28px);
+    }
+
+    .hero{
+        padding-top:32px;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:10.8px;
+    }
+
+    .section-heading h2{
+        font-size:23px;
+    }
+
+    .package-card{
+        padding:21px 16px 18px;
+    }
+
+    .package-card h3{
+        font-size:19px;
+    }
+
+    .amount{
+        font-size:32px;
+    }
+
+    .features li{
+        font-size:10.3px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACK TO HOME
+========================================================= -->
+
+<div class="back-wrap">
+
+    <div class="container">
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            UI/UX DESIGN & PROTOTYPING
+        </div>
+
+        <h1>
+            Design Better.
+            <span>Build Better Experiences.</span>
+        </h1>
+
+        <p>
+            User-focused UI/UX design for websites, mobile apps and
+            digital products that look professional and feel easy to use.
+        </p>
+
+        <div class="gradient-line"></div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PACKAGES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                UI/UX Design Packages
+            </h2>
+
+            <p>
+                Choose the right design support for your website,
+                application or digital product.
+            </p>
+
+        </div>
+
+
+
+        <div class="package-grid">
+
+
+            <!-- BASIC -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        STARTER
+                    </span>
+
+                    <span class="package-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    UI Starter
+                </h3>
+
+
+                <p class="package-description">
+                    Clean and professional interface design for
+                    small websites or individual digital screens.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">2,999</span>
+
+                    <span class="duration">
+                        / project
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        User Interface Design
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Up to 5 Screens
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Responsive Design
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Modern Visual Style
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Wireframe
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Figma Design File
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Starter
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- GROWTH -->
+
+            <article class="package-card featured">
+
+                <div class="popular-badge">
+                    ⭐ MOST POPULAR
+                </div>
+
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        GROWTH
+                    </span>
+
+                    <span class="package-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    UI/UX Growth
+                </h3>
+
+
+                <p class="package-description">
+                    Complete UI/UX design for businesses that need
+                    a polished website or application experience.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">7,999</span>
+
+                    <span class="duration">
+                        / project
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        UX Research & Planning
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        User Flow & Wireframes
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Up to 12 Screens
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Responsive Website UI
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Interactive Figma Prototype
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Design System Basics
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Figma Source File
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Growth
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- PREMIUM -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        PROFESSIONAL
+                    </span>
+
+                    <span class="package-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Product UI/UX
+                </h3>
+
+
+                <p class="package-description">
+                    End-to-end UI/UX design for websites, mobile apps
+                    and complete digital products.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">₹</span>
+
+                    <span class="amount">14,999</span>
+
+                    <span class="duration">
+                        / project
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        UX Research & Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Complete User Flow
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Wireframes &amp; Prototypes
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        20+ UI Screens
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Website / Mobile App UI
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Interactive Figma Prototype
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Complete Design System
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Developer Handoff Support
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Pro
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                UI/UX Design Services
+            </h2>
+
+            <p>
+                Professional design services for websites,
+                mobile apps and digital products.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <!-- 01 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Website UI Design
+                        </h3>
+
+                        <p>
+                            Modern and responsive website interfaces
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Mobile App UI Design
+                        </h3>
+
+                        <p>
+                            Clean interfaces for Android and iOS apps
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Wireframing
+                        </h3>
+
+                        <p>
+                            Clear layouts and user flows before development
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Figma Prototyping
+                        </h3>
+
+                        <p>
+                            Interactive prototypes for testing ideas
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            UX Research
+                        </h3>
+
+                        <p>
+                            Understand users and improve product experience
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            User Flow Design
+                        </h3>
+
+                        <p>
+                            Simple and logical customer journeys
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Design Systems
+                        </h3>
+
+                        <p>
+                            Consistent colors, typography and components
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 08 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Developer Handoff
+                        </h3>
+
+                        <p>
+                            Organized designs ready for development
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 09 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            E-Commerce UI/UX
+                        </h3>
+
+                        <p>
+                            User-friendly shopping and checkout experiences
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 10 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Dashboard UI Design
+                        </h3>
+
+                        <p>
+                            Clean interfaces for business dashboards
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 11 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            UI Redesign
+                        </h3>
+
+                        <p>
+                            Improve an existing website or app interface
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 12 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Landing Page UI
+                        </h3>
+
+                        <p>
+                            Conversion-focused landing page design
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    ₹999 onwards
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DESIGN PROCESS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Our Design Process
+            </h2>
+
+            <p>
+                A simple process from idea to polished interface.
+            </p>
+
+        </div>
+
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Understand your business, users and project goals.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Plan
+                </h3>
+
+                <p>
+                    Create user flows, structure and wireframes.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    Turn the structure into a modern visual interface.
+                </p>
+
+            </div>
+
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Prototype
+                </h3>
+
+                <p>
+                    Build an interactive prototype ready for review.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     IMPORTANT TERMS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Important Terms
+            </h2>
+
+            <p>
+                Clear terms for a smooth and professional design project.
+            </p>
+
+        </div>
+
+
+
+        <div class="terms-grid">
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment
+                </h3>
+
+                <p>
+                    Payment schedule depends on the selected package
+                    and project scope.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-rotate"></i>
+                    Revisions
+                </h3>
+
+                <p>
+                    Revisions depend on the selected package.
+                    Additional revisions may be charged separately.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-brands fa-figma"></i>
+                    Source Files
+                </h3>
+
+                <p>
+                    Figma source files are included where specifically
+                    mentioned in the selected package.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-file-lines"></i>
+                    Client Content
+                </h3>
+
+                <p>
+                    Client must provide correct business information,
+                    content, images and required references.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-code"></i>
+                    Development
+                </h3>
+
+                <p>
+                    UI/UX design and website/app development are separate
+                    services unless specifically included.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-list-check"></i>
+                    Custom Requirements
+                </h3>
+
+                <p>
+                    Requirements outside the selected package scope
+                    will be quoted separately.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Have a Design Idea?
+            </h2>
+
+            <p>
+                Let's turn your idea into a clean, professional and
+                user-friendly digital experience.
+            </p>
+
+            <a href="contact.html" class="cta-btn">
+
+                Start Your Design
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer">
+
+
+            <div class="footer-brand">
+
+                <h3>
+                    ZippyGrow Media
+                </h3>
+
+                <p>
+                    Digital Growth • Branding • Marketing
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://www.zippygrowmedia.in"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    www.zippygrowmedia.in
+
+                </a>
+
+                <a href="mailto:zippygrowmedia@gmail.com">
+
+                    zippygrowmedia@gmail.com
+
+                </a>
+
+                <a href="tel:+919534680179">
+
+                    9534680179
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ZippyGrow Media. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
