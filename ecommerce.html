@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Business Marketing | ZippyGrow Media</title>
+    <title>E-Commerce Solutions | ZippyGrow Media</title>
 
     <meta name="description"
-        content="Grow your business with professional social media marketing, lead generation, Meta Ads, Google Ads, website development, branding and promotional content by ZippyGrow Media.">
-
-    <meta name="keywords"
-        content="Business Marketing, Social Media Marketing, Meta Ads, Google Ads, Lead Generation, Website Development, ZippyGrow Media">
+        content="Professional E-Commerce website development, online store setup, product cataloguing, payment gateway integration, shipping, SEO and digital marketing by ZippyGrow Media.">
 
     <meta name="author" content="ZippyGrow Media">
 
-    <meta name="theme-color" content="#0b0d12">
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,1280 +19,2266 @@
         rel="stylesheet"
     >
 
-    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <style>
+<style>
 
-        /* =========================================================
-           ROOT
-        ========================================================= */
+/* =========================================================
+   ROOT
+========================================================= */
 
-        :root {
-            --bg: #0b0d12;
-            --bg-soft: #10131a;
+:root{
+    --bg:#0b0d12;
+    --card:#171a21;
+    --card-hover:#1b1f27;
 
-            --card: #171a21;
-            --card-hover: #1b1f27;
+    --border:#292e39;
+    --border-light:#343b48;
 
-            --border: #292e39;
-            --border-light: #343b48;
+    --white:#f7f8fa;
+    --text:#d7dbe3;
+    --muted:#9299a7;
 
-            --white: #f7f8fa;
-            --text: #d7dbe3;
-            --muted: #9299a7;
+    --orange:#ff7048;
+    --orange-light:#ff9a5c;
+    --coral:#ff5360;
 
-            --orange: #ff7048;
-            --orange-light: #ff9a5c;
-            --coral: #ff5360;
+    --cyan:#61e8ff;
+    --green:#00ee88;
 
-            --cyan: #61e8ff;
+    --radius:21px;
+}
 
-            --green: #00ee88;
 
-            --radius: 21px;
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* =========================================================
-           RESET
-        ========================================================= */
+html{
+    scroll-behavior:smooth;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+    min-height:100vh;
 
-        html {
-            scroll-behavior: smooth;
-        }
+    overflow-x:hidden;
 
-        body {
-            min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255,112,72,.08),
+            transparent 35%
+        ),
+        var(--bg);
 
-            overflow-x: hidden;
+    color:var(--text);
 
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    rgba(255, 112, 72, 0.08),
-                    transparent 35%
-                ),
-                var(--bg);
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
 
-            color: var(--text);
+    line-height:1.6;
+}
 
-            font-family:
-                "Inter",
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-            line-height: 1.6;
-        }
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:0 auto;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
 
-        .container {
-            width: min(1180px, calc(100% - 40px));
-            margin: 0 auto;
-        }
+/* =========================================================
+   BACK HOME
+========================================================= */
 
+.back-wrap{
+    padding-top:24px;
+}
 
-        /* =========================================================
-           BACK TO HOME
-        ========================================================= */
+.back-home{
+    display:inline-flex;
 
-        .back-wrap {
-            padding-top: 25px;
-        }
+    align-items:center;
 
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
+    gap:9px;
 
-            padding: 10px 17px;
+    padding:10px 17px;
 
-            border: 1px solid var(--border);
-            border-radius: 999px;
+    border:1px solid var(--border);
 
-            background: rgba(255, 255, 255, 0.025);
+    border-radius:999px;
 
-            color: var(--text);
+    background:rgba(255,255,255,.025);
 
-            font-size: 12px;
-            font-weight: 600;
+    color:var(--text);
 
-            transition: 0.3s ease;
-        }
+    font-size:12px;
 
-        .back-home:hover {
-            transform: translateX(-3px);
+    font-weight:600;
 
-            color: #fff;
+    transition:.3s ease;
+}
 
-            border-color: rgba(97, 232, 255, 0.35);
+.back-home:hover{
+    transform:translateX(-3px);
 
-            background: rgba(97, 232, 255, 0.05);
-        }
+    color:#fff;
 
+    border-color:
+        rgba(97,232,255,.35);
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+    background:
+        rgba(97,232,255,.05);
+}
 
-        .hero {
-            text-align: center;
 
-            padding: 58px 0 28px;
-        }
+/* =========================================================
+   HERO
+========================================================= */
 
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+.hero{
+    padding:58px 0 28px;
 
-            padding: 7px 13px;
+    text-align:center;
+}
 
-            margin-bottom: 14px;
+.eyebrow{
+    display:inline-flex;
 
-            border: 1px solid rgba(97, 232, 255, 0.2);
-            border-radius: 999px;
+    align-items:center;
+    justify-content:center;
 
-            background: rgba(97, 232, 255, 0.04);
+    padding:7px 13px;
 
-            color: var(--cyan);
+    margin-bottom:14px;
 
-            font-size: 9px;
-            font-weight: 800;
+    border:
+        1px solid rgba(97,232,255,.2);
 
-            letter-spacing: 1.5px;
+    border-radius:999px;
 
-            text-transform: uppercase;
-        }
+    background:
+        rgba(97,232,255,.04);
 
-        .hero h1 {
-            max-width: 900px;
+    color:var(--cyan);
 
-            margin: 0 auto;
+    font-size:9px;
 
-            color: var(--white);
+    font-weight:800;
 
-            font-size: clamp(40px, 6vw, 72px);
+    letter-spacing:1.5px;
 
-            line-height: 1.04;
+    text-transform:uppercase;
+}
 
-            letter-spacing: -2.7px;
+.hero h1{
+    max-width:900px;
 
-            font-weight: 800;
-        }
+    margin:0 auto;
 
-        .hero h1 span {
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--orange),
-                    var(--coral),
-                    var(--orange-light)
-                );
+    color:var(--white);
 
-            -webkit-background-clip: text;
-            background-clip: text;
+    font-size:
+        clamp(40px,6vw,72px);
 
-            color: transparent;
-        }
+    line-height:1.04;
 
-        .hero p {
-            max-width: 710px;
+    letter-spacing:-2.7px;
 
-            margin: 16px auto 0;
+    font-weight:800;
+}
 
-            color: var(--muted);
+.hero h1 span{
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--orange-light)
+        );
 
-            font-size: 14px;
+    -webkit-background-clip:text;
 
-            line-height: 1.65;
-        }
+    background-clip:text;
 
-        .gradient-line {
-            width: 85px;
-            height: 3px;
+    color:transparent;
+}
 
-            margin: 19px auto 0;
+.hero p{
+    max-width:700px;
 
-            border-radius: 50px;
+    margin:16px auto 0;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--orange),
-                    var(--coral),
-                    var(--cyan)
-                );
+    color:var(--muted);
 
-            box-shadow:
-                0 0 18px rgba(255, 112, 72, 0.18);
-        }
+    font-size:14px;
 
+    line-height:1.65;
+}
 
-        /* =========================================================
-           SECTION
-        ========================================================= */
+.gradient-line{
+    width:85px;
 
-        .section {
-            padding: 30px 0 75px;
-        }
+    height:3px;
 
-        .section-heading {
-            text-align: center;
+    margin:19px auto 0;
 
-            margin-bottom: 30px;
-        }
+    border-radius:50px;
 
-        .section-heading h2 {
-            color: var(--white);
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--cyan)
+        );
 
-            font-size: clamp(28px, 4vw, 41px);
+    box-shadow:
+        0 0 18px
+        rgba(255,112,72,.18);
+}
 
-            line-height: 1.15;
 
-            letter-spacing: -1.3px;
-        }
+/* =========================================================
+   SECTION
+========================================================= */
 
-        .section-heading p {
-            max-width: 650px;
+.section{
+    padding:30px 0 72px;
+}
 
-            margin: 8px auto 0;
+.section-heading{
+    text-align:center;
 
-            color: var(--muted);
+    margin-bottom:30px;
+}
 
-            font-size: 12.5px;
-        }
+.section-heading h2{
+    color:var(--white);
 
+    font-size:
+        clamp(28px,4vw,41px);
 
-        /* =========================================================
-           MARKETING PACKAGES
-        ========================================================= */
+    line-height:1.15;
 
-        .package-grid {
-            display: grid;
+    letter-spacing:-1.3px;
+}
 
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+.section-heading p{
+    max-width:650px;
 
-            gap: 22px;
-        }
+    margin:8px auto 0;
 
-        .package-card {
-            position: relative;
+    color:var(--muted);
 
-            display: flex;
-            flex-direction: column;
+    font-size:12.5px;
+}
 
-            min-height: 525px;
 
-            padding: 28px 26px 24px;
+/* =========================================================
+   E-COMMERCE PACKAGES
+========================================================= */
 
-            border: 1px solid var(--border);
+.package-grid{
+    display:grid;
 
-            border-radius: var(--radius);
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.025),
-                    rgba(255, 255, 255, 0.007)
-                ),
-                var(--card);
+    gap:22px;
+}
 
-            transition:
-                transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+.package-card{
+    position:relative;
 
-        .package-card:hover {
-            transform: translateY(-6px);
+    display:flex;
 
-            border-color: var(--border-light);
+    flex-direction:column;
 
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.25);
-        }
+    min-height:560px;
 
-        .package-card.featured {
-            border: 2px solid var(--orange);
+    padding:28px 26px 24px;
 
-            box-shadow:
-                0 0 0 1px rgba(255, 112, 72, 0.08),
-                0 25px 65px rgba(255, 112, 72, 0.11);
-        }
+    border:
+        1px solid var(--border);
 
-        .popular-badge {
-            position: absolute;
+    border-radius:var(--radius);
 
-            top: -14px;
-            left: 50%;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.007)
+        ),
+        var(--card);
 
-            transform: translateX(-50%);
+    transition:.3s ease;
+}
 
-            min-width: 153px;
+.package-card:hover{
+    transform:translateY(-6px);
 
-            padding: 6px 12px;
+    border-color:
+        var(--border-light);
 
-            border-radius: 999px;
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.25);
+}
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--orange),
-                    var(--coral)
-                );
+.package-card.featured{
+    border:
+        2px solid var(--orange);
 
-            color: #fff;
+    box-shadow:
+        0 0 0 1px
+        rgba(255,112,72,.08),
 
-            text-align: center;
+        0 25px 65px
+        rgba(255,112,72,.11);
+}
 
-            font-size: 9px;
+.popular-badge{
+    position:absolute;
 
-            font-weight: 800;
+    top:-14px;
 
-            box-shadow:
-                0 8px 25px rgba(255, 112, 72, 0.2);
-        }
+    left:50%;
 
-        .package-top {
-            display: flex;
+    transform:translateX(-50%);
 
-            align-items: center;
+    min-width:155px;
 
-            justify-content: space-between;
-        }
+    padding:6px 12px;
 
-        .package-type {
-            color: var(--cyan);
+    border-radius:999px;
 
-            font-size: 9px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral)
+        );
 
-            font-weight: 800;
+    color:#fff;
 
-            letter-spacing: 1.4px;
+    text-align:center;
 
-            text-transform: uppercase;
-        }
+    font-size:9px;
 
-        .package-number {
-            color: #59616e;
+    font-weight:800;
+}
 
-            font-size: 11px;
+.package-top{
+    display:flex;
 
-            font-weight: 800;
-        }
+    align-items:center;
 
-        .package-card h3 {
-            margin-top: 13px;
+    justify-content:space-between;
+}
 
-            color: var(--white);
+.package-type{
+    color:var(--cyan);
 
-            font-size: 23px;
+    font-size:9px;
 
-            line-height: 1.25;
-        }
+    font-weight:800;
 
-        .package-description {
-            min-height: 52px;
+    letter-spacing:1.4px;
 
-            margin-top: 7px;
+    text-transform:uppercase;
+}
 
-            color: var(--muted);
+.package-number{
+    color:#59616e;
 
-            font-size: 11.5px;
+    font-size:11px;
 
-            line-height: 1.55;
-        }
+    font-weight:800;
+}
 
+.package-card h3{
+    margin-top:13px;
 
-        /* =========================================================
-           PRICE
-        ========================================================= */
+    color:var(--white);
 
-        .price {
-            display: flex;
+    font-size:22px;
 
-            align-items: baseline;
+    line-height:1.25;
+}
 
-            gap: 4px;
+.package-description{
+    min-height:55px;
 
-            margin-top: 20px;
+    margin-top:7px;
 
-            white-space: nowrap;
-        }
+    color:var(--muted);
 
-        .currency {
-            color: var(--orange-light);
+    font-size:11.5px;
 
-            font-size: 21px;
+    line-height:1.55;
+}
 
-            font-weight: 700;
-        }
 
-        .amount {
-            color: var(--white);
+/* =========================================================
+   PRICE
+========================================================= */
 
-            font-size: 39px;
+.price{
+    display:flex;
 
-            line-height: 1;
+    align-items:baseline;
 
-            font-weight: 800;
+    gap:4px;
 
-            letter-spacing: -1.5px;
-        }
+    margin-top:20px;
 
-        .duration {
-            color: var(--muted);
+    white-space:nowrap;
+}
 
-            font-size: 10px;
-        }
+.currency{
+    color:var(--orange-light);
 
+    font-size:21px;
 
-        /* =========================================================
-           DIVIDER
-        ========================================================= */
+    font-weight:700;
+}
 
-        .divider {
-            width: 100%;
+.amount{
+    color:var(--white);
 
-            height: 1px;
+    font-size:39px;
 
-            margin: 20px 0;
+    line-height:1;
 
-            background: var(--border);
-        }
+    font-weight:800;
 
+    letter-spacing:-1.5px;
+}
 
-        /* =========================================================
-           FEATURES
-        ========================================================= */
+.duration{
+    color:var(--muted);
 
-        .features {
-            display: flex;
+    font-size:10px;
+}
 
-            flex-direction: column;
 
-            gap: 10px;
+/* =========================================================
+   DIVIDER
+========================================================= */
 
-            list-style: none;
-        }
+.divider{
+    height:1px;
 
-        .features li {
-            display: flex;
+    margin:20px 0;
 
-            align-items: flex-start;
+    background:var(--border);
+}
 
-            gap: 9px;
 
-            color: var(--text);
+/* =========================================================
+   FEATURES
+========================================================= */
 
-            font-size: 11.5px;
+.features{
+    display:flex;
 
-            line-height: 1.45;
-        }
+    flex-direction:column;
 
-        .features i {
-            flex: 0 0 auto;
+    gap:10px;
 
-            margin-top: 3px;
+    list-style:none;
+}
 
-            color: var(--green);
+.features li{
+    display:flex;
 
-            font-size: 10px;
-        }
+    align-items:flex-start;
 
+    gap:9px;
 
-        /* =========================================================
-           PACKAGE BUTTON
-        ========================================================= */
+    color:var(--text);
 
-        .package-btn {
-            display: flex;
+    font-size:11.5px;
 
-            align-items: center;
-            justify-content: center;
+    line-height:1.45;
+}
 
-            gap: 8px;
+.features i{
+    flex:0 0 auto;
 
-            width: 100%;
+    margin-top:3px;
 
-            min-height: 47px;
+    color:var(--green);
 
-            margin-top: auto;
+    font-size:10px;
+}
 
-            padding: 11px 15px;
 
-            border: 1px solid var(--border-light);
+/* =========================================================
+   PACKAGE BUTTON
+========================================================= */
 
-            border-radius: 12px;
+.package-btn{
+    display:flex;
 
-            background: rgba(255, 255, 255, 0.02);
+    align-items:center;
 
-            color: #fff;
+    justify-content:center;
 
-            font-size: 12px;
+    gap:8px;
 
-            font-weight: 800;
+    width:100%;
 
-            transition: 0.3s ease;
-        }
+    min-height:47px;
 
-        .package-btn:hover {
-            border-color: var(--cyan);
+    margin-top:auto;
 
-            background: rgba(97, 232, 255, 0.06);
-        }
+    padding:11px 15px;
 
-        .featured .package-btn {
-            border: none;
+    border:
+        1px solid var(--border-light);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--orange),
-                    var(--coral)
-                );
+    border-radius:12px;
 
-            box-shadow:
-                0 12px 30px rgba(255, 112, 72, 0.2);
-        }
+    background:
+        rgba(255,255,255,.02);
 
+    color:#fff;
 
-        /* =========================================================
-           WHAT WE CAN DO
-        ========================================================= */
+    font-size:12px;
 
-        .service-grid {
-            display: grid;
+    font-weight:800;
 
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+    transition:.3s ease;
+}
 
-            gap: 13px;
-        }
+.package-btn:hover{
+    border-color:var(--cyan);
 
-        .service-card {
-            display: flex;
+    background:
+        rgba(97,232,255,.06);
+}
 
-            align-items: center;
+.featured .package-btn{
+    border:none;
 
-            justify-content: space-between;
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
 
-            gap: 15px;
+    box-shadow:
+        0 12px 30px
+        rgba(255,112,72,.2);
+}
 
-            padding: 17px 19px;
 
-            border: 1px solid var(--border);
+/* =========================================================
+   E-COMMERCE SERVICES
+========================================================= */
 
-            border-radius: 15px;
+.service-grid{
+    display:grid;
 
-            background: var(--card);
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
 
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                background 0.25s ease;
-        }
+    gap:13px;
+}
 
-        .service-card:hover {
-            transform: translateY(-3px);
+.service-card{
+    display:flex;
 
-            border-color:
-                rgba(97, 232, 255, 0.22);
+    align-items:center;
 
-            background:
-                var(--card-hover);
-        }
+    justify-content:space-between;
 
-        .service-left {
-            display: flex;
+    gap:15px;
 
-            align-items: center;
+    padding:17px 19px;
 
-            gap: 12px;
+    border:
+        1px solid var(--border);
 
-            min-width: 0;
-        }
+    border-radius:15px;
 
-        .service-icon {
-            flex:
-                0 0 auto;
+    background:var(--card);
 
-            width: 39px;
-            height: 39px;
+    transition:.3s ease;
+}
 
-            display: flex;
+.service-card:hover{
+    transform:translateY(-3px);
 
-            align-items: center;
-            justify-content: center;
+    border-color:
+        rgba(97,232,255,.22);
 
-            border-radius: 10px;
+    background:
+        var(--card-hover);
+}
 
-            background:
-                rgba(97, 232, 255, 0.055);
+.service-left{
+    display:flex;
 
-            color: var(--cyan);
+    align-items:center;
 
-            font-size: 13px;
-        }
+    gap:12px;
 
-        .service-text h3 {
-            color: var(--white);
+    min-width:0;
+}
 
-            font-size: 12.5px;
+.service-icon{
+    flex:0 0 auto;
 
-            line-height: 1.35;
-        }
+    width:39px;
+    height:39px;
 
-        .service-text p {
-            margin-top: 2px;
+    display:flex;
 
-            color: var(--muted);
+    align-items:center;
 
-            font-size: 9.5px;
+    justify-content:center;
 
-            line-height: 1.4;
-        }
+    border-radius:10px;
 
-        .service-price {
-            flex:
-                0 0 auto;
+    background:
+        rgba(97,232,255,.055);
 
-            color: var(--orange-light);
+    color:var(--cyan);
 
-            font-size: 11px;
+    font-size:13px;
+}
 
-            font-weight: 800;
+.service-text h3{
+    color:var(--white);
 
-            white-space: nowrap;
-        }
+    font-size:12.5px;
 
+    line-height:1.35;
+}
 
-        /* =========================================================
-           IMPORTANT TERMS
-        ========================================================= */
+.service-text p{
+    margin-top:2px;
 
-        .terms-grid {
-            display: grid;
+    color:var(--muted);
 
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
+    font-size:9.5px;
 
-            gap: 13px;
-        }
+    line-height:1.4;
+}
 
-        .term-card {
-            padding: 19px;
+.service-price{
+    flex:0 0 auto;
 
-            border: 1px solid var(--border);
+    color:var(--orange-light);
 
-            border-radius: 15px;
+    font-size:11px;
 
-            background: var(--card);
-        }
+    font-weight:800;
 
-        .term-card h3 {
-            display: flex;
+    white-space:nowrap;
+}
 
-            align-items: center;
 
-            gap: 9px;
+/* =========================================================
+   TERMS
+========================================================= */
 
-            color: var(--white);
+.terms-grid{
+    display:grid;
 
-            font-size: 13px;
-        }
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
 
-        .term-card h3 i {
-            color: var(--orange-light);
+    gap:13px;
+}
 
-            font-size: 12px;
-        }
+.term-card{
+    padding:19px;
 
-        .term-card p {
-            margin-top: 6px;
+    border:
+        1px solid var(--border);
 
-            color: var(--muted);
+    border-radius:15px;
 
-            font-size: 10.5px;
+    background:var(--card);
+}
 
-            line-height: 1.6;
-        }
+.term-card h3{
+    display:flex;
 
+    align-items:center;
 
-        /* =========================================================
-           FINAL CTA
-        ========================================================= */
+    gap:9px;
 
-        .final-cta {
-            padding: 0 0 75px;
-        }
+    color:var(--white);
 
-        .cta-box {
-            position: relative;
+    font-size:13px;
+}
 
-            overflow: hidden;
+.term-card h3 i{
+    color:var(--orange-light);
 
-            padding: 52px 25px;
+    font-size:12px;
+}
 
-            border: 1px solid
-                rgba(255, 112, 72, 0.22);
+.term-card p{
+    margin-top:6px;
 
-            border-radius: 24px;
+    color:var(--muted);
 
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(255, 112, 72, 0.12),
-                    transparent 55%
-                ),
-                var(--card);
+    font-size:10.5px;
 
-            text-align: center;
-        }
+    line-height:1.6;
+}
 
-        .cta-box::before {
-            content: "";
 
-            position: absolute;
+/* =========================================================
+   CTA
+========================================================= */
 
-            top: 0;
-            left: 15%;
-            right: 15%;
+.final-cta{
+    padding:0 0 75px;
+}
 
-            height: 1px;
+.cta-box{
+    position:relative;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--orange),
-                    var(--cyan),
-                    transparent
-                );
-        }
+    overflow:hidden;
 
-        .cta-box h2 {
-            color: var(--white);
+    padding:50px 25px;
 
-            font-size:
-                clamp(28px, 4vw, 41px);
+    border:
+        1px solid
+        rgba(255,112,72,.22);
 
-            line-height: 1.15;
+    border-radius:24px;
 
-            letter-spacing: -1.2px;
-        }
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,112,72,.12),
+            transparent 55%
+        ),
+        var(--card);
 
-        .cta-box p {
-            max-width: 600px;
+    text-align:center;
+}
 
-            margin:
-                9px auto 22px;
+.cta-box::before{
+    content:"";
 
-            color: var(--muted);
+    position:absolute;
 
-            font-size: 12.5px;
-        }
+    top:0;
 
-        .cta-btn {
-            display: inline-flex;
+    left:15%;
+    right:15%;
 
-            align-items: center;
-            justify-content: center;
+    height:1px;
 
-            gap: 9px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            var(--cyan),
+            transparent
+        );
+}
 
-            padding: 13px 24px;
+.cta-box h2{
+    color:var(--white);
 
-            border-radius: 12px;
+    font-size:
+        clamp(28px,4vw,41px);
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--orange),
-                    var(--coral)
-                );
+    line-height:1.15;
 
-            color: #fff;
+    letter-spacing:-1.2px;
+}
 
-            font-size: 12px;
+.cta-box p{
+    max-width:600px;
 
-            font-weight: 800;
+    margin:9px auto 22px;
 
-            transition: 0.3s ease;
-        }
+    color:var(--muted);
 
-        .cta-btn:hover {
-            transform: translateY(-3px);
+    font-size:12.5px;
+}
 
-            box-shadow:
-                0 15px 35px
-                rgba(255, 112, 72, 0.25);
-        }
+.cta-btn{
+    display:inline-flex;
 
+    align-items:center;
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+    justify-content:center;
 
-        footer {
-            padding: 28px 0 22px;
+    gap:9px;
 
-            border-top:
-                1px solid var(--border);
+    padding:13px 24px;
 
-            background: #080a0f;
-        }
+    border-radius:12px;
 
-        .footer {
-            display: flex;
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
 
-            align-items: center;
+    color:#fff;
 
-            justify-content: space-between;
+    font-size:12px;
 
-            gap: 20px;
-        }
+    font-weight:800;
 
-        .footer-brand h3 {
-            color: var(--white);
+    transition:.3s ease;
+}
 
-            font-size: 15px;
-        }
+.cta-btn:hover{
+    transform:translateY(-3px);
 
-        .footer-brand p {
-            margin-top: 3px;
+    box-shadow:
+        0 15px 35px
+        rgba(255,112,72,.25);
+}
 
-            color: var(--muted);
 
-            font-size: 10px;
-        }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-        .footer-links {
-            display: flex;
+footer{
+    padding:28px 0 22px;
 
-            flex-wrap: wrap;
+    border-top:
+        1px solid var(--border);
 
-            justify-content: flex-end;
+    background:#080a0f;
+}
 
-            gap: 14px;
-        }
+.footer{
+    display:flex;
 
-        .footer-links a {
-            color: var(--muted);
+    align-items:center;
 
-            font-size: 10px;
+    justify-content:space-between;
 
-            transition: 0.3s ease;
-        }
+    gap:20px;
+}
 
-        .footer-links a:hover {
-            color: var(--cyan);
-        }
+.footer-brand h3{
+    color:var(--white);
 
-        .copyright {
-            margin-top: 18px;
+    font-size:15px;
+}
 
-            color: #5e6570;
+.footer-brand p{
+    margin-top:3px;
 
-            font-size: 9px;
+    color:var(--muted);
 
-            text-align: center;
-        }
+    font-size:10px;
+}
 
+.footer-links{
+    display:flex;
 
-        /* =========================================================
-           TABLET
-        ========================================================= */
+    flex-wrap:wrap;
 
-        @media (max-width: 900px) {
+    justify-content:flex-end;
 
-            .package-grid {
-                grid-template-columns: 1fr;
+    gap:14px;
+}
 
-                max-width: 620px;
+.footer-links a{
+    color:var(--muted);
 
-                margin: 0 auto;
-            }
+    font-size:10px;
 
-            .package-card {
-                min-height: 0;
-            }
+    transition:.3s ease;
+}
 
-        }
+.footer-links a:hover{
+    color:var(--cyan);
+}
 
+.copyright{
+    margin-top:18px;
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
+    color:#5e6570;
 
-        @media (max-width: 720px) {
+    font-size:9px;
 
-            .container {
-                width:
-                    calc(100% - 30px);
+    text-align:center;
+}
 
-                max-width: 620px;
-            }
 
+/* =========================================================
+   TABLET
+========================================================= */
 
-            /* Back */
+@media(max-width:900px){
 
-            .back-wrap {
-                padding-top: 17px;
-            }
+    .package-grid{
+        grid-template-columns:1fr;
 
-            .back-home {
-                padding: 9px 14px;
+        max-width:620px;
 
-                font-size: 11px;
-            }
+        margin:auto;
+    }
 
+    .package-card{
+        min-height:0;
+    }
 
-            /* Hero */
+}
 
-            .hero {
-                padding:
-                    40px 0 18px;
-            }
 
-            .eyebrow {
-                padding: 6px 10px;
+/* =========================================================
+   MOBILE
+========================================================= */
 
-                margin-bottom: 11px;
+@media(max-width:720px){
 
-                font-size: 8px;
+    .container{
+        width:calc(100% - 30px);
 
-                letter-spacing: 1px;
-            }
+        max-width:620px;
+    }
 
-            .hero h1 {
-                font-size:
-                    clamp(32px, 9.5vw, 42px);
 
-                line-height: 1.08;
+    /* Back */
 
-                letter-spacing: -1.3px;
-            }
+    .back-wrap{
+        padding-top:17px;
+    }
 
-            .hero p {
-                max-width: 330px;
+    .back-home{
+        padding:9px 14px;
 
-                margin-top: 11px;
+        font-size:11px;
+    }
 
-                font-size: 11.5px;
 
-                line-height: 1.55;
-            }
+    /* Hero */
 
-            .gradient-line {
-                width: 65px;
-                height: 2px;
+    .hero{
+        padding:40px 0 18px;
+    }
 
-                margin-top: 14px;
-            }
+    .eyebrow{
+        padding:6px 10px;
 
+        margin-bottom:11px;
 
-            /* Sections */
+        font-size:8px;
 
-            .section {
-                padding:
-                    20px 0 55px;
-            }
+        letter-spacing:1px;
+    }
 
-            .section-heading {
-                margin-bottom: 23px;
-            }
+    .hero h1{
+        font-size:
+            clamp(32px,9.5vw,42px);
 
-            .section-heading h2 {
-                font-size: 25px;
-            }
+        line-height:1.08;
 
-            .section-heading p {
-                font-size: 11px;
-            }
+        letter-spacing:-1.3px;
+    }
 
+    .hero p{
+        max-width:330px;
 
-            /* Packages */
+        margin-top:11px;
 
-            .package-grid {
-                width: 100%;
+        font-size:11.5px;
 
-                gap: 25px;
-            }
+        line-height:1.55;
+    }
 
-            .package-card {
-                width: 100%;
+    .gradient-line{
+        width:65px;
 
-                padding:
-                    22px 17px 19px;
+        height:2px;
 
-                border-radius: 18px;
-            }
+        margin-top:14px;
+    }
 
-            .package-card.featured {
-                border-width: 1px;
-            }
 
-            .popular-badge {
-                top: -12px;
+    /* Section */
 
-                min-width: 145px;
+    .section{
+        padding:20px 0 55px;
+    }
 
-                padding: 6px 10px;
+    .section-heading{
+        margin-bottom:23px;
+    }
 
-                font-size: 8px;
-            }
+    .section-heading h2{
+        font-size:25px;
+    }
 
-            .package-card h3 {
-                font-size: 20px;
-            }
+    .section-heading p{
+        font-size:11px;
+    }
 
-            .package-description {
-                min-height: 0;
 
-                font-size: 11px;
-            }
+    /* Packages */
 
-            .price {
-                margin-top: 16px;
-            }
+    .package-grid{
+        width:100%;
 
-            .currency {
-                font-size: 19px;
-            }
+        gap:25px;
+    }
 
-            .amount {
-                font-size: 34px;
-            }
+    .package-card{
+        width:100%;
 
-            .duration {
-                font-size: 9px;
-            }
+        padding:
+            22px 17px 19px;
 
-            .divider {
-                margin: 17px 0;
-            }
+        border-radius:18px;
+    }
 
-            .features {
-                gap: 9px;
-            }
+    .package-card.featured{
+        border-width:1px;
+    }
 
-            .features li {
-                font-size: 10.8px;
-            }
+    .popular-badge{
+        top:-12px;
 
-            .package-btn {
-                min-height: 45px;
+        min-width:145px;
 
-                margin-top: 20px;
+        padding:6px 10px;
 
-                font-size: 11px;
-            }
+        font-size:8px;
+    }
 
+    .package-card h3{
+        font-size:20px;
+    }
 
-            /* Services */
+    .package-description{
+        min-height:0;
 
-            .service-grid {
-                grid-template-columns: 1fr;
+        font-size:11px;
+    }
 
-                gap: 10px;
-            }
+    .price{
+        margin-top:16px;
+    }
 
-            .service-card {
-                padding: 14px;
+    .currency{
+        font-size:19px;
+    }
 
-                border-radius: 14px;
-            }
+    .amount{
+        font-size:34px;
+    }
 
-            .service-left {
-                gap: 10px;
-            }
+    .duration{
+        font-size:9px;
+    }
 
-            .service-icon {
-                width: 34px;
-                height: 34px;
+    .divider{
+        margin:17px 0;
+    }
 
-                border-radius: 9px;
+    .features{
+        gap:9px;
+    }
 
-                font-size: 11px;
-            }
+    .features li{
+        font-size:10.8px;
+    }
 
-            .service-text h3 {
-                font-size: 11.5px;
-            }
+    .package-btn{
+        min-height:45px;
 
-            .service-text p {
-                font-size: 8.8px;
-            }
+        margin-top:20px;
 
-            .service-price {
-                font-size: 9.5px;
-            }
+        font-size:11px;
+    }
 
 
-            /* Terms */
+    /* Services */
 
-            .terms-grid {
-                grid-template-columns: 1fr;
+    .service-grid{
+        grid-template-columns:1fr;
 
-                gap: 10px;
-            }
+        gap:10px;
+    }
 
-            .term-card {
-                padding: 16px;
+    .service-card{
+        padding:14px;
 
-                border-radius: 14px;
-            }
+        border-radius:14px;
+    }
 
-            .term-card h3 {
-                font-size: 12px;
-            }
+    .service-left{
+        gap:10px;
+    }
 
-            .term-card p {
-                font-size: 10px;
-            }
+    .service-icon{
+        width:34px;
+        height:34px;
 
+        border-radius:9px;
 
-            /* CTA */
+        font-size:11px;
+    }
 
-            .final-cta {
-                padding-bottom: 55px;
-            }
+    .service-text h3{
+        font-size:11.5px;
+    }
 
-            .cta-box {
-                padding:
-                    36px 17px;
+    .service-text p{
+        font-size:8.8px;
+    }
 
-                border-radius: 19px;
-            }
+    .service-price{
+        font-size:9.5px;
+    }
 
-            .cta-box h2 {
-                font-size: 26px;
-            }
 
-            .cta-box p {
-                font-size: 11px;
+    /* Terms */
 
-                margin-bottom: 19px;
-            }
+    .terms-grid{
+        grid-template-columns:1fr;
 
-            .cta-btn {
-                width: 100%;
+        gap:10px;
+    }
 
-                font-size: 11.5px;
-            }
+    .term-card{
+        padding:16px;
 
+        border-radius:14px;
+    }
 
-            /* Footer */
+    .term-card h3{
+        font-size:12px;
+    }
 
-            footer {
-                padding:
-                    25px 0 20px;
-            }
+    .term-card p{
+        font-size:10px;
+    }
 
-            .footer {
-                flex-direction: column;
 
-                align-items: center;
+    /* CTA */
 
-                text-align: center;
-            }
+    .final-cta{
+        padding-bottom:55px;
+    }
 
-            .footer-links {
-                justify-content: center;
+    .cta-box{
+        padding:36px 17px;
 
-                gap: 8px 13px;
-            }
+        border-radius:19px;
+    }
 
-        }
+    .cta-box h2{
+        font-size:26px;
+    }
 
+    .cta-box p{
+        font-size:11px;
 
-        /* =========================================================
-           SMALL PHONE
-        ========================================================= */
+        margin-bottom:19px;
+    }
 
-        @media (max-width: 430px) {
+    .cta-btn{
+        width:100%;
 
-            .container {
-                width:
-                    calc(100% - 28px);
-            }
+        font-size:11.5px;
+    }
 
-            .hero {
-                padding-top: 32px;
-            }
 
-            .hero h1 {
-                font-size: 33px;
-            }
+    /* Footer */
 
-            .hero p {
-                font-size: 10.8px;
-            }
+    footer{
+        padding:25px 0 20px;
+    }
 
-            .section-heading h2 {
-                font-size: 23px;
-            }
+    .footer{
+        flex-direction:column;
 
-            .package-card {
-                padding:
-                    21px 16px 18px;
-            }
+        align-items:center;
 
-            .package-card h3 {
-                font-size: 19px;
-            }
+        text-align:center;
+    }
 
-            .amount {
-                font-size: 32px;
-            }
+    .footer-links{
+        justify-content:center;
 
-            .features li {
-                font-size: 10.3px;
-            }
+        gap:8px 13px;
+    }
 
-        }
+}
 
-    </style>
 
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media(max-width:430px){
+
+    .container{
+        width:calc(100% - 28px);
+    }
+
+    .hero{
+        padding-top:32px;
+    }
+
+    .hero h1{
+        font-size:33px;
+    }
+
+    .hero p{
+        font-size:10.8px;
+    }
+
+    .section-heading h2{
+        font-size:23px;
+    }
+
+    .package-card{
+        padding:
+            21px 16px 18px;
+    }
+
+    .package-card h3{
+        font-size:19px;
+    }
+
+    .amount{
+        font-size:32px;
+    }
+
+    .features li{
+        font-size:10.3px;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- =========================================================
-         BACK TO HOME
-    ========================================================= -->
+<!-- =========================================================
+     BACK TO HOME
+========================================================= -->
 
-    <div class="back-wrap">
+<div class="back-wrap">
 
-        <div class="container">
+    <div class="container">
 
-            <a href="index.html" class="back-home">
+        <a href="index.html" class="back-home">
 
-                <i class="fa-solid fa-arrow-left"></i>
+            <i class="fa-solid fa-arrow-left"></i>
 
-                Back to Home
+            Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            E-COMMERCE SOLUTIONS
+        </div>
+
+        <h1>
+            Build Your Online Store.
+            <span>Sell With Confidence.</span>
+        </h1>
+
+        <p>
+            Complete e-commerce solutions to showcase your products,
+            accept online payments and build a professional online store.
+        </p>
+
+        <div class="gradient-line"></div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     E-COMMERCE PACKAGES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                E-Commerce Packages
+            </h2>
+
+            <p>
+                Choose the right solution according to your products,
+                business size and online selling requirements.
+            </p>
+
+        </div>
+
+
+
+        <div class="package-grid">
+
+
+            <!-- =================================================
+                 BASIC
+            ================================================== -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        STARTER
+                    </span>
+
+                    <span class="package-number">
+                        01
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    E-Commerce Basic
+                </h3>
+
+
+                <p class="package-description">
+                    A simple online store solution for small businesses
+                    starting to sell products online.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">
+                        ₹
+                    </span>
+
+                    <span class="amount">
+                        7,999
+                    </span>
+
+                    <span class="duration">
+                        / one-time
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Responsive E-Commerce Website
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Up to 15 Products
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Product Categories
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        WhatsApp Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Contact &amp; Enquiry Form
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mobile Responsive Design
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Product Pages
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Basic
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 STANDARD
+            ================================================== -->
+
+            <article class="package-card featured">
+
+                <div class="popular-badge">
+                    ⭐ MOST POPULAR
+                </div>
+
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        GROWTH
+                    </span>
+
+                    <span class="package-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    E-Commerce Standard
+                </h3>
+
+
+                <p class="package-description">
+                    A complete online store for growing businesses
+                    that want a better customer shopping experience.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">
+                        ₹
+                    </span>
+
+                    <span class="amount">
+                        12,999
+                    </span>
+
+                    <span class="duration">
+                        / one-time
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Professional E-Commerce Website
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Up to 50 Products
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Product Categories &amp; Filters
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Shopping Cart
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Payment Gateway Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        WhatsApp &amp; Contact Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Order Enquiry System
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mobile Responsive Design
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Standard
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PREMIUM
+            ================================================== -->
+
+            <article class="package-card">
+
+                <div class="package-top">
+
+                    <span class="package-type">
+                        BUSINESS PRO
+                    </span>
+
+                    <span class="package-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    E-Commerce Premium
+                </h3>
+
+
+                <p class="package-description">
+                    A powerful online store for businesses looking
+                    for a more complete selling system.
+                </p>
+
+
+                <div class="price">
+
+                    <span class="currency">
+                        ₹
+                    </span>
+
+                    <span class="amount">
+                        19,999
+                    </span>
+
+                    <span class="duration">
+                        / one-time
+                    </span>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <ul class="features">
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced E-Commerce Website
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Up to 100 Products
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Product Categories
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Shopping Cart &amp; Checkout
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Payment Gateway Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Order Management System
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        WhatsApp Integration
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Promotional Banner Sections
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Mobile Responsive Design
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic On-Page SEO Setup
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Premium
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     E-COMMERCE SERVICES
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Additional E-Commerce Services
+            </h2>
+
+            <p>
+                Add the services and features your online store needs.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+            <!-- 01 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            E-Commerce Website Development
+                        </h3>
+
+                        <p>
+                            Professional online store development
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 02 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Online Store Setup
+                        </h3>
+
+                        <p>
+                            Complete store structure and setup
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Product Upload &amp; Cataloguing
+                        </h3>
+
+                        <p>
+                            Product images, details, pricing &amp; categories
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 04 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Payment Gateway Integration
+                        </h3>
+
+                        <p>
+                            Online payment setup and integration
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 05 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Shipping Integration
+                        </h3>
+
+                        <p>
+                            Delivery and shipping setup
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 06 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            WhatsApp Integration
+                        </h3>
+
+                        <p>
+                            Customer enquiry and support connection
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Product SEO Setup
+                        </h3>
+
+                        <p>
+                            Basic product search optimization
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 08 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Store Banner Design
+                        </h3>
+
+                        <p>
+                            Website banners and promotional sections
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    ₹499 onwards
+                </div>
+
+            </div>
+
+
+
+            <!-- 09 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Promotional Creatives
+                        </h3>
+
+                        <p>
+                            Offers, sales and product creatives
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    ₹199 onwards
+                </div>
+
+            </div>
+
+
+
+            <!-- 10 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Social Media Marketing
+                        </h3>
+
+                        <p>
+                            Product and store promotion
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 11 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Google Ads
+                        </h3>
+
+                        <p>
+                            Search and shopping advertising
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+
+            <!-- 12 -->
+
+            <div class="service-card">
+
+                <div class="service-left">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                    </div>
+
+                    <div class="service-text">
+
+                        <h3>
+                            Meta Ads
+                        </h3>
+
+                        <p>
+                            Facebook and Instagram advertising
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="service-price">
+                    Get a Quote
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     IMPORTANT TERMS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Important Terms
+            </h2>
+
+            <p>
+                Clear terms for a smooth and transparent e-commerce project.
+            </p>
+
+        </div>
+
+
+
+        <div class="terms-grid">
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment
+                </h3>
+
+                <p>
+                    Payment schedule depends on the selected package
+                    and project scope.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-globe"></i>
+                    Domain &amp; Hosting
+                </h3>
+
+                <p>
+                    Domain, hosting and third-party platform charges
+                    are separate unless specifically included.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-box"></i>
+                    Product Content
+                </h3>
+
+                <p>
+                    Client must provide correct product names, images,
+                    prices, descriptions and other required information.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-credit-card"></i>
+                    Payment Gateway
+                </h3>
+
+                <p>
+                    Payment gateway account, transaction charges and
+                    third-party fees are separate.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-clock"></i>
+                    Delivery
+                </h3>
+
+                <p>
+                    Delivery time depends on project scope,
+                    content availability and client feedback.
+                </p>
+
+            </div>
+
+
+
+            <div class="term-card">
+
+                <h3>
+                    <i class="fa-solid fa-rotate"></i>
+                    Revisions
+                </h3>
+
+                <p>
+                    Revisions depend on the selected package.
+                    Additional revisions may be charged separately.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready to Start Selling Online?
+            </h2>
+
+            <p>
+                Tell us about your products and business.
+                We'll help you choose the right e-commerce solution.
+            </p>
+
+            <a href="contact.html" class="cta-btn">
+
+                Start Your E-Commerce Project
+
+                <i class="fa-solid fa-arrow-right"></i>
 
             </a>
 
@@ -1307,1026 +2286,63 @@
 
     </div>
 
-
-
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
-
-    <header class="hero">
-
-        <div class="container">
-
-            <div class="eyebrow">
-                BUSINESS MARKETING
-            </div>
-
-            <h1>
-                Grow Your Business
-                <span>With Better Marketing.</span>
-            </h1>
-
-            <p>
-                Build a stronger online presence, reach the right audience,
-                generate enquiries and present your business professionally.
-            </p>
-
-            <div class="gradient-line"></div>
-
-        </div>
-
-    </header>
+</section>
 
 
 
-    <!-- =========================================================
-         MARKETING PACKAGES
-    ========================================================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-    <section class="section">
+<footer>
 
-        <div class="container">
+    <div class="container">
 
+        <div class="footer">
 
-            <div class="section-heading">
+            <div class="footer-brand">
 
-                <h2>
-                    Business Marketing Packages
-                </h2>
+                <h3>
+                    ZippyGrow Media
+                </h3>
 
                 <p>
-                    Choose the level of marketing support that suits
-                    your business and growth stage.
+                    Digital Growth • Branding • Marketing
                 </p>
 
             </div>
 
 
-
-            <div class="package-grid">
-
-
-                <!-- =================================================
-                     STARTER
-                ================================================== -->
-
-                <article class="package-card">
-
-
-                    <div class="package-top">
-
-                        <span class="package-type">
-                            STARTER
-                        </span>
-
-                        <span class="package-number">
-                            01
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Business Starter
-                    </h3>
-
-
-                    <p class="package-description">
-                        A practical marketing package for small businesses
-                        starting to build a professional online presence.
-                    </p>
-
-
-                    <div class="price">
-
-                        <span class="currency">
-                            ₹
-                        </span>
-
-                        <span class="amount">
-                            1,999
-                        </span>
-
-                        <span class="duration">
-                            / month
-                        </span>
-
-                    </div>
-
-
-                    <div class="divider"></div>
-
-
-                    <ul class="features">
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Google Business Profile support
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            8 Social Media Creatives
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Promotional Post Designs
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Basic Content Support
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Local Marketing Guidance
-                        </li>
-
-                    </ul>
-
-
-                    <a href="contact.html" class="package-btn">
-
-                        Choose Starter
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     GROWTH
-                ================================================== -->
-
-                <article class="package-card featured">
-
-
-                    <div class="popular-badge">
-                        ⭐ MOST POPULAR
-                    </div>
-
-
-                    <div class="package-top">
-
-                        <span class="package-type">
-                            GROWTH
-                        </span>
-
-                        <span class="package-number">
-                            02
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Business Growth
-                    </h3>
-
-
-                    <p class="package-description">
-                        For businesses ready to improve visibility,
-                        engagement and customer enquiries.
-                    </p>
-
-
-                    <div class="price">
-
-                        <span class="currency">
-                            ₹
-                        </span>
-
-                        <span class="amount">
-                            3,999
-                        </span>
-
-                        <span class="duration">
-                            / month
-                        </span>
-
-                    </div>
-
-
-                    <div class="divider"></div>
-
-
-                    <ul class="features">
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Google Business Profile optimization
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            12 Social Media Creatives
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Offer & Promotional Creatives
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Social Media Marketing Support
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Local Campaign Planning
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Basic Lead Generation Support
-                        </li>
-
-                    </ul>
-
-
-                    <a href="contact.html" class="package-btn">
-
-                        Choose Growth
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     PRO
-                ================================================== -->
-
-                <article class="package-card">
-
-
-                    <div class="package-top">
-
-                        <span class="package-type">
-                            BUSINESS PRO
-                        </span>
-
-                        <span class="package-number">
-                            03
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Business Pro
-                    </h3>
-
-
-                    <p class="package-description">
-                        Complete marketing support for businesses
-                        looking for stronger digital growth.
-                    </p>
-
-
-                    <div class="price">
-
-                        <span class="currency">
-                            ₹
-                        </span>
-
-                        <span class="amount">
-                            6,999
-                        </span>
-
-                        <span class="duration">
-                            / month
-                        </span>
-
-                    </div>
-
-
-                    <div class="divider"></div>
-
-
-                    <ul class="features">
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Google Business Profile support
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            16 Social Media Creatives
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Promotional Campaign Creatives
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Meta Ads Campaign Setup
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Lead Generation Campaigns
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Local Marketing Strategy
-                        </li>
-
-                        <li>
-                            <i class="fa-solid fa-check"></i>
-                            Monthly Marketing Guidance
-                        </li>
-
-                    </ul>
-
-
-                    <a href="contact.html" class="package-btn">
-
-                        Choose Business Pro
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         ADDITIONAL SERVICES
-    ========================================================= -->
-
-    <section class="section">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    Additional Marketing Services
-                </h2>
-
-                <p>
-                    Choose individual services according to your business,
-                    marketing and growth requirements.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-grid">
-
-
-                <!-- 01 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Real Estate Social Media Management
-                            </h3>
-
-                            <p>
-                                Professional social media management
-                                for property businesses.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 02 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-image"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Property Post &amp; Creative Design
-                            </h3>
-
-                            <p>
-                                Attractive property posts and promotional
-                                creatives.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        ₹199 onwards
-                    </div>
-
-                </div>
-
-
-
-                <!-- 03 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-brands fa-instagram"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Instagram &amp; Facebook Marketing
-                            </h3>
-
-                            <p>
-                                Social media marketing for better reach
-                                and engagement.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 04 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Meta Ads Campaigns for Property Leads
-                            </h3>
-
-                            <p>
-                                Facebook and Instagram campaigns focused
-                                on property enquiries.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 05 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-users"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Lead Generation Campaigns
-                            </h3>
-
-                            <p>
-                                Campaigns designed to generate potential
-                                customer enquiries.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 06 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Website Development
-                            </h3>
-
-                            <p>
-                                Professional websites for businesses
-                                and brands.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 07 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Property Landing Pages
-                            </h3>
-
-                            <p>
-                                Conversion-focused landing pages for
-                                property campaigns.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 08 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Branding &amp; Professional Business Identity
-                            </h3>
-
-                            <p>
-                                Logo, visual identity and professional
-                                brand presence.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 09 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-video"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Promotional Videos &amp; Reels
-                            </h3>
-
-                            <p>
-                                Short-form promotional content for
-                                social media and ads.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 10 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-camera"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Property Photography &amp; Video Editing
-                            </h3>
-
-                            <p>
-                                Professional property visuals and
-                                video editing support.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 11 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-brands fa-google"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Google Ads
-                            </h3>
-
-                            <p>
-                                Search advertising to reach high-intent
-                                customers.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        Get a Quote
-                    </div>
-
-                </div>
-
-
-
-                <!-- 12 -->
-
-                <div class="service-card">
-
-                    <div class="service-left">
-
-                        <div class="service-icon">
-                            <i class="fa-solid fa-bullhorn"></i>
-                        </div>
-
-                        <div class="service-text">
-
-                            <h3>
-                                Ad Creatives &amp; Promotional Content
-                            </h3>
-
-                            <p>
-                                High-impact creatives for paid campaigns
-                                and promotions.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="service-price">
-                        ₹199 onwards
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         IMPORTANT TERMS
-    ========================================================= -->
-
-    <section class="section">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    Important Terms
-                </h2>
-
-                <p>
-                    Clear and simple terms for a smooth working experience.
-                </p>
-
-            </div>
-
-
-
-            <div class="terms-grid">
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-credit-card"></i>
-                        Payment
-                    </h3>
-
-                    <p>
-                        Payment terms depend on the selected service
-                        or marketing package.
-                    </p>
-
-                </div>
-
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-bullseye"></i>
-                        Ad Budget
-                    </h3>
-
-                    <p>
-                        Meta Ads, Google Ads and other advertising
-                        platform budgets are separate unless specifically included.
-                    </p>
-
-                </div>
-
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-file-lines"></i>
-                        Client Content
-                    </h3>
-
-                    <p>
-                        Client must provide correct business information,
-                        images, offers and other required content.
-                    </p>
-
-                </div>
-
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-clock"></i>
-                        Delivery
-                    </h3>
-
-                    <p>
-                        Delivery timelines depend on the selected service,
-                        quantity and client feedback.
-                    </p>
-
-                </div>
-
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-rotate"></i>
-                        Revisions
-                    </h3>
-
-                    <p>
-                        Revisions depend on the selected service or package.
-                        Additional revisions may be charged separately.
-                    </p>
-
-                </div>
-
-
-
-                <div class="term-card">
-
-                    <h3>
-                        <i class="fa-solid fa-list-check"></i>
-                        Custom Requirements
-                    </h3>
-
-                    <p>
-                        Requirements outside the selected package scope
-                        will be discussed and quoted separately.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         FINAL CTA
-    ========================================================= -->
-
-    <section class="final-cta">
-
-        <div class="container">
-
-            <div class="cta-box">
-
-                <h2>
-                    Ready to Grow Your Business?
-                </h2>
-
-                <p>
-                    Tell us about your business, goals and requirements.
-                    We'll help you choose the right marketing solution.
-                </p>
-
-                <a href="contact.html" class="cta-btn">
-
-                    Start Your Marketing
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
+            <div class="footer-links">
+
+                <a
+                    href="https://www.zippygrowmedia.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    www.zippygrowmedia.in
+                </a>
+
+                <a href="mailto:zippygrowmedia@gmail.com">
+                    zippygrowmedia@gmail.com
+                </a>
+
+                <a href="tel:+919534680179">
+                    9534680179
                 </a>
 
             </div>
 
         </div>
 
-    </section>
 
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
-
-    <footer>
-
-        <div class="container">
-
-
-            <div class="footer">
-
-
-                <div class="footer-brand">
-
-                    <h3>
-                        ZippyGrow Media
-                    </h3>
-
-                    <p>
-                        Digital Growth • Branding • Marketing
-                    </p>
-
-                </div>
-
-
-                <div class="footer-links">
-
-                    <a
-                        href="https://www.zippygrowmedia.in"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        www.zippygrowmedia.in
-                    </a>
-
-
-                    <a href="mailto:zippygrowmedia@gmail.com">
-                        zippygrowmedia@gmail.com
-                    </a>
-
-
-                    <a href="tel:+919534680179">
-                        9534680179
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="copyright">
-
-                © 2026 ZippyGrow Media. All rights reserved.
-
-            </div>
-
-
+        <div class="copyright">
+            © 2026 ZippyGrow Media. All rights reserved.
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
 </body>
