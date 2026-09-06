@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Performance Ads & Leads | ZippyGrow Media</title>
+
+<meta name="description"
+content="Performance marketing, Meta Ads, Google Ads, lead generation and conversion-focused campaigns by ZippyGrow Media.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root{
+    --bg:#090c11;
+    --panel:#121720;
+    --panel2:#161c25;
+
+    --border:#27303c;
+    --border2:#35404e;
+
+    --white:#f7f9fb;
+    --text:#d7dce4;
+    --muted:#929ba9;
+
+    --orange:#ff7048;
+    --orange2:#ff9a5c;
+    --coral:#ff5360;
+
+    --cyan:#61e8ff;
+    --green:#00e889;
+
+    --radius:20px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+        radial-gradient(
+            circle at 80% 5%,
+            rgba(255,112,72,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 35%,
+            rgba(97,232,255,.045),
+            transparent 25%
+        ),
+        var(--bg);
+
+    color:var(--text);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1160px,calc(100% - 40px));
+    margin:auto;
+}
+
+
+/* =========================
+BACK BUTTON
+========================= */
+
+.back-area{
+    padding-top:24px;
+}
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 15px;
+
+    border:1px solid var(--border);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    font-size:11px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.back-btn:hover{
+    transform:translateX(-3px);
+    border-color:rgba(97,232,255,.35);
+    color:var(--cyan);
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    padding:58px 0 38px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap:45px;
+
+    align-items:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:7px 12px;
+
+    border:1px solid rgba(255,112,72,.22);
+    border-radius:50px;
+
+    background:rgba(255,112,72,.045);
+
+    color:var(--orange2);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+}
+
+.badge i{
+    font-size:8px;
+}
+
+.hero h1{
+    margin-top:17px;
+
+    max-width:720px;
+
+    color:var(--white);
+
+    font-size:clamp(40px,5.5vw,67px);
+
+    line-height:1.04;
+
+    letter-spacing:-2.7px;
+
+    font-weight:800;
+}
+
+.hero h1 span{
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral),
+            var(--orange2)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-text{
+    max-width:630px;
+
+    margin-top:16px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:11px;
+
+    margin-top:23px;
+}
+
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 19px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:11px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(255,112,72,.22);
+}
+
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 19px;
+
+    border:1px solid var(--border2);
+    border-radius:11px;
+
+    background:rgba(255,255,255,.025);
+
+    color:var(--text);
+
+    font-size:11px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.secondary-btn:hover{
+    border-color:var(--cyan);
+    color:var(--cyan);
+}
+
+
+/* =========================
+CAMPAIGN VISUAL
+========================= */
+
+.campaign-box{
+    position:relative;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.008)
+        ),
+        var(--panel);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30);
+
+    overflow:hidden;
+}
+
+.campaign-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:-110px;
+    right:-80px;
+
+    border-radius:50%;
+
+    background:rgba(255,112,72,.10);
+
+    filter:blur(10px);
+}
+
+.campaign-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:17px;
+}
+
+.campaign-label{
+    color:var(--muted);
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.live{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    color:var(--green);
+
+    font-size:9px;
+    font-weight:800;
+}
+
+.live-dot{
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:0 0 10px var(--green);
+}
+
+.result-main{
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:#0e131a;
+}
+
+.result-title{
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.result-number{
+    margin-top:5px;
+
+    color:var(--white);
+
+    font-size:37px;
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+}
+
+.result-number span{
+    color:var(--green);
+
+    font-size:12px;
+
+    margin-left:5px;
+}
+
+.fake-chart{
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:7px;
+
+    height:105px;
+
+    margin-top:20px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(97,232,255,.025),
+            transparent
+        );
+}
+
+.bar{
+    flex:1;
+
+    border-radius:5px 5px 2px 2px;
+
+    background:
+        linear-gradient(
+            to top,
+            var(--orange),
+            var(--orange2)
+        );
+
+    opacity:.9;
+}
+
+.bar:nth-child(1){height:28%;}
+.bar:nth-child(2){height:42%;}
+.bar:nth-child(3){height:35%;}
+.bar:nth-child(4){height:58%;}
+.bar:nth-child(5){height:51%;}
+.bar:nth-child(6){height:74%;}
+.bar:nth-child(7){height:88%;}
+.bar:nth-child(8){height:100%;}
+
+.mini-stats{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:8px;
+
+    margin-top:10px;
+}
+
+.mini-stat{
+    padding:11px 8px;
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    background:rgba(255,255,255,.018);
+
+    text-align:center;
+}
+
+.mini-stat strong{
+    display:block;
+
+    color:var(--white);
+
+    font-size:13px;
+}
+
+.mini-stat span{
+    display:block;
+
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:7.5px;
+}
+
+
+/* =========================
+SECTION
+========================= */
+
+.section{
+    padding:42px 0 70px;
+}
+
+.section-title{
+    margin-bottom:27px;
+}
+
+.section-title.center{
+    text-align:center;
+}
+
+.section-title h2{
+    color:var(--white);
+
+    font-size:clamp(27px,4vw,40px);
+
+    line-height:1.15;
+
+    letter-spacing:-1.3px;
+}
+
+.section-title p{
+    max-width:650px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =========================
+AD PLATFORMS
+========================= */
+
+.platform-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:12px;
+}
+
+.platform{
+    padding:19px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--panel);
+
+    transition:.3s ease;
+}
+
+.platform:hover{
+    transform:translateY(-4px);
+
+    border-color:rgba(255,112,72,.3);
+}
+
+.platform-icon{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:
+        rgba(255,112,72,.09);
+
+    color:var(--orange2);
+
+    font-size:14px;
+}
+
+.platform h3{
+    margin-top:13px;
+
+    color:var(--white);
+
+    font-size:13px;
+}
+
+.platform p{
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:9.5px;
+
+    line-height:1.5;
+}
+
+
+/* =========================
+PACKAGES
+========================= */
+
+.package-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:19px;
+}
+
+.package{
+    position:relative;
+
+    padding:25px;
+
+    border:1px solid var(--border);
+
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.03),
+            transparent
+        ),
+        var(--panel);
+
+    transition:.3s ease;
+}
+
+.package:hover{
+    transform:translateY(-5px);
+
+    border-color:var(--border2);
+}
+
+.package.featured{
+    border:1px solid var(--orange);
+
+    box-shadow:
+        0 0 35px rgba(255,112,72,.08);
+}
+
+.package-badge{
+    position:absolute;
+
+    top:-12px;
+    right:18px;
+
+    padding:5px 10px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:8px;
+
+    font-weight:800;
+}
+
+.package small{
+    color:var(--cyan);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1.3px;
+}
+
+.package h3{
+    margin-top:9px;
+
+    color:var(--white);
+
+    font-size:20px;
+}
+
+.package-desc{
+    min-height:52px;
+
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:10.5px;
+
+    line-height:1.55;
+}
+
+.package-price{
+    margin-top:17px;
+
+    color:var(--white);
+
+    font-size:30px;
+
+    font-weight:800;
+}
+
+.package-price span{
+    color:var(--muted);
+
+    font-size:9px;
+
+    font-weight:500;
+}
+
+.package-line{
+    height:1px;
+
+    margin:17px 0;
+
+    background:var(--border);
+}
+
+.package ul{
+    display:flex;
+    flex-direction:column;
+
+    gap:9px;
+
+    list-style:none;
+}
+
+.package li{
+    display:flex;
+
+    gap:8px;
+
+    color:var(--text);
+
+    font-size:10.5px;
+
+    line-height:1.4;
+}
+
+.package li i{
+    margin-top:3px;
+
+    color:var(--green);
+
+    font-size:9px;
+}
+
+.package-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+
+    margin-top:21px;
+
+    padding:11px;
+
+    border:1px solid var(--border2);
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-size:10.5px;
+
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.package-btn:hover{
+    border-color:var(--cyan);
+
+    color:var(--cyan);
+}
+
+.featured .package-btn{
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+}
+
+
+/* =========================
+SERVICES
+========================= */
+
+.service-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.service{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:13px;
+
+    background:var(--panel);
+
+    transition:.3s ease;
+}
+
+.service:hover{
+    border-color:rgba(97,232,255,.22);
+
+    background:var(--panel2);
+}
+
+.service-icon{
+    flex:0 0 auto;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    background:rgba(97,232,255,.055);
+
+    color:var(--cyan);
+
+    font-size:11px;
+}
+
+.service h3{
+    color:var(--white);
+
+    font-size:11.5px;
+}
+
+.service p{
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:8.8px;
+}
+
+
+/* =========================
+PROCESS
+========================= */
+
+.process{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,minmax(0,1fr));
+
+    gap:10px;
+}
+
+.step{
+    padding:18px 13px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--panel);
+
+    text-align:center;
+}
+
+.step-number{
+    width:32px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 10px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,112,72,.17),
+            rgba(255,83,96,.06)
+        );
+
+    color:var(--orange2);
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+.step h3{
+    color:var(--white);
+
+    font-size:11px;
+}
+
+.step p{
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:8.5px;
+
+    line-height:1.45;
+}
+
+
+/* =========================
+TERMS
+========================= */
+
+.terms{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:11px;
+}
+
+.term{
+    padding:17px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--panel);
+}
+
+.term h3{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--white);
+
+    font-size:11.5px;
+}
+
+.term h3 i{
+    color:var(--orange2);
+
+    font-size:10px;
+}
+
+.term p{
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    line-height:1.55;
+}
+
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+    padding:0 0 70px;
+}
+
+.cta-box{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:48px 25px;
+
+    border:1px solid rgba(255,112,72,.22);
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,112,72,.12),
+            transparent 55%
+        ),
+        var(--panel);
+
+    text-align:center;
+}
+
+.cta-box::after{
+    content:"";
+
+    position:absolute;
+
+    left:18%;
+    right:18%;
+    top:0;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            var(--cyan),
+            transparent
+        );
+}
+
+.cta-box h2{
+    color:var(--white);
+
+    font-size:clamp(27px,4vw,40px);
+
+    line-height:1.15;
+}
+
+.cta-box p{
+    max-width:570px;
+
+    margin:8px auto 20px;
+
+    color:var(--muted);
+
+    font-size:11.5px;
+}
+
+.cta-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 21px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--coral)
+        );
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    padding:27px 0 20px;
+
+    border-top:1px solid var(--border);
+
+    background:#07090d;
+}
+
+.footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.footer h3{
+    color:var(--white);
+
+    font-size:14px;
+}
+
+.footer p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.footer-links{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+
+    gap:13px;
+}
+
+.footer-links a{
+    color:var(--muted);
+
+    font-size:9px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--cyan);
+}
+
+.copyright{
+    margin-top:17px;
+
+    color:#59616c;
+
+    font-size:8px;
+
+    text-align:center;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media(max-width:950px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .campaign-box{
+        max-width:600px;
+        margin:auto;
+    }
+
+    .platform-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .terms{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:720px){
+
+    .container{
+        width:calc(100% - 30px);
+
+        max-width:620px;
+    }
+
+    .back-area{
+        padding-top:17px;
+    }
+
+    .back-btn{
+        font-size:10px;
+    }
+
+
+    .hero{
+        padding:38px 0 25px;
+    }
+
+    .hero h1{
+        font-size:34px;
+
+        letter-spacing:-1.5px;
+    }
+
+    .hero-text{
+        margin-top:12px;
+
+        font-size:11px;
+
+        line-height:1.6;
+    }
+
+    .hero-buttons{
+        margin-top:18px;
+
+        gap:8px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        padding:10px 15px;
+
+        font-size:10px;
+    }
+
+
+    .campaign-box{
+        padding:15px;
+
+        border-radius:18px;
+    }
+
+    .result-main{
+        padding:16px;
+    }
+
+    .result-number{
+        font-size:32px;
+    }
+
+    .fake-chart{
+        height:85px;
+    }
+
+
+    .section{
+        padding:27px 0 52px;
+    }
+
+    .section-title{
+        margin-bottom:21px;
+    }
+
+    .section-title h2{
+        font-size:25px;
+    }
+
+    .section-title p{
+        font-size:10.5px;
+    }
+
+
+    .platform-grid{
+        grid-template-columns:1fr 1fr;
+
+        gap:9px;
+    }
+
+    .platform{
+        padding:15px;
+    }
+
+    .platform h3{
+        font-size:11.5px;
+    }
+
+    .platform p{
+        font-size:8.5px;
+    }
+
+
+    .package-grid{
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+        max-width:600px;
+
+        margin:auto;
+    }
+
+    .package{
+        padding:21px;
+
+        border-radius:17px;
+    }
+
+    .package-desc{
+        min-height:0;
+    }
+
+
+    .service-list{
+        grid-template-columns:1fr;
+    }
+
+
+    .process{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:9px;
+    }
+
+
+    .terms{
+        grid-template-columns:1fr;
+
+        gap:9px;
+    }
+
+
+    .cta{
+        padding-bottom:53px;
+    }
+
+    .cta-box{
+        padding:36px 17px;
+
+        border-radius:19px;
+    }
+
+    .cta-box h2{
+        font-size:26px;
+    }
+
+    .cta-box p{
+        font-size:10.5px;
+    }
+
+    .cta-btn{
+        width:100%;
+
+        font-size:10.5px;
+    }
+
+
+    .footer{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+
+        gap:8px 12px;
+    }
+
+}
+
+
+/* =========================
+SMALL PHONE
+========================= */
+
+@media(max-width:430px){
+
+    .container{
+        width:calc(100% - 26px);
+    }
+
+    .hero{
+        padding-top:30px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero-text{
+        font-size:10.5px;
+    }
+
+    .badge{
+        font-size:7.5px;
+    }
+
+    .mini-stats{
+        gap:6px;
+    }
+
+    .mini-stat{
+        padding:9px 5px;
+    }
+
+    .mini-stat strong{
+        font-size:11px;
+    }
+
+    .mini-stat span{
+        font-size:7px;
+    }
+
+    .package{
+        padding:19px 16px;
+    }
+
+    .package h3{
+        font-size:19px;
+    }
+
+    .package-price{
+        font-size:28px;
+    }
+
+    .process-card{
+        padding:15px 9px;
+    }
+
+    .step h3{
+        font-size:10px;
+    }
+
+    .step p{
+        font-size:8px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+BACK HOME
+========================= -->
+
+<div class="back-area">
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <div class="hero-content">
+
+                <div class="badge">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    PERFORMANCE MARKETING
+
+                </div>
+
+
+                <h1>
+
+                    Turn Ad Spend Into
+                    <span>Real Leads.</span>
+
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Target the right audience, run smarter campaigns
+                    and generate quality leads through performance-focused
+                    digital advertising.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="contact.html" class="primary-btn">
+
+                        Start a Campaign
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="#services" class="secondary-btn">
+
+                        Explore Services
+
+                        <i class="fa-solid fa-angle-down"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAMPAIGN VISUAL -->
+
+            <div class="campaign-box">
+
+                <div class="campaign-top">
+
+                    <span class="campaign-label">
+                        Campaign Overview
+                    </span>
+
+                    <span class="live">
+
+                        <span class="live-dot"></span>
+
+                        ACTIVE
+
+                    </span>
+
+                </div>
+
+
+                <div class="result-main">
+
+                    <div class="result-title">
+                        Qualified Leads
+                    </div>
+
+                    <div class="result-number">
+
+                        248
+
+                        <span>
+                            +32.8%
+                        </span>
+
+                    </div>
+
+
+                    <div class="fake-chart">
+
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+
+                    </div>
+
+
+                    <div class="mini-stats">
+
+                        <div class="mini-stat">
+
+                            <strong>4.8x</strong>
+
+                            <span>
+                                ROAS
+                            </span>
+
+                        </div>
+
+
+                        <div class="mini-stat">
+
+                            <strong>3.2%</strong>
+
+                            <span>
+                                CTR
+                            </span>
+
+                        </div>
+
+
+                        <div class="mini-stat">
+
+                            <strong>₹42</strong>
+
+                            <span>
+                                Avg. CPL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+PLATFORMS
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <h2>
+                Where We Run Campaigns
+            </h2>
+
+            <p>
+                Choose the right platform based on your audience,
+                business and campaign objective.
+            </p>
+
+        </div>
+
+
+        <div class="platform-grid">
+
+
+            <div class="platform">
+
+                <div class="platform-icon">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </div>
+
+                <h3>
+                    Meta Ads
+                </h3>
+
+                <p>
+                    Facebook & Instagram campaigns for reach,
+                    leads, enquiries and sales.
+                </p>
+
+            </div>
+
+
+            <div class="platform">
+
+                <div class="platform-icon">
+
+                    <i class="fa-brands fa-google"></i>
+
+                </div>
+
+                <h3>
+                    Google Ads
+                </h3>
+
+                <p>
+                    Search-focused campaigns to reach customers
+                    actively looking for your service.
+                </p>
+
+            </div>
+
+
+            <div class="platform">
+
+                <div class="platform-icon">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </div>
+
+                <h3>
+                    LinkedIn Ads
+                </h3>
+
+                <p>
+                    B2B campaigns designed to reach relevant
+                    professionals and decision-makers.
+                </p>
+
+            </div>
+
+
+            <div class="platform">
+
+                <div class="platform-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <h3>
+                    Local Campaigns
+                </h3>
+
+                <p>
+                    Location-focused advertising to generate
+                    enquiries from nearby customers.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+PACKAGES
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <h2>
+                Performance Ads Packages
+            </h2>
+
+            <p>
+                Campaign management designed for different
+                business growth stages.
+            </p>
+
+        </div>
+
+
+        <div class="package-grid">
+
+
+            <!-- STARTER -->
+
+            <article class="package">
+
+                <small>
+                    STARTER
+                </small>
+
+                <h3>
+                    Lead Starter
+                </h3>
+
+                <p class="package-desc">
+
+                    A focused setup for businesses
+                    starting paid advertising.
+
+                </p>
+
+
+                <div class="package-price">
+
+                    ₹2,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="package-line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Campaign Setup
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Meta Ads Management
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Audience Targeting
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Ad Creative Guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Basic Performance Tracking
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Monthly Optimization
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Starter
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- GROWTH -->
+
+            <article class="package featured">
+
+                <div class="package-badge">
+                    MOST POPULAR
+                </div>
+
+
+                <small>
+                    GROWTH
+                </small>
+
+                <h3>
+                    Lead Growth
+                </h3>
+
+                <p class="package-desc">
+
+                    A complete campaign management solution
+                    focused on consistent lead generation.
+
+                </p>
+
+
+                <div class="package-price">
+
+                    ₹5,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="package-line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Meta + Google Ads
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Lead Generation Campaigns
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Audience Targeting
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Ad Creative Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Landing Page Guidance
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Campaign Optimization
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Performance Reporting
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Growth
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- SCALE -->
+
+            <article class="package">
+
+                <small>
+                    SCALE
+                </small>
+
+                <h3>
+                    Performance Pro
+                </h3>
+
+                <p class="package-desc">
+
+                    Advanced advertising support for businesses
+                    looking to scale profitable campaigns.
+
+                </p>
+
+
+                <div class="package-price">
+
+                    ₹9,999
+
+                    <span>
+                        / month
+                    </span>
+
+                </div>
+
+
+                <div class="package-line"></div>
+
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Meta + Google + LinkedIn
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Multiple Campaign Funnels
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Advanced Retargeting
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Conversion Tracking
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Landing Page Strategy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Continuous Optimization
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Detailed Reporting
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html" class="package-btn">
+
+                    Choose Pro
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Performance Marketing Services
+            </h2>
+
+            <p>
+                Everything needed to plan, launch and improve
+                performance advertising campaigns.
+            </p>
+
+        </div>
+
+
+        <div class="service-list">
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-brands fa-meta"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Meta Ads Campaigns
+                    </h3>
+
+                    <p>
+                        Facebook & Instagram advertising
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-brands fa-google"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Google Ads
+                    </h3>
+
+                    <p>
+                        Search and conversion-focused campaigns
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-filter-circle-dollar"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Lead Generation
+                    </h3>
+
+                    <p>
+                        Campaigns designed to generate enquiries
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Audience Targeting
+                    </h3>
+
+                    <p>
+                        Reach relevant customers and audiences
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Retargeting Campaigns
+                    </h3>
+
+                    <p>
+                        Reconnect with interested visitors
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Campaign Optimization
+                    </h3>
+
+                    <p>
+                        Improve campaigns using performance data
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Ad Creative Strategy
+                    </h3>
+
+                    <p>
+                        Creative direction for better ad performance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-window-maximize"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Landing Page Strategy
+                    </h3>
+
+                    <p>
+                        Pages designed around conversion goals
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Conversion Tracking
+                    </h3>
+
+                    <p>
+                        Track leads, clicks and campaign actions
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-file-chart-column"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Performance Reports
+                    </h3>
+
+                    <p>
+                        Clear reports on campaign performance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+PROCESS
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <h2>
+                How We Run Your Campaign
+            </h2>
+
+            <p>
+                A structured process focused on continuous improvement.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Research
+                </h3>
+
+                <p>
+                    Understand your business,
+                    audience and competitors.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Strategy
+                </h3>
+
+                <p>
+                    Build the campaign structure
+                    and targeting plan.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Launch
+                </h3>
+
+                <p>
+                    Launch ads with suitable
+                    creatives and targeting.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Optimize
+                </h3>
+
+                <p>
+                    Monitor performance and
+                    improve campaigns.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <h3>
+                    Scale
+                </h3>
+
+                <p>
+                    Scale campaigns when
+                    performance supports it.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+TERMS
+========================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title center">
+
+            <h2>
+                Important Terms
+            </h2>
+
+            <p>
+                Clear expectations for a smooth advertising project.
+            </p>
+
+        </div>
+
+
+        <div class="terms">
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                    Ad Budget
+
+                </h3>
+
+                <p>
+                    Advertising budget is separate from
+                    ZippyGrow Media management fees.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    Management Fee
+
+                </h3>
+
+                <p>
+                    Management charges depend on the selected
+                    package and campaign scope.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Results
+
+                </h3>
+
+                <p>
+                    Results can vary based on budget,
+                    market, offer, audience and competition.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Client Content
+
+                </h3>
+
+                <p>
+                    Client must provide accurate business
+                    information, offers and required assets.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Optimization
+
+                </h3>
+
+                <p>
+                    Campaigns may be adjusted based on
+                    performance and available data.
+                </p>
+
+            </div>
+
+
+            <div class="term">
+
+                <h3>
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                    Lead Quality
+
+                </h3>
+
+                <p>
+                    Lead quality depends on targeting,
+                    offer, market demand and customer response.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready to Generate More Leads?
+            </h2>
+
+            <p>
+                Let's build a focused advertising strategy
+                for your business and growth goals.
+            </p>
+
+            <a href="contact.html" class="cta-btn">
+
+                Start Your Campaign
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer">
+
+            <div>
+
+                <h3>
+                    ZippyGrow Media
+                </h3>
+
+                <p>
+                    Digital Growth • Branding • Marketing
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://www.zippygrowmedia.in"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    www.zippygrowmedia.in
+
+                </a>
+
+                <a href="mailto:zippygrowmedia@gmail.com">
+
+                    zippygrowmedia@gmail.com
+
+                </a>
+
+                <a href="tel:+919534680179">
+
+                    9534680179
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 ZippyGrow Media. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
